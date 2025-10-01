@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Triply</string>
+    <string name="error_email_required">Email is required</string>
+    <string name="error_email_invalid">Please enter a valid email</string>
+    <string name="error_password_required">Password is required</string>
+    <string name="error_password_short">Password must be at least 6 characters</string>
+    <string name="error_password_mismatch">Passwords do not match</string>
+    <string name="login_success">Logged in successfully</string>
+    <string name="signup_success">Account created successfully</string>
+    <string name="triply_logo">Triply</string>
+    <string name="login">Login</string>
+    <string name="sign_up">Sign up</string>
+    <string name="hint_email_username">Enter email or username</string>
+    <string name="hint_password">Password</string>
+    <string name="forgot_password">Forgot password</string>
+    <string name="or_login_with">or login with</string>
+    <string name="google_login">Login with Google</string>
+    <string name="hint_full_name">Full name</string>
+    <string name="hint_phone">Phone</string>
+    <string name="hint_address">Address</string>
+    <string name="hint_username">Username</string>
+    <string name="toast_login_success">Đăng nhập thành công</string>
+    <string name="toast_signup_success">Đăng ký thành công</string>
+    <string name="toast_login_failed">Đăng nhập thất bại</string>
+    <string name="toast_signup_failed">Đăng ký thất bại</string>
+    <string name="default_web_client_id">381925635085-lluvinfj0jot6ihgi1pps69s9po1naqj.apps.googleusercontent.com</string>
+    <string name="error_identifier_required">Username or email is required</string>
+</resources>
+<!--mục tiêu của app-->
+<!--chức năng của app cam kết làm cuối kì xong-->
+<!--với chức năng như vậy thì plan như nào, ai làm phần nào-->
+<!--plan kế hoạch có làm xong k-->

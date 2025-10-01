@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Ảnh -->
+        <ImageView
+            android:id="@+id/imagePlace"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/lang_bac"
+            android:adjustViewBounds="true"
+            android:background="@drawable/image_round_bottom" />
+
+        <!-- Nội dung -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Tiêu đề -->
+            <TextView
+                android:id="@+id/textTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lăng Chủ Tịch Hồ Chí Minh"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:fontFamily="serif" />
+
+            <!-- Địa điểm -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="6dp"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@android:drawable/ic_menu_mylocation"
+                    android:tint="#555" />
+
+                <TextView
+                    android:id="@+id/textLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="6dp"
+                    android:text="Ba Đình, Hà Nội"
+                    android:textSize="14sp"
+                    android:textColor="#555" />
+            </LinearLayout>
+
+            <!-- Mô tả -->
+            <TextView
+                android:id="@+id/textDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Nằm tại Quảng trường Ba Đình, Hà Nội, Lăng Bác là nơi gìn giữ thi hài Chủ tịch Hồ Chí Minh – vị lãnh tụ vĩ đại của dân tộc..."
+                android:textSize="15sp"
+                android:lineSpacingExtra="4dp"
+                android:textColor="#333" />
+
+            <!-- Nút Directions -->
+            <Button
+                android:id="@+id/btnDirections"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#00AEEF"
+                android:text="Directions"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:drawableLeft="@android:drawable/ic_menu_directions" />
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

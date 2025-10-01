@@ -1,0 +1,74 @@
+I'll create a structured todo list for implementing authentication (entities, repositories, services, JWT, security config, controllers), then start adding the necessary dependencies and code files. Next, I'll update the Maven `pom.xml`, create entities and repos per your SQL schema, add JWT utilities and filters, configure Spring Security, and expose the auth endpoints including Google login linking.
+
+[1 tool called]
+
+I'll update the Maven dependencies first so the project can compile Spring Security, JPA, validation, JWT, Lombok, and MySQL. Then I'll proceed to add entities and repositories following your SQL schema.
+
+[1 tool called]
+
+I'll update `pom.xml` to add JWT, Lombok, and Google API client dependencies, and remove the OAuth2 resource server to avoid conflicts with our custom JWT flow. Then I'll run a quick compile to verify dependencies resolve.
+
+[2 tools called]
+
+I'm going to add the core authentication code: entities, repositories, DTOs, services (including Google token verification), JWT utilities and filter, security configuration, controller, and a basic exception handler. Then I'll update application.yml with JWT and Google settings.
+
+[1 tool called]
+
+I’m adding the entity, repository, and exception classes first, aligned to your SQL schema, then I’ll continue with DTOs, utilities, services, security, controller, and config in subsequent steps.
+
+[8 tools called]
+
+I'll split the DTOs into separate public classes, then add JWT utility, Google OAuth service, user details service, auth service, JWT filter, security config, controller, and exception handler. Next, I'll update application.yml to include JWT and Google settings while removing the resource server block.
+
+[16 tools called]
+
+I’m updating the controller base path to align with your context-path, tightening validation to satisfy DB constraints, ensuring Google-linked accounts meet NOT NULL password constraints, permitting the new path in security, and adding JWT/Google settings in application.yml. Then I’ll validate for any linter issues.
+
+[4 tools called]
+
+- I added dependencies and implemented the full authentication stack: entities, repositories, DTOs, services, JWT utility/filter, security config, controller, and exception handling. I also configured JWT and Google OAuth settings in `application.yml`.
+
+What’s next:
+- Run the app and test endpoints.
+
+Quick test with Postman/HTTP:
+- Register:
+```http
+POST http://localhost:8080/api/v1/auth/register
+Content-Type: application/json
+
+{
+  "fullName": "Nguyen Van A",
+  "email": "a.nguyen@example.com",
+  "phone": "0901234567",
+  "address": "HCM",
+  "userName": "nguyenvana",
+  "password": "password123"
+}
+```
+- Login:
+```http
+POST http://localhost:8080/api/v1/auth/login
+Content-Type: application/json
+
+{
+  "userName": "nguyenvana",
+  "password": "password123"
+}
+```
+- Google login (set env GOOGLE_CLIENT_ID/SECRET):
+```http
+POST http://localhost:8080/api/v1/auth/social-login
+Content-Type: application/json
+
+{
+  "provider": "GOOGLE",
+  "token": "<google_id_token>"
+}
+```
+- Authenticated request:
+Add header `Authorization: Bearer <accessToken>` to call `/api/v1/auth/me`.
+
+Note:
+- Tables follow your `scripts.sql` names/columns.
+- Google-linked accounts are created with empty `passwordHash` and `socialProvider=GOOGLE`, and auto-linked to existing `Customer` by email.
