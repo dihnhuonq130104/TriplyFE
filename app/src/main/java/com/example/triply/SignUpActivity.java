@@ -95,11 +95,10 @@ public class SignUpActivity extends AppCompatActivity {
         authRepository.register(request, new AuthRepository.AuthCallback() {
             @Override
             public void onSuccess(com.example.triply.data.remote.model.AuthResponse response) {
-                Toast.makeText(SignUpActivity.this, getString(R.string.toast_signup_success), Toast.LENGTH_LONG).show();
-                emailEditText.postDelayed(() -> {
-                    startActivity(new Intent(SignUpActivity.this, HomeActivity.class));
-                    finish();
-                }, 5000);
+                Toast.makeText(SignUpActivity.this, getString(R.string.toast_signup_success), Toast.LENGTH_SHORT).show();
+                // Không delay để cải thiện trải nghiệm người dùng
+                startActivity(new Intent(SignUpActivity.this, HomeActivity.class));
+                finish();
             }
 
             @Override

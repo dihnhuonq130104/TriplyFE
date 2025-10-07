@@ -1,0 +1,672 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Header -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/blue"
+            android:padding="16dp">
+
+            <!-- Back Button -->
+            <ImageView
+                android:id="@+id/btn_back"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="40dp"
+                android:src="@drawable/icon_left"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                app:tint="@color/white" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_header_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/lobster"
+                android:text="Lên Kế Hoạch Chi Tiết"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:textStyle="bold"/>
+
+            <!-- Trip Summary -->
+            <LinearLayout
+                android:id="@+id/trip_summary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_header_title"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/tv_destination"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hà Nội"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="16dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="•"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="16dp"/>
+
+                <TextView
+                    android:id="@+id/tv_duration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3 ngày 2 đêm"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="16dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="•"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="16dp"/>
+
+                <TextView
+                    android:id="@+id/tv_people_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2 người"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <!-- Content Container -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Section 1: Flight Selection -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="16dp">
+
+                        <TextView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:text="✈️"
+                            android:textSize="20sp"
+                            android:gravity="center"
+                            android:layout_marginEnd="12dp"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Chọn Vé Máy Bay"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"/>
+
+                        <TextView
+                            android:id="@+id/tv_flight_status"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Chưa chọn"
+                            android:textSize="14sp"
+                            android:textColor="@color/gray"
+                            android:background="@drawable/bg_rounded_gray"
+                            android:padding="8dp"
+                            android:layout_marginStart="8dp"/>
+
+                    </LinearLayout>
+
+                    <!-- Flight Options -->
+                    <RadioGroup
+                        android:id="@+id/rg_flight_options"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/rb_vietnam_airlines"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Vietnam Airlines - 2,500,000 VND"
+                            android:textSize="16sp"
+                            android:padding="12dp"
+                            android:background="?attr/selectableItemBackground"/>
+
+                        <RadioButton
+                            android:id="@+id/rb_vietjet"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="VietJet Air - 1,800,000 VND"
+                            android:textSize="16sp"
+                            android:padding="12dp"
+                            android:background="?attr/selectableItemBackground"/>
+
+                        <RadioButton
+                            android:id="@+id/rb_bamboo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Bamboo Airways - 2,200,000 VND"
+                            android:textSize="16sp"
+                            android:padding="12dp"
+                            android:background="?attr/selectableItemBackground"/>
+
+                        <RadioButton
+                            android:id="@+id/rb_jetstar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Jetstar Pacific - 1,600,000 VND"
+                            android:textSize="16sp"
+                            android:padding="12dp"
+                            android:background="?attr/selectableItemBackground"/>
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Section 2: Hotel Selection -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="16dp">
+
+                        <TextView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:text="🏨"
+                            android:textSize="20sp"
+                            android:gravity="center"
+                            android:layout_marginEnd="12dp"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Chọn Khách Sạn"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"/>
+
+                        <TextView
+                            android:id="@+id/tv_hotel_status"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Chưa chọn"
+                            android:textSize="14sp"
+                            android:textColor="@color/gray"
+                            android:background="@drawable/bg_rounded_gray"
+                            android:padding="8dp"
+                            android:layout_marginStart="8dp"/>
+
+                    </LinearLayout>
+
+                    <!-- Hotel Options -->
+                    <RadioGroup
+                        android:id="@+id/rg_hotel_options"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/rb_lotte_hotel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Lotte Hotel Hanoi - 5⭐ - 3,500,000 VND/đêm"
+                            android:textSize="16sp"
+                            android:padding="12dp"
+                            android:background="?attr/selectableItemBackground"/>
+
+                        <RadioButton
+                            android:id="@+id/rb_intercontinental"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="InterContinental Hanoi - 5⭐ - 4,200,000 VND/đêm"
+                            android:textSize="16sp"
+                            android:padding="12dp"
+                            android:background="?attr/selectableItemBackground"/>
+
+                        <RadioButton
+                            android:id="@+id/rb_hilton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Hilton Hanoi Opera - 5⭐ - 3,800,000 VND/đêm"
+                            android:textSize="16sp"
+                            android:padding="12dp"
+                            android:background="?attr/selectableItemBackground"/>
+
+                        <RadioButton
+                            android:id="@+id/rb_sheraton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Sheraton Hanoi Hotel - 5⭐ - 3,200,000 VND/đêm"
+                            android:textSize="16sp"
+                            android:padding="12dp"
+                            android:background="?attr/selectableItemBackground"/>
+
+                        <RadioButton
+                            android:id="@+id/rb_pullman"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Pullman Hanoi - 4⭐ - 2,800,000 VND/đêm"
+                            android:textSize="16sp"
+                            android:padding="12dp"
+                            android:background="?attr/selectableItemBackground"/>
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Section 3: Tourist Attractions Selection -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="16dp">
+
+                        <TextView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:text="🏛️"
+                            android:textSize="20sp"
+                            android:gravity="center"
+                            android:layout_marginEnd="12dp"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Chọn Địa Điểm Tham Quan"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"/>
+
+                        <TextView
+                            android:id="@+id/tv_attractions_status"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0/5 đã chọn"
+                            android:textSize="14sp"
+                            android:textColor="@color/gray"
+                            android:background="@drawable/bg_rounded_gray"
+                            android:padding="8dp"
+                            android:layout_marginStart="8dp"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Chọn tối đa 5 địa điểm bạn muốn tham quan:"
+                        android:textSize="14sp"
+                        android:textColor="@color/gray"
+                        android:layout_marginBottom="12dp"/>
+
+                    <!-- Attractions Options -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <CheckBox
+                            android:id="@+id/cb_ho_chi_minh_mausoleum"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Lăng Chủ Tịch Hồ Chí Minh - Miễn phí"
+                            android:textSize="16sp"
+                            android:padding="12dp"
+                            android:background="?attr/selectableItemBackground"/>
+
+                        <CheckBox
+                            android:id="@+id/cb_temple_literature"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Văn Miếu - Quốc Tử Giám - 30,000 VND/người"
+                            android:textSize="16sp"
+                            android:padding="12dp"
+                            android:background="?attr/selectableItemBackground"/>
+
+                        <CheckBox
+                            android:id="@+id/cb_hoan_kiem_lake"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Hồ Hoàn Kiếm - Miễn phí"
+                            android:textSize="16sp"
+                            android:padding="12dp"
+                            android:background="?attr/selectableItemBackground"/>
+
+                        <CheckBox
+                            android:id="@+id/cb_old_quarter"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Phố Cổ Hà Nội - Miễn phí"
+                            android:textSize="16sp"
+                            android:padding="12dp"
+                            android:background="?attr/selectableItemBackground"/>
+
+                        <CheckBox
+                            android:id="@+id/cb_one_pillar_pagoda"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Chùa Một Cột - Miễn phí"
+                            android:textSize="16sp"
+                            android:padding="12dp"
+                            android:background="?attr/selectableItemBackground"/>
+
+                        <CheckBox
+                            android:id="@+id/cb_hanoi_opera_house"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Nhà Hát Lớn Hà Nội - 100,000 VND/người"
+                            android:textSize="16sp"
+                            android:padding="12dp"
+                            android:background="?attr/selectableItemBackground"/>
+
+                        <CheckBox
+                            android:id="@+id/cb_ba_dinh_square"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Quảng Trường Ba Đình - Miễn phí"
+                            android:textSize="16sp"
+                            android:padding="12dp"
+                            android:background="?attr/selectableItemBackground"/>
+
+                        <CheckBox
+                            android:id="@+id/cb_west_lake"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Hồ Tây - Miễn phí"
+                            android:textSize="16sp"
+                            android:padding="12dp"
+                            android:background="?attr/selectableItemBackground"/>
+
+                        <CheckBox
+                            android:id="@+id/cb_hanoi_museum"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Bảo Tàng Lịch Sử Việt Nam - 40,000 VND/người"
+                            android:textSize="16sp"
+                            android:padding="12dp"
+                            android:background="?attr/selectableItemBackground"/>
+
+                        <CheckBox
+                            android:id="@+id/cb_long_bien_bridge"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Cầu Long Biên - Miễn phí"
+                            android:textSize="16sp"
+                            android:padding="12dp"
+                            android:background="?attr/selectableItemBackground"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Section 4: Cost Summary -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#F5F5F5">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="16dp">
+
+                        <TextView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:text="💰"
+                            android:textSize="20sp"
+                            android:gravity="center"
+                            android:layout_marginEnd="12dp"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Tổng Chi Phí Dự Kiến"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"/>
+
+                    </LinearLayout>
+
+                    <!-- Cost Breakdown -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="8dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Vé máy bay:"
+                                android:textSize="16sp"/>
+
+                            <TextView
+                                android:id="@+id/tv_flight_cost"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0 VND"
+                                android:textSize="16sp"
+                                android:textStyle="bold"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="8dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Khách sạn:"
+                                android:textSize="16sp"/>
+
+                            <TextView
+                                android:id="@+id/tv_hotel_cost"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0 VND"
+                                android:textSize="16sp"
+                                android:textStyle="bold"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="8dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Địa điểm tham quan:"
+                                android:textSize="16sp"/>
+
+                            <TextView
+                                android:id="@+id/tv_attractions_cost"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0 VND"
+                                android:textSize="16sp"
+                                android:textStyle="bold"/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/gray"
+                            android:layout_margin="8dp"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="8dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="TỔNG CỘNG:"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/blue"/>
+
+                            <TextView
+                                android:id="@+id/tv_total_cost"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0 VND"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/blue"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Action Buttons -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_preview"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:text="Xem Trước"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/gray"
+                    app:cornerRadius="8dp"
+                    android:enabled="false"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_create_plan"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_weight="2"
+                    android:layout_marginStart="8dp"
+                    android:text="🚀 Tạo Kế Hoạch Chi Tiết"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/blue"
+                    app:cornerRadius="8dp"
+                    android:enabled="false"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

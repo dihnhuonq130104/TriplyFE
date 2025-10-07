@@ -116,13 +116,11 @@ public class LoginActivity extends AppCompatActivity {
         authRepository.login(identifier, password, new AuthRepository.AuthCallback() {
             @Override
             public void onSuccess(com.example.triply.data.remote.model.AuthResponse response) {
-                Toast toast = Toast.makeText(LoginActivity.this, getString(R.string.toast_login_success), Toast.LENGTH_LONG);
-                toast.show();
-                emailEditText.postDelayed(() -> {
-                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                    startActivity(intent);
-                    finish();
-                }, 5000);
+                Toast.makeText(LoginActivity.this, getString(R.string.toast_login_success), Toast.LENGTH_SHORT).show();
+                // Không delay để cải thiện trải nghiệm người dùng
+                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                startActivity(intent);
+                finish();
             }
 
             @Override
@@ -144,11 +142,10 @@ public class LoginActivity extends AppCompatActivity {
                     authRepository.socialLogin("GOOGLE", idToken, new AuthRepository.AuthCallback() {
                         @Override
                         public void onSuccess(com.example.triply.data.remote.model.AuthResponse response) {
-                            Toast.makeText(LoginActivity.this, getString(R.string.toast_login_success), Toast.LENGTH_LONG).show();
-                            emailEditText.postDelayed(() -> {
-                                startActivity(new Intent(LoginActivity.this, HomeActivity.class));
-                                finish();
-                            }, 5000);
+                            Toast.makeText(LoginActivity.this, getString(R.string.toast_login_success), Toast.LENGTH_SHORT).show();
+                            // Không delay để cải thiện trải nghiệm người dùng
+                            startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                            finish();
                         }
 
                         @Override
