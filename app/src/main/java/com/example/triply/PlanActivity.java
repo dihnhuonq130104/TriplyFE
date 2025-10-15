@@ -11,9 +11,13 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.triply.data.remote.model.PlanResponse;
+import com.google.gson.Gson;
 import com.google.android.material.button.MaterialButton;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.List;
 
 public class PlanActivity extends AppCompatActivity {
 
@@ -36,6 +40,19 @@ public class PlanActivity extends AppCompatActivity {
     private CheckBox cbHoChiMinhMausoleum, cbTempleLiterature, cbHoanKiemLake, 
                      cbOldQuarter, cbOnePillarPagoda, cbHanoiOperaHouse,
                      cbBaDinhSquare, cbWestLake, cbHanoiMuseum, cbLongBienBridge;
+
+    // Dynamic data from backend
+    private PlanResponse planResponse;
+    private final int[] flightRadioIds = new int[]{
+            R.id.rb_vietnam_airlines, R.id.rb_vietjet, R.id.rb_bamboo, R.id.rb_jetstar
+    };
+    private final int[] hotelRadioIds = new int[]{
+            R.id.rb_lotte_hotel, R.id.rb_intercontinental, R.id.rb_hilton, R.id.rb_sheraton, R.id.rb_pullman
+    };
+    private long[] flightOptionPrices = new long[]{2500000, 1800000, 2200000, 1600000};
+    private String[] flightOptionAirlines = new String[]{"Vietnam Airlines", "VietJet Air", "Bamboo Airways", "Jetstar Pacific"};
+    private long[] hotelOptionNightlyPrices = new long[]{3500000, 4200000, 3800000, 3200000, 2800000};
+    private String[] hotelOptionNames = new String[]{"Lotte Hotel Hanoi", "InterContinental Hanoi", "Hilton Hanoi Opera", "Sheraton Hanoi Hotel", "Pullman Hanoi"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,6 +108,7 @@ public class PlanActivity extends AppCompatActivity {
             String direction = intent.getStringExtra("direction");
             String durations = intent.getStringExtra("durations");
             String numbersPerson = intent.getStringExtra("numbers_person");
+            String planJson = intent.getStringExtra("plan_json");
             
             if (direction != null) {
                 tvDestination.setText(direction);
@@ -119,6 +137,94 @@ public class PlanActivity extends AppCompatActivity {
                     peopleCount = 1;
                 }
             }
+
+            if (planJson != null) {
+                try {
+                    planResponse = new Gson().fromJson(planJson, PlanResponse.class);
+                    populateDynamicOptions();
+                } catch (Exception ignored) {}
+            }
+        }
+    }
+
+    private void populateDynamicOptions() {
+        // Populate flights from flightOther
+        if (planResponse != null && planResponse.flightOther != null && !planResponse.flightOther.isEmpty()) {
+            int max = Math.min(flightRadioIds.length, planResponse.flightOther.size());
+            for (int i = 0; i < flightRadioIds.length; i++) {
+                RadioButton rb = findViewById(flightRadioIds[i]);
+                if (i < max) {
+                    PlanResponse.FlightItinerary it = planResponse.flightOther.get(i);
+                    String airline = (it.flights != null && !it.flights.isEmpty() && it.flights.get(0).airline != null)
+                            ? it.flights.get(0).airline : "Flight";
+                    String number = (it.flights != null && !it.flights.isEmpty() && it.flights.get(0).flight_number != null)
+                            ? it.flights.get(0).flight_number : "";
+                    long price = it.price;
+                    flightOptionAirlines[i] = airline;
+                    flightOptionPrices[i] = price;
+                    rb.setEnabled(true);
+                    rb.setText(airline + (number.isEmpty() ? "" : (" - " + number)) + " - " + formatCurrency(price) + " VND");
+                } else {
+                    rb.setEnabled(false);
+                    rb.setText("Không có dữ liệu");
+                }
+            }
+        }
+
+        // Populate hotels
+        if (planResponse != null && planResponse.hotels != null && !planResponse.hotels.isEmpty()) {
+            int maxH = Math.min(hotelRadioIds.length, planResponse.hotels.size());
+            for (int i = 0; i < hotelRadioIds.length; i++) {
+                RadioButton rb = findViewById(hotelRadioIds[i]);
+                if (i < maxH) {
+                    PlanResponse.Hotel h = planResponse.hotels.get(i);
+                    String name = h.name != null ? h.name : "Hotel";
+                    Integer stars = h.extracted_hotel_class;
+                    long nightly = (h.rate_per_night != null ? h.rate_per_night.extracted_lowest : 0);
+                    hotelOptionNames[i] = name;
+                    hotelOptionNightlyPrices[i] = nightly;
+                    String starTxt = stars != null ? (stars + "⭐") : "";
+                    rb.setEnabled(true);
+                    rb.setText(name + (starTxt.isEmpty() ? "" : (" - " + starTxt)) + " - " + formatCurrency(nightly) + " VND/đêm");
+                } else {
+                    rb.setEnabled(false);
+                    rb.setText("Không có dữ liệu");
+                }
+            }
+        }
+
+        // Populate attractions from schedules
+        List<String> suggestions = new ArrayList<>();
+        if (planResponse != null && planResponse.attractions != null) {
+            for (PlanResponse.AttractionDay day : planResponse.attractions) {
+                if (day == null || day.schedule == null) continue;
+                for (PlanResponse.AttractionSchedule s : day.schedule) {
+                    String text = (day.date != null ? day.date + " " : "") +
+                            (s.time != null ? s.time + " - " : "") +
+                            (s.location != null ? s.location + ": " : "") +
+                            (s.activity != null ? s.activity : "");
+                    if (s.reason != null && !s.reason.isEmpty()) {
+                        String r = s.reason.replace('\n', ' ');
+                        if (r.length() > 120) r = r.substring(0, 120) + "...";
+                        text += " (" + r + ")";
+                    }
+                    suggestions.add(text);
+                }
+            }
+        }
+        CheckBox[] checkBoxes = new CheckBox[]{
+                cbHoChiMinhMausoleum, cbTempleLiterature, cbHoanKiemLake, cbOldQuarter,
+                cbOnePillarPagoda, cbHanoiOperaHouse, cbBaDinhSquare, cbWestLake,
+                cbHanoiMuseum, cbLongBienBridge
+        };
+        for (int i = 0; i < checkBoxes.length; i++) {
+            if (i < suggestions.size()) {
+                checkBoxes[i].setText(suggestions.get(i));
+                checkBoxes[i].setEnabled(true);
+            } else {
+                checkBoxes[i].setText("(Không có gợi ý)");
+                checkBoxes[i].setEnabled(false);
+            }
         }
     }
     
@@ -129,18 +235,12 @@ public class PlanActivity extends AppCompatActivity {
         
         // Flight selection
         rgFlightOptions.setOnCheckedChangeListener((group, checkedId) -> {
-            if (checkedId == R.id.rb_vietnam_airlines) {
-                flightCost = 2500000 * peopleCount;
-                tvFlightStatus.setText("Vietnam Airlines");
-            } else if (checkedId == R.id.rb_vietjet) {
-                flightCost = 1800000 * peopleCount;
-                tvFlightStatus.setText("VietJet Air");
-            } else if (checkedId == R.id.rb_bamboo) {
-                flightCost = 2200000 * peopleCount;
-                tvFlightStatus.setText("Bamboo Airways");
-            } else if (checkedId == R.id.rb_jetstar) {
-                flightCost = 1600000 * peopleCount;
-                tvFlightStatus.setText("Jetstar Pacific");
+            int idx = getFlightIndexById(checkedId);
+            if (idx >= 0) {
+                long price = flightOptionPrices[idx];
+                String airline = flightOptionAirlines[idx];
+                flightCost = price * peopleCount;
+                tvFlightStatus.setText(airline);
             }
             updateCostDisplay();
             checkAllSelections();
@@ -148,21 +248,12 @@ public class PlanActivity extends AppCompatActivity {
         
         // Hotel selection
         rgHotelOptions.setOnCheckedChangeListener((group, checkedId) -> {
-            if (checkedId == R.id.rb_lotte_hotel) {
-                hotelCost = 3500000 * nightCount;
-                tvHotelStatus.setText("Lotte Hotel");
-            } else if (checkedId == R.id.rb_intercontinental) {
-                hotelCost = 4200000 * nightCount;
-                tvHotelStatus.setText("InterContinental");
-            } else if (checkedId == R.id.rb_hilton) {
-                hotelCost = 3800000 * nightCount;
-                tvHotelStatus.setText("Hilton Opera");
-            } else if (checkedId == R.id.rb_sheraton) {
-                hotelCost = 3200000 * nightCount;
-                tvHotelStatus.setText("Sheraton Hotel");
-            } else if (checkedId == R.id.rb_pullman) {
-                hotelCost = 2800000 * nightCount;
-                tvHotelStatus.setText("Pullman Hanoi");
+            int idx = getHotelIndexById(checkedId);
+            if (idx >= 0) {
+                long nightly = hotelOptionNightlyPrices[idx];
+                String name = hotelOptionNames[idx];
+                hotelCost = nightly * nightCount;
+                tvHotelStatus.setText(name);
             }
             updateCostDisplay();
             checkAllSelections();
@@ -188,7 +279,8 @@ public class PlanActivity extends AppCompatActivity {
             cbHanoiMuseum, cbLongBienBridge
         };
         
-        long[] costs = {0, 30000, 0, 0, 0, 100000, 0, 0, 40000, 0}; // Cost per person
+        // Dynamic suggestions are not priced by backend, keep costs zero to preserve total calc
+        long[] costs = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; // Cost per person
         
         for (int i = 0; i < checkBoxes.length; i++) {
             final int index = i;
@@ -210,6 +302,29 @@ public class PlanActivity extends AppCompatActivity {
                 updateCostDisplay();
                 checkAllSelections();
             });
+        }
+    }
+
+    private int getFlightIndexById(int id) {
+        for (int i = 0; i < flightRadioIds.length; i++) {
+            if (flightRadioIds[i] == id) return i;
+        }
+        return -1;
+    }
+
+    private int getHotelIndexById(int id) {
+        for (int i = 0; i < hotelRadioIds.length; i++) {
+            if (hotelRadioIds[i] == id) return i;
+        }
+        return -1;
+    }
+
+    private String formatCurrency(long v) {
+        try {
+            DecimalFormat formatter = new DecimalFormat("#,###");
+            return formatter.format(v);
+        } catch (Exception e) {
+            return String.valueOf(v);
         }
     }
     

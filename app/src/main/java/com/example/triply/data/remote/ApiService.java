@@ -4,6 +4,8 @@ import com.example.triply.data.remote.model.AuthResponse;
 import com.example.triply.data.remote.model.LoginRequest;
 import com.example.triply.data.remote.model.RegisterRequest;
 import com.example.triply.data.remote.model.SocialLoginRequest;
+import com.example.triply.data.remote.model.CreatePlanRequest;
+import com.example.triply.data.remote.model.PlanResponse;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -23,6 +25,10 @@ public interface ApiService {
 
     @GET("/api/v1/auth/me")
     Call<AuthResponse> me(@Header("Authorization") String bearerToken);
+
+    // Trip planning
+    @POST("/api/v1/trip/plan")
+    Call<PlanResponse> planTrip(@Body CreatePlanRequest request);
 }
 
 
