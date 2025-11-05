@@ -22,16 +22,12 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_forgot_password);
-
-        // view
         emailEditText = findViewById(R.id.et_email);
         MaterialButton sendPasswordButton = findViewById(R.id.btn_send_password);
         TextView backToLoginText = findViewById(R.id.tv_back_to_login);
 
-        // Nút gửi mật khẩu
         sendPasswordButton.setOnClickListener(v -> attemptSendPassword());
 
-        // Quay lại màn hình login
         backToLoginText.setOnClickListener(v -> {
             Intent intent = new Intent(ForgotPasswordActivity.this, LoginActivity.class);
             startActivity(intent);
@@ -42,7 +38,6 @@ public class ForgotPasswordActivity extends AppCompatActivity {
     private void attemptSendPassword() {
         String email = emailEditText.getText().toString().trim();
 
-        // Validate email
         if (TextUtils.isEmpty(email)) {
             emailEditText.setError("Email is required");
             emailEditText.requestFocus();
@@ -57,7 +52,6 @@ public class ForgotPasswordActivity extends AppCompatActivity {
 
         Toast.makeText(this, "Password reset link sent to " + email, Toast.LENGTH_LONG).show();
         
-        // Optionally, navigate back to login after successful email send
         Intent intent = new Intent(ForgotPasswordActivity.this, LoginActivity.class);
         startActivity(intent);
         finish();

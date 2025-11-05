@@ -2,8 +2,8 @@ package com.example.triply;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.CheckBox;
-import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -16,407 +16,424 @@ import com.google.gson.Gson;
 import com.google.android.material.button.MaterialButton;
 
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class PlanActivity extends AppCompatActivity {
+
+    public static final String EXTRA_DETAIL_DESTINATION = "DETAIL_DESTINATION";
+    public static final String EXTRA_DETAIL_DURATION_TEXT = "DETAIL_DURATION_TEXT";
+    public static final String EXTRA_DETAIL_PEOPLE_COUNT = "DETAIL_PEOPLE_COUNT";
+    public static final String EXTRA_DETAIL_NIGHT_COUNT = "DETAIL_NIGHT_COUNT";
+    public static final String EXTRA_DETAIL_START_DATE = "DETAIL_START_DATE";
+    public static final String EXTRA_DETAIL_SELECTED_ATTRACTIONS = "DETAIL_SELECTED_ATTRACTIONS";
+
+    public static final String EXTRA_DETAIL_FLIGHT_DEP_AIRPORT = "DETAIL_FLIGHT_DEP_AIRPORT";
+    public static final String EXTRA_DETAIL_FLIGHT_DEP_TIME = "DETAIL_FLIGHT_DEP_TIME";
+    public static final String EXTRA_DETAIL_FLIGHT_ARR_AIRPORT = "DETAIL_FLIGHT_ARR_AIRPORT";
+    public static final String EXTRA_DETAIL_FLIGHT_ARR_TIME = "DETAIL_FLIGHT_ARR_TIME";
+    public static final String EXTRA_DETAIL_FLIGHT_AIRLINE_INFO = "DETAIL_FLIGHT_AIRLINE_INFO";
+    public static final String EXTRA_DETAIL_FLIGHT_DURATION = "DETAIL_FLIGHT_DURATION";
+
+    public static final String EXTRA_DETAIL_FLIGHT_RETURN_DEP_AIRPORT = "DETAIL_FLIGHT_RETURN_DEP_AIRPORT";
+    public static final String EXTRA_DETAIL_FLIGHT_RETURN_DEP_TIME = "DETAIL_FLIGHT_RETURN_DEP_TIME";
+    public static final String EXTRA_DETAIL_FLIGHT_RETURN_ARR_AIRPORT = "DETAIL_FLIGHT_RETURN_ARR_AIRPORT";
+    public static final String EXTRA_DETAIL_FLIGHT_RETURN_ARR_TIME = "DETAIL_FLIGHT_RETURN_ARR_TIME";
+    public static final String EXTRA_DETAIL_FLIGHT_RETURN_AIRLINE_INFO = "DETAIL_FLIGHT_RETURN_AIRLINE_INFO";
+    public static final String EXTRA_DETAIL_FLIGHT_RETURN_DURATION = "DETAIL_FLIGHT_RETURN_DURATION";
+
+
+    public static final String EXTRA_DETAIL_HOTEL_NAME = "DETAIL_HOTEL_NAME";
+    public static final String EXTRA_DETAIL_HOTEL_STARS = "DETAIL_HOTEL_STARS";
+    public static final String EXTRA_DETAIL_HOTEL_CHECKIN = "DETAIL_HOTEL_CHECKIN";
+    public static final String EXTRA_DETAIL_HOTEL_CHECKOUT = "DETAIL_HOTEL_CHECKOUT";
+
+    public static final String EXTRA_DETAIL_FLIGHT_COST = "DETAIL_FLIGHT_COST";
+    public static final String EXTRA_DETAIL_HOTEL_COST = "DETAIL_HOTEL_COST";
+    public static final String EXTRA_DETAIL_TOTAL_COST = "DETAIL_TOTAL_COST";
+    public static final String EXTRA_DETAIL_FLIGHT_AIRLINE_NAME = "DETAIL_FLIGHT_AIRLINE_NAME";
+
 
     private TextView tvDestination, tvDuration, tvPeopleCount;
     private TextView tvFlightStatus, tvHotelStatus, tvAttractionsStatus;
     private TextView tvFlightCost, tvHotelCost, tvAttractionsCost, tvTotalCost;
-    
+
     private RadioGroup rgFlightOptions, rgHotelOptions;
     private MaterialButton btnPreview, btnCreatePlan;
-    
-    // Cost tracking
     private long flightCost = 0;
     private long hotelCost = 0;
     private long attractionsCost = 0;
     private int selectedAttractionsCount = 0;
-    private int peopleCount = 2;
-    private int nightCount = 2;
-    
-    // CheckBoxes for attractions
-    private CheckBox cbHoChiMinhMausoleum, cbTempleLiterature, cbHoanKiemLake, 
-                     cbOldQuarter, cbOnePillarPagoda, cbHanoiOperaHouse,
-                     cbBaDinhSquare, cbWestLake, cbHanoiMuseum, cbLongBienBridge;
+    private int peopleCount = 1;
+    private int nightCount = 1;
 
-    // Dynamic data from backend
+    private CheckBox[] attractionCheckBoxes;
+
     private PlanResponse planResponse;
-    private final int[] flightRadioIds = new int[]{
-            R.id.rb_vietnam_airlines, R.id.rb_vietjet, R.id.rb_bamboo, R.id.rb_jetstar
-    };
-    private final int[] hotelRadioIds = new int[]{
-            R.id.rb_lotte_hotel, R.id.rb_intercontinental, R.id.rb_hilton, R.id.rb_sheraton, R.id.rb_pullman
-    };
-    private long[] flightOptionPrices = new long[]{2500000, 1800000, 2200000, 1600000};
-    private String[] flightOptionAirlines = new String[]{"Vietnam Airlines", "VietJet Air", "Bamboo Airways", "Jetstar Pacific"};
-    private long[] hotelOptionNightlyPrices = new long[]{3500000, 4200000, 3800000, 3200000, 2800000};
-    private String[] hotelOptionNames = new String[]{"Lotte Hotel Hanoi", "InterContinental Hanoi", "Hilton Hanoi Opera", "Sheraton Hanoi Hotel", "Pullman Hanoi"};
+    private String startDateRaw;
+    private final int[] flightRadioIds = { R.id.rb_vietnam_airlines, R.id.rb_vietjet, R.id.rb_bamboo, R.id.rb_jetstar };
+    private final int[] hotelRadioIds = { R.id.rb_lotte_hotel, R.id.rb_intercontinental, R.id.rb_hilton, R.id.rb_sheraton, R.id.rb_pullman };
+
+    private long[] flightOptionPrices = new long[flightRadioIds.length];
+    private String[] flightOptionAirlines = new String[flightRadioIds.length];
+    private long[] hotelOptionNightlyPrices = new long[hotelRadioIds.length];
+    private String[] hotelOptionNames = new String[hotelRadioIds.length];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plan);
-        
+
         initViews();
         loadDataFromIntent();
         setupListeners();
+        updateCostDisplay();
+        checkAllSelections();
     }
-    
+
     private void initViews() {
-        // Header info
         tvDestination = findViewById(R.id.tv_destination);
         tvDuration = findViewById(R.id.tv_duration);
         tvPeopleCount = findViewById(R.id.tv_people_count);
-        
-        // Status indicators
         tvFlightStatus = findViewById(R.id.tv_flight_status);
         tvHotelStatus = findViewById(R.id.tv_hotel_status);
         tvAttractionsStatus = findViewById(R.id.tv_attractions_status);
-        
-        // Cost displays
         tvFlightCost = findViewById(R.id.tv_flight_cost);
         tvHotelCost = findViewById(R.id.tv_hotel_cost);
         tvAttractionsCost = findViewById(R.id.tv_attractions_cost);
         tvTotalCost = findViewById(R.id.tv_total_cost);
-        
-        // Radio groups
         rgFlightOptions = findViewById(R.id.rg_flight_options);
         rgHotelOptions = findViewById(R.id.rg_hotel_options);
-        
-        // Buttons
         btnPreview = findViewById(R.id.btn_preview);
         btnCreatePlan = findViewById(R.id.btn_create_plan);
-        
-        // Attraction checkboxes
-        cbHoChiMinhMausoleum = findViewById(R.id.cb_ho_chi_minh_mausoleum);
-        cbTempleLiterature = findViewById(R.id.cb_temple_literature);
-        cbHoanKiemLake = findViewById(R.id.cb_hoan_kiem_lake);
-        cbOldQuarter = findViewById(R.id.cb_old_quarter);
-        cbOnePillarPagoda = findViewById(R.id.cb_one_pillar_pagoda);
-        cbHanoiOperaHouse = findViewById(R.id.cb_hanoi_opera_house);
-        cbBaDinhSquare = findViewById(R.id.cb_ba_dinh_square);
-        cbWestLake = findViewById(R.id.cb_west_lake);
-        cbHanoiMuseum = findViewById(R.id.cb_hanoi_museum);
-        cbLongBienBridge = findViewById(R.id.cb_long_bien_bridge);
+
+        attractionCheckBoxes = new CheckBox[]{
+                findViewById(R.id.cb_ho_chi_minh_mausoleum), findViewById(R.id.cb_temple_literature),
+                findViewById(R.id.cb_hoan_kiem_lake), findViewById(R.id.cb_old_quarter),
+                findViewById(R.id.cb_one_pillar_pagoda), findViewById(R.id.cb_hanoi_opera_house),
+                findViewById(R.id.cb_ba_dinh_square), findViewById(R.id.cb_west_lake),
+                findViewById(R.id.cb_hanoi_museum), findViewById(R.id.cb_long_bien_bridge)
+        };
     }
-    
+
     private void loadDataFromIntent() {
         Intent intent = getIntent();
-        if (intent != null) {
-            String direction = intent.getStringExtra("direction");
-            String durations = intent.getStringExtra("durations");
-            String numbersPerson = intent.getStringExtra("numbers_person");
-            String planJson = intent.getStringExtra("plan_json");
-            
-            if (direction != null) {
-                tvDestination.setText(direction);
-            }
-            if (durations != null) {
-                tvDuration.setText(durations);
-                // Extract night count for hotel calculation
-                if (durations.contains("2 đêm")) {
-                    nightCount = 2;
-                } else if (durations.contains("3 đêm")) {
-                    nightCount = 3;
-                } else if (durations.contains("1 đêm")) {
-                    nightCount = 1;
-                }
-            }
-            if (numbersPerson != null) {
-                tvPeopleCount.setText(numbersPerson);
-                // Extract people count for cost calculation
-                if (numbersPerson.contains("2")) {
-                    peopleCount = 2;
-                } else if (numbersPerson.contains("3")) {
-                    peopleCount = 3;
-                } else if (numbersPerson.contains("4")) {
-                    peopleCount = 4;
-                } else {
-                    peopleCount = 1;
-                }
-            }
+        if (intent == null) return;
 
-            if (planJson != null) {
-                try {
-                    planResponse = new Gson().fromJson(planJson, PlanResponse.class);
-                    populateDynamicOptions();
-                } catch (Exception ignored) {}
+        String direction = intent.getStringExtra("direction");
+        String durations = intent.getStringExtra("durations");
+        String numbersPerson = intent.getStringExtra("numbers_person");
+        this.startDateRaw = intent.getStringExtra("start_date");
+        this.nightCount = intent.getIntExtra("night_count", 1);
+        String planJson = intent.getStringExtra("plan_json");
+
+        tvDestination.setText(direction);
+        tvDuration.setText(durations);
+        tvPeopleCount.setText(numbersPerson);
+
+        try {
+            if (numbersPerson != null) {
+                peopleCount = Integer.parseInt(numbersPerson.replaceAll("[^0-9]", ""));
             }
+        } catch (Exception e) {
+            peopleCount = 1;
+        }
+
+        if (planJson != null && !planJson.isEmpty()) {
+            planResponse = new Gson().fromJson(planJson, PlanResponse.class);
+            populateDynamicOptions();
         }
     }
 
     private void populateDynamicOptions() {
-        // Populate flights from flightOther
-        if (planResponse != null && planResponse.flightOther != null && !planResponse.flightOther.isEmpty()) {
-            int max = Math.min(flightRadioIds.length, planResponse.flightOther.size());
+        if (planResponse == null) return;
+
+        if (planResponse.flightOther != null) {
+            int flightCount = Math.min(planResponse.flightOther.size(), flightRadioIds.length);
             for (int i = 0; i < flightRadioIds.length; i++) {
                 RadioButton rb = findViewById(flightRadioIds[i]);
-                if (i < max) {
-                    PlanResponse.FlightItinerary it = planResponse.flightOther.get(i);
-                    String airline = (it.flights != null && !it.flights.isEmpty() && it.flights.get(0).airline != null)
-                            ? it.flights.get(0).airline : "Flight";
-                    String number = (it.flights != null && !it.flights.isEmpty() && it.flights.get(0).flight_number != null)
-                            ? it.flights.get(0).flight_number : "";
-                    long price = it.price;
-                    flightOptionAirlines[i] = airline;
-                    flightOptionPrices[i] = price;
-                    rb.setEnabled(true);
-                    rb.setText(airline + (number.isEmpty() ? "" : (" - " + number)) + " - " + formatCurrency(price) + " VND");
+                if (i < flightCount && planResponse.flightOther.get(i).flights != null && !planResponse.flightOther.get(i).flights.isEmpty()) {
+                    PlanResponse.FlightItinerary itinerary = planResponse.flightOther.get(i);
+                    PlanResponse.FlightLeg leg = itinerary.flights.get(0);
+
+                    flightOptionAirlines[i] = leg.airline;
+                    flightOptionPrices[i] = itinerary.price;
+
+                    String departureTimeInfo = "";
+                    if (leg.departure_airport != null && leg.departure_airport.time != null) {
+                        departureTimeInfo = formatDateTime(leg.departure_airport.time);
+                    }
+
+                    String label = leg.airline + " | " + departureTimeInfo + " | " + formatCurrency(itinerary.price) + " VND";
+                    rb.setText(label);
+                    rb.setVisibility(View.VISIBLE);
                 } else {
-                    rb.setEnabled(false);
-                    rb.setText("Không có dữ liệu");
+                    rb.setVisibility(View.GONE);
                 }
             }
         }
 
-        // Populate hotels
-        if (planResponse != null && planResponse.hotels != null && !planResponse.hotels.isEmpty()) {
-            int maxH = Math.min(hotelRadioIds.length, planResponse.hotels.size());
+        if (planResponse.hotels != null) {
+            int hotelCount = Math.min(planResponse.hotels.size(), hotelRadioIds.length);
             for (int i = 0; i < hotelRadioIds.length; i++) {
                 RadioButton rb = findViewById(hotelRadioIds[i]);
-                if (i < maxH) {
-                    PlanResponse.Hotel h = planResponse.hotels.get(i);
-                    String name = h.name != null ? h.name : "Hotel";
-                    Integer stars = h.extracted_hotel_class;
-                    long nightly = (h.rate_per_night != null ? h.rate_per_night.extracted_lowest : 0);
-                    hotelOptionNames[i] = name;
-                    hotelOptionNightlyPrices[i] = nightly;
-                    String starTxt = stars != null ? (stars + "⭐") : "";
-                    rb.setEnabled(true);
-                    rb.setText(name + (starTxt.isEmpty() ? "" : (" - " + starTxt)) + " - " + formatCurrency(nightly) + " VND/đêm");
+                if (i < hotelCount) {
+                    PlanResponse.Hotel hotel = planResponse.hotels.get(i);
+                    hotelOptionNames[i] = hotel.name;
+                    hotelOptionNightlyPrices[i] = (hotel.rate_per_night != null) ? hotel.rate_per_night.extracted_lowest : 0;
+                    String label = hotel.name + " | " + formatCurrency(hotelOptionNightlyPrices[i]) + " VND/đêm";
+                    rb.setText(label);
+                    rb.setVisibility(View.VISIBLE);
                 } else {
-                    rb.setEnabled(false);
-                    rb.setText("Không có dữ liệu");
+                    rb.setVisibility(View.GONE);
                 }
             }
         }
 
-        // Populate attractions from schedules
-        List<String> suggestions = new ArrayList<>();
-        if (planResponse != null && planResponse.attractions != null) {
+        if (planResponse.attractions != null) {
+            List<String> suggestions = new ArrayList<>();
             for (PlanResponse.AttractionDay day : planResponse.attractions) {
-                if (day == null || day.schedule == null) continue;
-                for (PlanResponse.AttractionSchedule s : day.schedule) {
-                    String text = (day.date != null ? day.date + " " : "") +
-                            (s.time != null ? s.time + " - " : "") +
-                            (s.location != null ? s.location + ": " : "") +
-                            (s.activity != null ? s.activity : "");
-                    if (s.reason != null && !s.reason.isEmpty()) {
-                        String r = s.reason.replace('\n', ' ');
-                        if (r.length() > 120) r = r.substring(0, 120) + "...";
-                        text += " (" + r + ")";
+                if (day != null && day.schedule != null) {
+                    for (PlanResponse.AttractionSchedule schedule : day.schedule) {
+                        String suggestionText = schedule.time + " | " + schedule.location + ": " + schedule.activity;
+                        suggestions.add(suggestionText);
                     }
-                    suggestions.add(text);
                 }
             }
-        }
-        CheckBox[] checkBoxes = new CheckBox[]{
-                cbHoChiMinhMausoleum, cbTempleLiterature, cbHoanKiemLake, cbOldQuarter,
-                cbOnePillarPagoda, cbHanoiOperaHouse, cbBaDinhSquare, cbWestLake,
-                cbHanoiMuseum, cbLongBienBridge
-        };
-        for (int i = 0; i < checkBoxes.length; i++) {
-            if (i < suggestions.size()) {
-                checkBoxes[i].setText(suggestions.get(i));
-                checkBoxes[i].setEnabled(true);
-            } else {
-                checkBoxes[i].setText("(Không có gợi ý)");
-                checkBoxes[i].setEnabled(false);
-            }
-        }
-    }
-    
-    private void setupListeners() {
-        // Back button
-        ImageView btnBack = findViewById(R.id.btn_back);
-        btnBack.setOnClickListener(v -> finish());
-        
-        // Flight selection
-        rgFlightOptions.setOnCheckedChangeListener((group, checkedId) -> {
-            int idx = getFlightIndexById(checkedId);
-            if (idx >= 0) {
-                long price = flightOptionPrices[idx];
-                String airline = flightOptionAirlines[idx];
-                flightCost = price * peopleCount;
-                tvFlightStatus.setText(airline);
-            }
-            updateCostDisplay();
-            checkAllSelections();
-        });
-        
-        // Hotel selection
-        rgHotelOptions.setOnCheckedChangeListener((group, checkedId) -> {
-            int idx = getHotelIndexById(checkedId);
-            if (idx >= 0) {
-                long nightly = hotelOptionNightlyPrices[idx];
-                String name = hotelOptionNames[idx];
-                hotelCost = nightly * nightCount;
-                tvHotelStatus.setText(name);
-            }
-            updateCostDisplay();
-            checkAllSelections();
-        });
-        
-        // Attraction checkboxes
-        setupAttractionListeners();
-        
-        // Action buttons
-        btnPreview.setOnClickListener(v -> {
-            Toast.makeText(this, "Chức năng xem trước đang được phát triển", Toast.LENGTH_SHORT).show();
-        });
-        
-        btnCreatePlan.setOnClickListener(v -> {
-            createDetailedPlan();
-        });
-    }
-    
-    private void setupAttractionListeners() {
-        CheckBox[] checkBoxes = {
-            cbHoChiMinhMausoleum, cbTempleLiterature, cbHoanKiemLake, cbOldQuarter,
-            cbOnePillarPagoda, cbHanoiOperaHouse, cbBaDinhSquare, cbWestLake,
-            cbHanoiMuseum, cbLongBienBridge
-        };
-        
-        // Dynamic suggestions are not priced by backend, keep costs zero to preserve total calc
-        long[] costs = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; // Cost per person
-        
-        for (int i = 0; i < checkBoxes.length; i++) {
-            final int index = i;
-            checkBoxes[i].setOnCheckedChangeListener((buttonView, isChecked) -> {
-                if (isChecked) {
-                    if (selectedAttractionsCount >= 5) {
-                        buttonView.setChecked(false);
-                        Toast.makeText(this, "Bạn chỉ có thể chọn tối đa 5 địa điểm", Toast.LENGTH_SHORT).show();
-                        return;
-                    }
-                    selectedAttractionsCount++;
-                    attractionsCost += costs[index] * peopleCount;
+            int suggestionCount = Math.min(suggestions.size(), attractionCheckBoxes.length);
+            for (int i = 0; i < attractionCheckBoxes.length; i++) {
+                if (i < suggestionCount) {
+                    attractionCheckBoxes[i].setText(suggestions.get(i));
+                    attractionCheckBoxes[i].setVisibility(View.VISIBLE);
                 } else {
-                    selectedAttractionsCount--;
-                    attractionsCost -= costs[index] * peopleCount;
+                    attractionCheckBoxes[i].setVisibility(View.GONE);
                 }
-                
-                tvAttractionsStatus.setText(selectedAttractionsCount + "/5 đã chọn");
-                updateCostDisplay();
+            }
+        }
+    }
+
+    private void setupListeners() {
+        findViewById(R.id.btn_back).setOnClickListener(v -> finish());
+
+        rgFlightOptions.setOnCheckedChangeListener((group, checkedId) -> {
+            int idx = getIndexById(flightRadioIds, checkedId);
+            if (idx != -1) {
+                flightCost = (flightOptionPrices[idx]) * peopleCount;
+                tvFlightStatus.setText(flightOptionAirlines[idx]);
+            }
+            updateCostDisplay();
+            checkAllSelections();
+        });
+
+        rgHotelOptions.setOnCheckedChangeListener((group, checkedId) -> {
+            int idx = getIndexById(hotelRadioIds, checkedId);
+            if (idx != -1) {
+                hotelCost = hotelOptionNightlyPrices[idx] * nightCount;
+                tvHotelStatus.setText(hotelOptionNames[idx]);
+            }
+            updateCostDisplay();
+            checkAllSelections();
+        });
+
+        for (CheckBox cb : attractionCheckBoxes) {
+            cb.setOnCheckedChangeListener((buttonView, isChecked) -> {
+                updateSelectedAttractionsCount();
+                tvAttractionsStatus.setText(selectedAttractionsCount + " đã chọn");
                 checkAllSelections();
             });
         }
+
+        btnPreview.setOnClickListener(v -> Toast.makeText(this, "Chức năng đang phát triển", Toast.LENGTH_SHORT).show());
+        btnCreatePlan.setOnClickListener(v -> createDetailedPlan());
     }
 
-    private int getFlightIndexById(int id) {
-        for (int i = 0; i < flightRadioIds.length; i++) {
-            if (flightRadioIds[i] == id) return i;
+    private void createDetailedPlan() {
+        Toast.makeText(this, "Đang tạo kế hoạch chi tiết...", Toast.LENGTH_SHORT).show();
+
+        Intent intent = new Intent(PlanActivity.this, PlanDetailActivity.class);
+
+        intent.putExtra(EXTRA_DETAIL_DESTINATION, tvDestination.getText().toString());
+        intent.putExtra(EXTRA_DETAIL_DURATION_TEXT, tvDuration.getText().toString());
+        intent.putExtra(EXTRA_DETAIL_PEOPLE_COUNT, peopleCount);
+        intent.putExtra(EXTRA_DETAIL_NIGHT_COUNT, nightCount);
+        intent.putExtra(EXTRA_DETAIL_START_DATE, startDateRaw);
+        intent.putExtra(EXTRA_DETAIL_SELECTED_ATTRACTIONS, getSelectedAttractionsArray());
+
+        PlanResponse.FlightLeg departureFlight = findSelectedFlight(planResponse, getSelectedFlightAirline());
+        if (departureFlight != null) {
+            intent.putExtra(EXTRA_DETAIL_FLIGHT_DEP_AIRPORT, departureFlight.departure_airport.name);
+            intent.putExtra(EXTRA_DETAIL_FLIGHT_DEP_TIME, departureFlight.departure_airport.time);
+            intent.putExtra(EXTRA_DETAIL_FLIGHT_ARR_AIRPORT, departureFlight.arrival_airport.name);
+            intent.putExtra(EXTRA_DETAIL_FLIGHT_ARR_TIME, departureFlight.arrival_airport.time);
+            intent.putExtra(EXTRA_DETAIL_FLIGHT_AIRLINE_INFO, departureFlight.airline + " - " + departureFlight.flight_number);
+            intent.putExtra(EXTRA_DETAIL_FLIGHT_DURATION, departureFlight.duration + " phút");
+
+            PlanResponse.FlightLeg returnFlight = createReturnFlight(departureFlight);
+            intent.putExtra(EXTRA_DETAIL_FLIGHT_RETURN_DEP_AIRPORT, returnFlight.departure_airport.name);
+            intent.putExtra(EXTRA_DETAIL_FLIGHT_RETURN_DEP_TIME, returnFlight.departure_airport.time);
+            intent.putExtra(EXTRA_DETAIL_FLIGHT_RETURN_ARR_AIRPORT, returnFlight.arrival_airport.name);
+            intent.putExtra(EXTRA_DETAIL_FLIGHT_RETURN_ARR_TIME, returnFlight.arrival_airport.time);
+            intent.putExtra(EXTRA_DETAIL_FLIGHT_RETURN_AIRLINE_INFO, returnFlight.airline + " - " + returnFlight.flight_number);
+            intent.putExtra(EXTRA_DETAIL_FLIGHT_RETURN_DURATION, returnFlight.duration + " phút");
+        }
+
+        PlanResponse.Hotel selectedHotel = findSelectedHotel(planResponse, getSelectedHotelName());
+        if (selectedHotel != null) {
+            intent.putExtra(EXTRA_DETAIL_HOTEL_NAME, selectedHotel.name);
+            intent.putExtra(EXTRA_DETAIL_HOTEL_STARS, "⭐ " + (selectedHotel.extracted_hotel_class != null ? selectedHotel.extracted_hotel_class : "N/A") + " sao");
+            intent.putExtra(EXTRA_DETAIL_HOTEL_CHECKIN, "📅 Check-in: " + (selectedHotel.check_in_time != null ? selectedHotel.check_in_time : "N/A"));
+            intent.putExtra(EXTRA_DETAIL_HOTEL_CHECKOUT, "📅 Check-out: " + (selectedHotel.check_out_time != null ? selectedHotel.check_out_time : "N/A"));
+        }
+
+        intent.putExtra(EXTRA_DETAIL_FLIGHT_COST, flightCost);
+        intent.putExtra(EXTRA_DETAIL_HOTEL_COST, hotelCost);
+        intent.putExtra(EXTRA_DETAIL_TOTAL_COST, flightCost + hotelCost + attractionsCost);
+        intent.putExtra(EXTRA_DETAIL_FLIGHT_AIRLINE_NAME, getSelectedFlightAirline());
+
+        startActivity(intent);
+    }
+
+    private PlanResponse.FlightLeg findSelectedFlight(PlanResponse response, String selectedAirline) {
+        if (response == null || response.flightOther == null || selectedAirline == null) return null;
+        for (PlanResponse.FlightItinerary itinerary : response.flightOther) {
+            if (itinerary.flights != null && !itinerary.flights.isEmpty()) {
+                PlanResponse.FlightLeg leg = itinerary.flights.get(0);
+                if (leg.airline != null && leg.airline.equals(selectedAirline)) {
+                    leg.duration = itinerary.total_duration;
+                    return leg;
+                }
+            }
+        }
+        return null;
+    }
+
+    private PlanResponse.FlightLeg createReturnFlight(PlanResponse.FlightLeg departureFlight) {
+        PlanResponse.FlightLeg returnFlight = new PlanResponse.FlightLeg();
+        returnFlight.airline = departureFlight.airline;
+        returnFlight.flight_number = departureFlight.flight_number + "R"; // Thêm R để phân biệt
+        returnFlight.duration = departureFlight.duration;
+
+        returnFlight.departure_airport = departureFlight.arrival_airport;
+        returnFlight.arrival_airport = departureFlight.departure_airport;
+
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.US);
+            Date departureDate = sdf.parse(departureFlight.departure_airport.time);
+
+            Calendar cal = Calendar.getInstance();
+            cal.setTime(departureDate);
+            cal.add(Calendar.DAY_OF_MONTH, nightCount + 1); // Ngày về là ngày cuối cùng
+            cal.set(Calendar.HOUR_OF_DAY, 17); // Giả định bay về lúc 17:30
+            cal.set(Calendar.MINUTE, 30);
+            returnFlight.departure_airport.time = sdf.format(cal.getTime());
+
+            cal.add(Calendar.MINUTE, returnFlight.duration); // Thêm thời gian bay để có giờ đến
+            returnFlight.arrival_airport.time = sdf.format(cal.getTime());
+
+        } catch (Exception e) {
+            returnFlight.departure_airport.time = "N/A";
+            returnFlight.arrival_airport.time = "N/A";
+        }
+        return returnFlight;
+    }
+
+
+    private PlanResponse.Hotel findSelectedHotel(PlanResponse response, String selectedHotelName) {
+        if (response == null || response.hotels == null || selectedHotelName == null) return null;
+        for (PlanResponse.Hotel hotel : response.hotels) {
+            if (hotel.name != null && hotel.name.equals(selectedHotelName)) {
+                return hotel;
+            }
+        }
+        return null;
+    }
+
+    private void updateSelectedAttractionsCount() {
+        selectedAttractionsCount = 0;
+        for (CheckBox cb : attractionCheckBoxes) {
+            if (cb.isChecked() && cb.getVisibility() == View.VISIBLE) {
+                selectedAttractionsCount++;
+            }
+        }
+    }
+
+    private void updateCostDisplay() {
+        tvFlightCost.setText(formatCurrency(flightCost) + " VND");
+        tvHotelCost.setText(formatCurrency(hotelCost) + " VND");
+        tvAttractionsCost.setText(formatCurrency(attractionsCost) + " VND");
+        long total = flightCost + hotelCost + attractionsCost;
+        tvTotalCost.setText(formatCurrency(total) + " VND");
+    }
+
+    private void checkAllSelections() {
+        boolean allSelected = rgFlightOptions.getCheckedRadioButtonId() != -1 &&
+                rgHotelOptions.getCheckedRadioButtonId() != -1 &&
+                selectedAttractionsCount > 0;
+        btnPreview.setEnabled(allSelected);
+        btnCreatePlan.setEnabled(allSelected);
+        btnPreview.setAlpha(allSelected ? 1.0f : 0.5f);
+        btnCreatePlan.setAlpha(allSelected ? 1.0f : 0.5f);
+    }
+
+    private int getIndexById(int[] idArray, int id) {
+        for (int i = 0; i < idArray.length; i++) {
+            if (idArray[i] == id) return i;
         }
         return -1;
     }
 
-    private int getHotelIndexById(int id) {
-        for (int i = 0; i < hotelRadioIds.length; i++) {
-            if (hotelRadioIds[i] == id) return i;
+    private String getSelectedFlightAirline() {
+        int idx = getIndexById(flightRadioIds, rgFlightOptions.getCheckedRadioButtonId());
+        return (idx != -1) ? flightOptionAirlines[idx] : null;
+    }
+
+    private String getSelectedHotelName() {
+        int idx = getIndexById(hotelRadioIds, rgHotelOptions.getCheckedRadioButtonId());
+        return (idx != -1) ? hotelOptionNames[idx] : null;
+    }
+
+    private String[] getSelectedAttractionsArray() {
+        List<String> selected = new ArrayList<>();
+        for (CheckBox cb : attractionCheckBoxes) {
+            if (cb.isChecked() && cb.getVisibility() == View.VISIBLE) {
+                selected.add(cb.getText().toString());
+            }
         }
-        return -1;
+        return selected.toArray(new String[0]);
     }
 
     private String formatCurrency(long v) {
+        if (v == 0) return "0";
         try {
-            DecimalFormat formatter = new DecimalFormat("#,###");
-            return formatter.format(v);
+            return new DecimalFormat("#,###").format(v);
         } catch (Exception e) {
             return String.valueOf(v);
         }
     }
-    
-    private void updateCostDisplay() {
-        DecimalFormat formatter = new DecimalFormat("#,###");
-        
-        tvFlightCost.setText(formatter.format(flightCost) + " VND");
-        tvHotelCost.setText(formatter.format(hotelCost) + " VND");
-        tvAttractionsCost.setText(formatter.format(attractionsCost) + " VND");
-        
-        long total = flightCost + hotelCost + attractionsCost;
-        tvTotalCost.setText(formatter.format(total) + " VND");
-    }
-    
-    private void checkAllSelections() {
-        boolean flightSelected = rgFlightOptions.getCheckedRadioButtonId() != -1;
-        boolean hotelSelected = rgHotelOptions.getCheckedRadioButtonId() != -1;
-        boolean attractionsSelected = selectedAttractionsCount > 0;
-        
-        boolean allSelected = flightSelected && hotelSelected && attractionsSelected;
-        
-        btnPreview.setEnabled(allSelected);
-        btnCreatePlan.setEnabled(allSelected);
-        
-        if (allSelected) {
-            btnPreview.setAlpha(1.0f);
-            btnCreatePlan.setAlpha(1.0f);
-        } else {
-            btnPreview.setAlpha(0.5f);
-            btnCreatePlan.setAlpha(0.5f);
+
+    private String formatDateTime(String rawDateTime) {
+        if (rawDateTime == null || !rawDateTime.contains(" ") || !rawDateTime.contains("-")) {
+            return "";
         }
-    }
-    
-    private void createDetailedPlan() {
-        // Show loading message
-        Toast.makeText(this, "Đang tạo kế hoạch chi tiết...", Toast.LENGTH_SHORT).show();
-        
-        // Simulate AI processing time
-        btnCreatePlan.postDelayed(() -> {
-            Intent intent = new Intent(PlanActivity.this, PlanDetailActivity.class);
-            
-            // Pass selected options to detail activity
-            intent.putExtra("flight_airline", getSelectedFlightAirline());
-            intent.putExtra("hotel_name", getSelectedHotelName());
-            intent.putExtra("selected_attractions", getSelectedAttractionsArray());
-            intent.putExtra("total_cost", flightCost + hotelCost + attractionsCost);
-            intent.putExtra("people_count", peopleCount);
-            intent.putExtra("night_count", nightCount);
-            
-            startActivity(intent);
-        }, 2000);
-    }
-    
-    private String getSelectedFlightAirline() {
-        int checkedId = rgFlightOptions.getCheckedRadioButtonId();
-        if (checkedId == R.id.rb_vietnam_airlines) return "Vietnam Airlines";
-        if (checkedId == R.id.rb_vietjet) return "VietJet Air";
-        if (checkedId == R.id.rb_bamboo) return "Bamboo Airways";
-        if (checkedId == R.id.rb_jetstar) return "Jetstar Pacific";
-        return "";
-    }
-    
-    private String getSelectedHotelName() {
-        int checkedId = rgHotelOptions.getCheckedRadioButtonId();
-        if (checkedId == R.id.rb_lotte_hotel) return "Lotte Hotel Hanoi";
-        if (checkedId == R.id.rb_intercontinental) return "InterContinental Hanoi";
-        if (checkedId == R.id.rb_hilton) return "Hilton Hanoi Opera";
-        if (checkedId == R.id.rb_sheraton) return "Sheraton Hanoi Hotel";
-        if (checkedId == R.id.rb_pullman) return "Pullman Hanoi";
-        return "";
-    }
-    
-    private String[] getSelectedAttractionsArray() {
-        CheckBox[] checkBoxes = {
-            cbHoChiMinhMausoleum, cbTempleLiterature, cbHoanKiemLake, cbOldQuarter,
-            cbOnePillarPagoda, cbHanoiOperaHouse, cbBaDinhSquare, cbWestLake,
-            cbHanoiMuseum, cbLongBienBridge
-        };
-        
-        String[] attractionNames = {
-            "Lăng Chủ Tịch Hồ Chí Minh", "Văn Miếu - Quốc Tử Giám", "Hồ Hoàn Kiếm", 
-            "Phố Cổ Hà Nội", "Chùa Một Cột", "Nhà Hát Lớn Hà Nội",
-            "Quảng Trường Ba Đình", "Hồ Tây", "Bảo Tàng Lịch Sử Việt Nam", "Cầu Long Biên"
-        };
-        
-        java.util.List<String> selected = new java.util.ArrayList<>();
-        for (int i = 0; i < checkBoxes.length; i++) {
-            if (checkBoxes[i].isChecked()) {
-                selected.add(attractionNames[i]);
+        try {
+            String[] parts = rawDateTime.split(" ");
+            String datePart = parts[0];
+            String timePart = parts[1];
+            String[] dateParts = datePart.split("-");
+            if (dateParts.length == 3) {
+                String year = dateParts[0];
+                String month = dateParts[1];
+                String day = dateParts[2];
+                String formattedDate = day + "/" + month + "/" + year;
+                return timePart + " - " + formattedDate;
             }
+        } catch (Exception e) {
+            return rawDateTime;
         }
-        
-        return selected.toArray(new String[0]);
+        return rawDateTime;
     }
 }

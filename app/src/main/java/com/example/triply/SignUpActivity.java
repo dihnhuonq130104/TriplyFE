@@ -96,7 +96,6 @@ public class SignUpActivity extends AppCompatActivity {
             @Override
             public void onSuccess(com.example.triply.data.remote.model.AuthResponse response) {
                 Toast.makeText(SignUpActivity.this, getString(R.string.toast_signup_success), Toast.LENGTH_SHORT).show();
-                // Không delay để cải thiện trải nghiệm người dùng
                 startActivity(new Intent(SignUpActivity.this, HomeActivity.class));
                 finish();
             }

@@ -37,7 +37,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="40dp"
                 android:fontFamily="@font/lobster"
-                android:text="Lên Kế Hoạch Chi Tiết"
+                android:text="Detailed Planning"
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 android:textStyle="bold"/>

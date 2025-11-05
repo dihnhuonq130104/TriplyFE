@@ -1,0 +1,3613 @@
+{
+    "flights": [
+        {
+            "departure_id": "HAN",
+            "destination": "Huế",
+            "arrival_id": "HUI",
+            "airline": "VietJet Air",
+            "airline_id": "VJ",
+            "price_vnd": 1263378,
+            "flight_duration": "1h 15m"
+        },
+        {
+            "departure_id": "HAN",
+            "destination": "Huế",
+            "arrival_id": "HUI",
+            "airline": "VietJet Air",
+            "airline_id": "VJ",
+            "price_vnd": 1318551,
+            "flight_duration": "1h 15m"
+        },
+        {
+            "departure_id": "HAN",
+            "destination": "Huế",
+            "arrival_id": "HUI",
+            "airline": "Vietnam Airlines",
+            "airline_id": "VN",
+            "price_vnd": 2179000,
+            "flight_duration": "1h 15m"
+        },
+        {
+            "departure_id": "HAN",
+            "destination": "Huế",
+            "arrival_id": "HUI",
+            "airline": "Vietnam Airlines",
+            "airline_id": "VN",
+            "price_vnd": 2179000,
+            "flight_duration": "1h 15m"
+        },
+        {
+            "departure_id": "HAN",
+            "destination": "Huế",
+            "arrival_id": "HUI",
+            "airline": "VietJet Air",
+            "airline_id": "VJ",
+            "price_vnd": 1743499,
+            "flight_duration": "1h 15m"
+        }
+    ],
+    "flightBest": [],
+    "flightOther": [
+        {
+            "flights": [
+                {
+                    "departure_airport": {
+                        "name": "Cảng hàng không Quốc tế Nội Bài",
+                        "id": "HAN",
+                        "time": "2025-10-15 19:10"
+                    },
+                    "arrival_airport": {
+                        "name": "Ga hàng hoá - cảng hàng không quốc tế Phú Bài",
+                        "id": "HUI",
+                        "time": "2025-10-15 20:25"
+                    },
+                    "duration": 75,
+                    "airplane": "Airbus A321",
+                    "airline": "Vietjet",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/VJ.png",
+                    "travel_class": "Economy",
+                    "flight_number": "VJ 569",
+                    "legroom": "71 cm",
+                    "extensions": [
+                        "Below average legroom (71 cm)",
+                        "Carbon emissions estimate: 65 kg"
+                    ],
+                    "often_delayed_by_over_30_min": true
+                }
+            ],
+            "total_duration": 75,
+            "carbon_emissions": {
+                "this_flight": 65000,
+                "typical_for_this_route": 74000,
+                "difference_percent": -12
+            },
+            "price": 1361200,
+            "type": "Round trip",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/VJ.png",
+            "departure_token": "WyJDalJJYjBwamVVWmpkVWM1ZGpCQlEzZE9RVUZDUnkwdExTMHRMUzB0TFc5cmJHWXlNVUZCUVVGQlIycDFSRzVGVDBGUVpqQkJFZ1ZXU2pVMk9Sb0xDTENLVXhBQUdnTldUa1E0SEhDc0tBPT0iLFtbIkhBTiIsIjIwMjUtMTAtMTUiLCJIVUkiLG51bGwsIlZKIiwiNTY5Il1dXQ=="
+        },
+        {
+            "flights": [
+                {
+                    "departure_airport": {
+                        "name": "Cảng hàng không Quốc tế Nội Bài",
+                        "id": "HAN",
+                        "time": "2025-10-15 06:00"
+                    },
+                    "arrival_airport": {
+                        "name": "Ga hàng hoá - cảng hàng không quốc tế Phú Bài",
+                        "id": "HUI",
+                        "time": "2025-10-15 07:15"
+                    },
+                    "duration": 75,
+                    "airplane": "Airbus A321",
+                    "airline": "Vietnam Airlines",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/VN.png",
+                    "travel_class": "Economy",
+                    "flight_number": "VN 1541",
+                    "legroom": "79 cm",
+                    "extensions": [
+                        "Average legroom (79 cm)",
+                        "Stream media to your device",
+                        "Carbon emissions estimate: 78 kg"
+                    ]
+                }
+            ],
+            "total_duration": 75,
+            "carbon_emissions": {
+                "this_flight": 78000,
+                "typical_for_this_route": 74000,
+                "difference_percent": 5
+            },
+            "price": 2108000,
+            "type": "Round trip",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/VN.png",
+            "departure_token": "WyJDalJJYjBwamVVWmpkVWM1ZGpCQlEzZE9RVUZDUnkwdExTMHRMUzB0TFc5cmJHWXlNVUZCUVVGQlIycDFSRzVGVDBGUVpqQkJFZ1pXVGpFMU5ERWFEQWpnMUlBQkVBQWFBMVpPUkRnY2NMNCsiLFtbIkhBTiIsIjIwMjUtMTAtMTUiLCJIVUkiLG51bGwsIlZOIiwiMTU0MSJdXV0="
+        }
+    ],
+    "hotels": [
+        {
+            "type": "hotel",
+            "name": "ChocoHouse Hue_chocolate and coffee",
+            "link": "https://www.facebook.com/ChocoHouseHue",
+            "property_token": "ChoI66vsl6ux7tmRARoNL2cvMTF2YjVwdnN0XxAB",
+            "serpapi_property_details_link": "https://serpapi.com/search.json?adults=1&check_in_date=2025-10-15&check_out_date=2025-10-17&children=0&currency=VND&engine=google_hotels&gl=vn&hl=vi&max_price=1500000&property_token=ChoI66vsl6ux7tmRARoNL2cvMTF2YjVwdnN0XxAB&q=Hotel+in+Hu%E1%BA%BF&sort_by=8",
+            "gps_coordinates": {
+                "latitude": 16.4644086,
+                "longitude": 107.59207579999999
+            },
+            "rate_per_night": {
+                "lowest": "600.000 ₫",
+                "extracted_lowest": 600000,
+                "before_taxes_fees": "555.556 ₫",
+                "extracted_before_taxes_fees": 555556
+            },
+            "total_rate": {
+                "lowest": "1.200.000 ₫",
+                "extracted_lowest": 1200000,
+                "before_taxes_fees": "1.111.111 ₫",
+                "extracted_before_taxes_fees": 1111111
+            },
+            "nearby_places": [
+                {
+                    "name": "Đường đi bộ Huế",
+                    "transportations": [
+                        {
+                            "type": "Walking",
+                            "duration": "9 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Huế Văn phòng Xe Queen Cafe",
+                    "transportations": [
+                        {
+                            "type": "Walking",
+                            "duration": "9 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Cảng hàng không quốc tế Đà Nẵng",
+                    "transportations": [
+                        {
+                            "type": "Taxi",
+                            "duration": "2 giờ 5 phút"
+                        },
+                        {
+                            "type": "Public transport",
+                            "duration": "3 giờ 47 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Buffet Huế & Sushi Huế - Yaki Yum",
+                    "transportations": [
+                        {
+                            "type": "Walking",
+                            "duration": "6 phút"
+                        }
+                    ]
+                }
+            ],
+            "images": [
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nq0bvWsYUVw1J7t0pBQKpa5ATo3xST3chWdNUAGNM1qwXiB0F3yjdmeWDpXr9vBEZM1VQsEylXulMViFb2cZz6-9O-J4Ypo5wVB13SIhe5ptrdhRijiWTbuu_sUWqO3am0qUwZsxcMibkG7=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/CIABIhCIOPmkUwfuTEnXHnbk4wGI=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipN6GZ_ojwm1akSaoeoiHlui_W7zt3vtTCgWkyaW=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipN6GZ_ojwm1akSaoeoiHlui_W7zt3vtTCgWkyaW=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipNiuELTiqwx5VGMxyU_-XUhk4wHgh9KCevUntOK=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipNiuELTiqwx5VGMxyU_-XUhk4wHgh9KCevUntOK=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrczZi9ZCLPhnpOuc5GXw3uxF_ZlUi1vFBWTLNEbLqs9tJz4qppY23ppHbTRMBvZwiwRmXZPGdwW97_eU4lNhFWJkWe3dpyl0ukSMcIsUiErg-biOiJaiieA9jFD5x145ySWRkz4twB0fnE=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/CIABIhCJV8SnCFZzigquq1L8WrPS=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4np4cPkGGuMpX84ok75ZEz19IOtuLbl9ee5zqwTEZx4iJonmslAEQq5ANSecgrwlmoyiq4qzxXsO55ov_n30JuEvIIGyd88HvTvnyyjp95EI1QKJSnkKhuF7rK2FMaYRyK-H2OFdtw=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/CIHM0ogKEICAgIDXlMWA1wE=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npi-pLTWDXmcdclb7k5nfV0iIBPD5Lsr_zLvppuyS4Qe0VF-vkEJ-Jy4zCKVLoz5Y-zAYw1a35qPcnvvc77sfzr6T7wbc6-K9E08mgOTmnQVrjyPFtTi9XMoJbIcTXxPu2j7WLrG5pRL5en=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/CIABIhDOR3QiFmxdNuiyZXDygMsG=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqRVeo2QrKMpHB3C0bNRYBcxsyowsle2dmmxVQ9KqsSh3-TmPRds86DrQFsl7C4Ak9QZNN1RWOTZKz2zmZYrFB6mac8qk76hZ5EwfOUgthRTHCUkSfJbzPL_IX9VaE0LRPajB5GfF8Idn24=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/CIABIhAgz1oNcMagUhcNFiEfFHXu=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npVq7jyKP0zRiOh3wFkTXdA8akRzx_Cfs_WGBlPfDIHX1Qzym3EXNRTc3_tRH3lJnQElXTEGrbXyYLC_d63AkM3DSBXTOS3lEzsPFTEepJ8g-loMADA5JGLeoz2vdPeO4vqftWe=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/CIHM0ogKEICAgIDXpIfipgE=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nq0D-NjbIyppDCn6K88XQapGR3t7pxDafGPRvi6iZ58VbLG3Vi-dLzk00M-iMVOfWc6yKWkngBTHALU1kH3CccOSO7gHc5EVK-JJQL81T0uz0ObPGI2gVsqHpTdJq7juEPsgQvT7Q=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/CIHM0ogKEICAgMCg-YWExQE=s10000"
+                }
+            ],
+            "overall_rating": 4.9,
+            "reviews": 851,
+            "ratings": [
+                {
+                    "stars": 5,
+                    "count": 793
+                },
+                {
+                    "stars": 4,
+                    "count": 28
+                },
+                {
+                    "stars": 3,
+                    "count": 12
+                },
+                {
+                    "stars": 2,
+                    "count": 6
+                },
+                {
+                    "stars": 1,
+                    "count": 12
+                }
+            ],
+            "location_rating": 4.9,
+            "reviews_breakdown": [
+                {
+                    "name": "Dịch Vụ",
+                    "description": "Service",
+                    "total_mentioned": 214,
+                    "positive": 201,
+                    "negative": 8,
+                    "neutral": 5
+                },
+                {
+                    "name": "Món Ăn Sáng",
+                    "description": "Breakfast",
+                    "total_mentioned": 202,
+                    "positive": 186,
+                    "negative": 3,
+                    "neutral": 13
+                },
+                {
+                    "name": "Quầy Bar",
+                    "description": "Bar or lounge",
+                    "total_mentioned": 196,
+                    "positive": 182,
+                    "negative": 4,
+                    "neutral": 10
+                }
+            ]
+        },
+        {
+            "type": "hotel",
+            "name": "Meliá Vinpearl Hue",
+            "description": "Khách sạn cao tầng sang trọng có bể bơi trong nhà, spa, cảnh quan thành phố, nhà hàng và quán bar.",
+            "link": "https://www.melia.com/en/hotels/vietnam/hue-city/melia-vinpearl-hue?utm_campaign=google&utm_content=5767&utm_medium=organic&utm_source=directories",
+            "property_token": "ChkI0bbWs7O8nNgpGg0vZy8xMWZ4d2x3cGtoEAE",
+            "serpapi_property_details_link": "https://serpapi.com/search.json?adults=1&check_in_date=2025-10-15&check_out_date=2025-10-17&children=0&currency=VND&engine=google_hotels&gl=vn&hl=vi&max_price=1500000&property_token=ChkI0bbWs7O8nNgpGg0vZy8xMWZ4d2x3cGtoEAE&q=Hotel+in+Hu%E1%BA%BF&sort_by=8",
+            "gps_coordinates": {
+                "latitude": 16.4630468,
+                "longitude": 107.5943911
+            },
+            "check_in_time": "14:00",
+            "check_out_time": "12:00",
+            "rate_per_night": {
+                "lowest": "1.570.527 ₫",
+                "extracted_lowest": 1570527,
+                "before_taxes_fees": "1.384.944 ₫",
+                "extracted_before_taxes_fees": 1384944
+            },
+            "total_rate": {
+                "lowest": "3.141.053 ₫",
+                "extracted_lowest": 3141053,
+                "before_taxes_fees": "2.769.889 ₫",
+                "extracted_before_taxes_fees": 2769889
+            },
+            "nearby_places": [
+                {
+                    "name": "Hoàng Thành Huế",
+                    "transportations": [
+                        {
+                            "type": "Taxi",
+                            "duration": "8 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Ga Huế",
+                    "transportations": [
+                        {
+                            "type": "Taxi",
+                            "duration": "6 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Cảng hàng không quốc tế Đà Nẵng",
+                    "transportations": [
+                        {
+                            "type": "Taxi",
+                            "duration": "2 giờ 5 phút"
+                        },
+                        {
+                            "type": "Public transport",
+                            "duration": "3 giờ 49 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Cozy Restaurant ( Huế )",
+                    "transportations": [
+                        {
+                            "type": "Walking",
+                            "duration": "4 phút"
+                        }
+                    ]
+                }
+            ],
+            "hotel_class": "Khách sạn 5 sao",
+            "extracted_hotel_class": 5,
+            "images": [
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipMh_CZVpKwubIwBqlTLB_VbtjJnfJOpZrCynu-V=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipMh_CZVpKwubIwBqlTLB_VbtjJnfJOpZrCynu-V=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipPLhxpEC6xg4pu7v7kbxvyhI3zi5_LjbTF9y4Nn=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipPLhxpEC6xg4pu7v7kbxvyhI3zi5_LjbTF9y4Nn=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipNwFyLcY49GezgZfWPZ_yxmuWUakhifzypv9ov2=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipNwFyLcY49GezgZfWPZ_yxmuWUakhifzypv9ov2=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipPhy7Oo00izna08LNMNhcllQDwpk_kTB3_yMT4j=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipPhy7Oo00izna08LNMNhcllQDwpk_kTB3_yMT4j=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipNi_EL8sk0QdgbfGDUf7q_mMaVxSkgfIgYPHXGi=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipNi_EL8sk0QdgbfGDUf7q_mMaVxSkgfIgYPHXGi=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipOVyZiVxvZIdJRtqggMS60mbuVKFF55BVdSLD2n=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipOVyZiVxvZIdJRtqggMS60mbuVKFF55BVdSLD2n=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipOgKfpd2rqpvM7Mv_8Rg915CXaTLRbWbmhMvRPR=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipOgKfpd2rqpvM7Mv_8Rg915CXaTLRbWbmhMvRPR=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipOnRhkdNKNYXKCT-3aLb5Xv69HI7HUDtyNOaNjN=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipOnRhkdNKNYXKCT-3aLb5Xv69HI7HUDtyNOaNjN=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipNV2KnqsGDcep2M6SyGFjgFkHq6f2CQY_8bRB4g=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipNV2KnqsGDcep2M6SyGFjgFkHq6f2CQY_8bRB4g=s10000"
+                }
+            ],
+            "overall_rating": 4.8,
+            "reviews": 3749,
+            "ratings": [
+                {
+                    "stars": 5,
+                    "count": 3288
+                },
+                {
+                    "stars": 4,
+                    "count": 313
+                },
+                {
+                    "stars": 3,
+                    "count": 85
+                },
+                {
+                    "stars": 2,
+                    "count": 19
+                },
+                {
+                    "stars": 1,
+                    "count": 44
+                }
+            ],
+            "location_rating": 4.8,
+            "reviews_breakdown": [
+                {
+                    "name": "Quầy Bar",
+                    "description": "Bar or lounge",
+                    "total_mentioned": 214,
+                    "positive": 183,
+                    "negative": 20,
+                    "neutral": 11
+                },
+                {
+                    "name": "Ăn Tối",
+                    "description": "Food and Beverage",
+                    "total_mentioned": 268,
+                    "positive": 236,
+                    "negative": 20,
+                    "neutral": 12
+                },
+                {
+                    "name": "Món Ăn Sáng",
+                    "description": "Breakfast",
+                    "total_mentioned": 258,
+                    "positive": 217,
+                    "negative": 23,
+                    "neutral": 18
+                },
+                {
+                    "name": "Dịch Vụ",
+                    "description": "Service",
+                    "total_mentioned": 851,
+                    "positive": 761,
+                    "negative": 63,
+                    "neutral": 27
+                },
+                {
+                    "name": "Phòng Tập Thể Dục",
+                    "description": "Fitness",
+                    "total_mentioned": 158,
+                    "positive": 125,
+                    "negative": 18,
+                    "neutral": 15
+                },
+                {
+                    "name": "Phòng",
+                    "description": "Room amenities",
+                    "total_mentioned": 301,
+                    "positive": 271,
+                    "negative": 17,
+                    "neutral": 13
+                }
+            ],
+            "amenities": [
+                "Breakfast ($)",
+                "Free Wi-Fi",
+                "Free parking",
+                "Indoor pool",
+                "Hot tub",
+                "Air conditioning",
+                "Fitness center",
+                "Spa",
+                "Bar",
+                "Restaurant",
+                "Room service",
+                "Airport shuttle",
+                "Full-service laundry",
+                "Accessible",
+                "Business center",
+                "Kid-friendly"
+            ],
+            "eco_certified": true
+        },
+        {
+            "type": "hotel",
+            "name": "Tò Vò Hostel Trần Quang Khải - Huế",
+            "link": "https://tovohostel.com/",
+            "property_token": "ChoIvKb88ujatZfAARoNL2cvMTFoM2IydnBxZxAB",
+            "serpapi_property_details_link": "https://serpapi.com/search.json?adults=1&check_in_date=2025-10-15&check_out_date=2025-10-17&children=0&currency=VND&engine=google_hotels&gl=vn&hl=vi&max_price=1500000&property_token=ChoIvKb88ujatZfAARoNL2cvMTFoM2IydnBxZxAB&q=Hotel+in+Hu%E1%BA%BF&sort_by=8",
+            "gps_coordinates": {
+                "latitude": 16.4647742,
+                "longitude": 107.5954964
+            },
+            "check_in_time": "14:00",
+            "check_out_time": "12:00",
+            "rate_per_night": {
+                "lowest": "118.800 ₫",
+                "extracted_lowest": 118800,
+                "before_taxes_fees": "110.000 ₫",
+                "extracted_before_taxes_fees": 110000
+            },
+            "total_rate": {
+                "lowest": "237.600 ₫",
+                "extracted_lowest": 237600,
+                "before_taxes_fees": "220.000 ₫",
+                "extracted_before_taxes_fees": 220000
+            },
+            "nearby_places": [
+                {
+                    "name": "Đường đi bộ Huế",
+                    "transportations": [
+                        {
+                            "type": "Walking",
+                            "duration": "8 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Huế Văn phòng Xe Queen Cafe",
+                    "transportations": [
+                        {
+                            "type": "Walking",
+                            "duration": "8 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Cảng hàng không quốc tế Đà Nẵng",
+                    "transportations": [
+                        {
+                            "type": "Taxi",
+                            "duration": "2 giờ 5 phút"
+                        },
+                        {
+                            "type": "Public transport",
+                            "duration": "2 giờ 49 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Cơm niêu Chạn",
+                    "transportations": [
+                        {
+                            "type": "Walking",
+                            "duration": "5 phút"
+                        }
+                    ]
+                }
+            ],
+            "hotel_class": "Khách sạn 2 sao",
+            "extracted_hotel_class": 2,
+            "images": [
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipM9e81DsyVmj34w2zKwCthhtrAC1ez31lnNsI4w=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipM9e81DsyVmj34w2zKwCthhtrAC1ez31lnNsI4w=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipNnq_orol6IZxWbUP6bo2lpwSzkJPkK4PQFShSi=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipNnq_orol6IZxWbUP6bo2lpwSzkJPkK4PQFShSi=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipP2PI0IE1nuWpeSccNCMCa2_YY-Mfv7Akr3mXaY=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipP2PI0IE1nuWpeSccNCMCa2_YY-Mfv7Akr3mXaY=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipMsSSFmdchoRYgisAYfYNtY4l9tgIjdNYgzGcoj=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipMsSSFmdchoRYgisAYfYNtY4l9tgIjdNYgzGcoj=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipOQrvnm4rmC-wawcs4c79N9P-Qoy7S3MiaNio4R=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipOQrvnm4rmC-wawcs4c79N9P-Qoy7S3MiaNio4R=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipNhpvIPY4JxCoqjfCy5jYntaAMyH-NB1UQvOYRm=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipNhpvIPY4JxCoqjfCy5jYntaAMyH-NB1UQvOYRm=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipN66umXm0I0qePN6rgWOWg92RVya8e2-O3bH70G=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipN66umXm0I0qePN6rgWOWg92RVya8e2-O3bH70G=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipP0oUpam3gFIj3A3bDf3eIwnrsAn5RPqZfBgpA4=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipP0oUpam3gFIj3A3bDf3eIwnrsAn5RPqZfBgpA4=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipOGs3yHld5lkMyjmXU7Z4yBMo2Tjcwn50gFdpyA=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipOGs3yHld5lkMyjmXU7Z4yBMo2Tjcwn50gFdpyA=s10000"
+                }
+            ],
+            "overall_rating": 4.8,
+            "reviews": 1233,
+            "ratings": [
+                {
+                    "stars": 5,
+                    "count": 1133
+                },
+                {
+                    "stars": 4,
+                    "count": 58
+                },
+                {
+                    "stars": 3,
+                    "count": 14
+                },
+                {
+                    "stars": 2,
+                    "count": 4
+                },
+                {
+                    "stars": 1,
+                    "count": 24
+                }
+            ],
+            "location_rating": 4.8,
+            "reviews_breakdown": [
+                {
+                    "name": "Dịch Vụ",
+                    "description": "Service",
+                    "total_mentioned": 305,
+                    "positive": 292,
+                    "negative": 10,
+                    "neutral": 3
+                },
+                {
+                    "name": "Cơ Sở Vật Chất",
+                    "description": "Property",
+                    "total_mentioned": 260,
+                    "positive": 244,
+                    "negative": 8,
+                    "neutral": 8
+                },
+                {
+                    "name": "Tình Trạng Vệ Sinh",
+                    "description": "Cleanliness",
+                    "total_mentioned": 222,
+                    "positive": 205,
+                    "negative": 11,
+                    "neutral": 6
+                },
+                {
+                    "name": "Phòng Tắm",
+                    "description": "Bathroom and toiletries",
+                    "total_mentioned": 42,
+                    "positive": 32,
+                    "negative": 5,
+                    "neutral": 5
+                },
+                {
+                    "name": "Vị Trí",
+                    "description": "Location",
+                    "total_mentioned": 119,
+                    "positive": 111,
+                    "negative": 1,
+                    "neutral": 7
+                },
+                {
+                    "name": "Nghỉ Ngơi",
+                    "description": "Sleep",
+                    "total_mentioned": 45,
+                    "positive": 27,
+                    "negative": 13,
+                    "neutral": 5
+                }
+            ],
+            "amenities": [
+                "Free breakfast",
+                "Free Wi-Fi",
+                "Parking ($)",
+                "Air conditioning",
+                "Restaurant",
+                "Kitchen in some rooms",
+                "Airport shuttle",
+                "Full-service laundry",
+                "Kid-friendly",
+                "Smoke-free property"
+            ]
+        },
+        {
+            "type": "hotel",
+            "name": "Hotel La Perle Hue",
+            "description": "Khách sạn bình dân với phòng ở tinh tế, phục vụ bữa sáng miễn phí. Một số phòng có góc ngắm cảnh đẹp.",
+            "property_token": "ChkIveuUv-P-qZ4cGg0vZy8xMWNwNzhjNnM2EAE",
+            "serpapi_property_details_link": "https://serpapi.com/search.json?adults=1&check_in_date=2025-10-15&check_out_date=2025-10-17&children=0&currency=VND&engine=google_hotels&gl=vn&hl=vi&max_price=1500000&property_token=ChkIveuUv-P-qZ4cGg0vZy8xMWNwNzhjNnM2EAE&q=Hotel+in+Hu%E1%BA%BF&sort_by=8",
+            "gps_coordinates": {
+                "latitude": 16.4699436,
+                "longitude": 107.5970174
+            },
+            "check_in_time": "14:00",
+            "check_out_time": "12:00",
+            "rate_per_night": {
+                "lowest": "463.183 ₫",
+                "extracted_lowest": 463183,
+                "before_taxes_fees": "408.381 ₫",
+                "extracted_before_taxes_fees": 408381
+            },
+            "total_rate": {
+                "lowest": "926.366 ₫",
+                "extracted_lowest": 926366,
+                "before_taxes_fees": "816.762 ₫",
+                "extracted_before_taxes_fees": 816762
+            },
+            "nearby_places": [
+                {
+                    "name": "Đường đi bộ Huế",
+                    "transportations": [
+                        {
+                            "type": "Walking",
+                            "duration": "6 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Huế Văn phòng Xe Hạnh Cafe",
+                    "transportations": [
+                        {
+                            "type": "Walking",
+                            "duration": "6 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Cảng hàng không quốc tế Đà Nẵng",
+                    "transportations": [
+                        {
+                            "type": "Taxi",
+                            "duration": "2 giờ 7 phút"
+                        },
+                        {
+                            "type": "Public transport",
+                            "duration": "2 giờ 43 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Nhà hàng Thân Thiện - Cơm Niêu Nhà Rường",
+                    "transportations": [
+                        {
+                            "type": "Walking",
+                            "duration": "2 phút"
+                        }
+                    ]
+                }
+            ],
+            "hotel_class": "Khách sạn 3 sao",
+            "extracted_hotel_class": 3,
+            "images": [
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipN0s107jlq6am-PewLVETcbgbuU0TgHaYgZY_7z=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipN0s107jlq6am-PewLVETcbgbuU0TgHaYgZY_7z=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipOzvn2jTjELRNJSIXTJ-fu4ZyKjJBSOnwCUge-D=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipOzvn2jTjELRNJSIXTJ-fu4ZyKjJBSOnwCUge-D=s10000"
+                },
+                {
+                    "thumbnail": "https://lh5.googleusercontent.com/proxy/VnKiciH3_huQZaRlXOewE9ZtXro090QAjuTSftIoDY4q_UcFxX_qLrtXlu2U8GVB2KDChHKr-PGXqjlALoLNqopFmcvoMJfD2qWEP6WTauQl04-YfXodb6Rbag7EcCtt5Lg1sTC4zOaAhaOHm9yu-oB4FNWtzDU=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/af/eb/a2/family-room.jpg?w=2100&h=1400&s=1"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipMXG0qNoQBw7WuH6NDKbf0lQZL_0f6zDxAPZa6L=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipMXG0qNoQBw7WuH6NDKbf0lQZL_0f6zDxAPZa6L=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipNW-FzH_N8leFPSvnh_7AdcH6R4WIG0o5GsIpxK=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipNW-FzH_N8leFPSvnh_7AdcH6R4WIG0o5GsIpxK=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipOu-QDB7F_xeUQovd1gGsN8KMztoigfLipakWcF=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipOu-QDB7F_xeUQovd1gGsN8KMztoigfLipakWcF=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipMkgEDkaA8xHe5kQZvjPSwa3aLfaz3Xi8Nr3ZK4=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipMkgEDkaA8xHe5kQZvjPSwa3aLfaz3Xi8Nr3ZK4=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipPO06iHNqW2eNZk2uQ7VpFpERDct4SwrPSb45nM=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipPO06iHNqW2eNZk2uQ7VpFpERDct4SwrPSb45nM=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipP6ha_X2ts3OkafrCCXT22jBBzo916QkQlrVBGE=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipP6ha_X2ts3OkafrCCXT22jBBzo916QkQlrVBGE=s10000"
+                }
+            ],
+            "overall_rating": 4.8,
+            "reviews": 905,
+            "ratings": [
+                {
+                    "stars": 5,
+                    "count": 768
+                },
+                {
+                    "stars": 4,
+                    "count": 101
+                },
+                {
+                    "stars": 3,
+                    "count": 23
+                },
+                {
+                    "stars": 2,
+                    "count": 8
+                },
+                {
+                    "stars": 1,
+                    "count": 5
+                }
+            ],
+            "location_rating": 4.9,
+            "reviews_breakdown": [
+                {
+                    "name": "Món Ăn Sáng",
+                    "description": "Breakfast",
+                    "total_mentioned": 166,
+                    "positive": 159,
+                    "negative": 3,
+                    "neutral": 4
+                },
+                {
+                    "name": "Dịch Vụ",
+                    "description": "Service",
+                    "total_mentioned": 342,
+                    "positive": 332,
+                    "negative": 3,
+                    "neutral": 7
+                },
+                {
+                    "name": "Nhà Hàng",
+                    "description": "Restaurant",
+                    "total_mentioned": 78,
+                    "positive": 74,
+                    "negative": 2,
+                    "neutral": 2
+                },
+                {
+                    "name": "Quầy Bar",
+                    "description": "Bar or lounge",
+                    "total_mentioned": 55,
+                    "positive": 52,
+                    "negative": 1,
+                    "neutral": 2
+                },
+                {
+                    "name": "Cơ Sở Vật Chất",
+                    "description": "Property",
+                    "total_mentioned": 250,
+                    "positive": 240,
+                    "negative": 5,
+                    "neutral": 5
+                },
+                {
+                    "name": "Vị Trí",
+                    "description": "Location",
+                    "total_mentioned": 154,
+                    "positive": 140,
+                    "negative": 5,
+                    "neutral": 9
+                }
+            ],
+            "amenities": [
+                "Free breakfast",
+                "Free Wi-Fi",
+                "Air conditioning",
+                "Bar",
+                "Restaurant",
+                "Room service",
+                "Airport shuttle",
+                "Full-service laundry",
+                "Kid-friendly",
+                "Smoke-free property"
+            ]
+        },
+        {
+            "type": "hotel",
+            "name": "The Scarlett Boutique Hotel Hue",
+            "description": "Khách sạn cao cấp có phòng ốc sang trọng, một số phòng có ban công, khu spa và bữa sáng miễn phí.",
+            "link": "http://www.thescarletthotels.com/",
+            "property_token": "ChoIsvvmsKGdnqHIARoNL2cvMTFjbTA2eXhtaBAB",
+            "serpapi_property_details_link": "https://serpapi.com/search.json?adults=1&check_in_date=2025-10-15&check_out_date=2025-10-17&children=0&currency=VND&engine=google_hotels&gl=vn&hl=vi&max_price=1500000&property_token=ChoIsvvmsKGdnqHIARoNL2cvMTFjbTA2eXhtaBAB&q=Hotel+in+Hu%E1%BA%BF&sort_by=8",
+            "gps_coordinates": {
+                "latitude": 16.4671247,
+                "longitude": 107.5948808
+            },
+            "check_in_time": "14:00",
+            "check_out_time": "12:00",
+            "rate_per_night": {
+                "lowest": "674.462 ₫",
+                "extracted_lowest": 674462,
+                "before_taxes_fees": "624.502 ₫",
+                "extracted_before_taxes_fees": 624502
+            },
+            "total_rate": {
+                "lowest": "1.348.923 ₫",
+                "extracted_lowest": 1348923,
+                "before_taxes_fees": "1.249.003 ₫",
+                "extracted_before_taxes_fees": 1249003
+            },
+            "nearby_places": [
+                {
+                    "name": "Đường đi bộ Huế",
+                    "transportations": [
+                        {
+                            "type": "Walking",
+                            "duration": "3 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Huế Văn phòng Xe Queen Cafe",
+                    "transportations": [
+                        {
+                            "type": "Walking",
+                            "duration": "3 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Cảng hàng không quốc tế Đà Nẵng",
+                    "transportations": [
+                        {
+                            "type": "Taxi",
+                            "duration": "2 giờ 5 phút"
+                        },
+                        {
+                            "type": "Public transport",
+                            "duration": "2 giờ 45 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Cơm niêu Chạn",
+                    "transportations": [
+                        {
+                            "type": "Walking",
+                            "duration": "2 phút"
+                        }
+                    ]
+                }
+            ],
+            "hotel_class": "Khách sạn 3 sao",
+            "extracted_hotel_class": 3,
+            "images": [
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipMzYmCnVwhS9x7Q-mamVM4W5vlvbUEwZSUvkN43=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipMzYmCnVwhS9x7Q-mamVM4W5vlvbUEwZSUvkN43=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipN26oPa38XRVnJVhuB0OzR_SOewMXaqshIV7EX5=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipN26oPa38XRVnJVhuB0OzR_SOewMXaqshIV7EX5=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4noAmdISeb3kt-V08KTIO7Yoi-jA50ZU7Ve_rUg-rMlNgt3_zvk-84tllLpffp0A7_u3LY52_P4lowev6LSRBIgSNz-RlH59HPsob_0hR8dzTkWxX3RNh1DeARngs6Ys84FGCI7i=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/CIHM0ogKEICAgIDtxuuyEw=s10000"
+                },
+                {
+                    "thumbnail": "https://lh4.googleusercontent.com/proxy/bvcE7_HEEN7bvRzsON9WezjgLxJuKuH6FEyvV7bqmpFJaa3phB19bJsgc1YHs3niTtT8RZoi0vtvMnfClsVZ1zWBamFk7ubOHOlTyYJT4hVL0ED0UvJ7aE1fhopsW-dZidnG3tgYSg-t0_-pNUwmso2rkkoRtg=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://images.trvl-media.com/lodging/17000000/16010000/16001300/16001297/558121a8_z.jpg"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipM2aVYNVIhc8lbJZd6wip6exZ0lLCagMR13svBz=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipM2aVYNVIhc8lbJZd6wip6exZ0lLCagMR13svBz=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrX4BLV5-H-wK6GthmFXftNuqMgA8UgOJwO8TiYL2CjcaJCg6BQTDiYViSHAJLjdvVXj5xoT51iWmA7amrJ2R4XorzI5eH25eiUOr082NP-9XcMKRrCOZtvP5KucyuC8oxqT7VSNZXsHxdb=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/CIABIhD3mzk5w0iqi8UFmO9u-F-l=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4no4rjIgIL6gLXdL8lSoYesFkrH2f-MVXMWxofXnq8FiGimVLPaG3HOpzJQF_5BdxTJqmNrc3HJewNxzco2OcUYkh1m9QKhiTQs7fbD1RMxDSv2yBi8BMYMMhlRa-M1JV1YDiWPu=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/CIHM0ogKEICAgICV0I6k9gE=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqMb99NtRxARaWtUCgaGgvStboqaQlh-yqTLCcP6f9q-4jlvc1EY5c0TVXdcDijkBezun6AyjiRQnxjHV8QkUsO93zh1lAdyiFiDhmOhwEEk8hSU-5ilPftvdkVyeYM9LY5bJVh=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/CIHM0ogKEICAgMDAhPWVxwE=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npU2MsFSlyK5so6K5MejjAboBJKShg_pjyiKSG8mrOJaAkv4qBGHHSFhJPufWqjFhO10aXgHQ4BCL3lY9cIsVCKuBAAOYkqI0mfpXOl_dInQddaU4nUcpj1LTyhBur46c9NYaB6=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/CIHM0ogKEPqx48i1kKXsFA=s10000"
+                }
+            ],
+            "overall_rating": 4.8,
+            "reviews": 716,
+            "ratings": [
+                {
+                    "stars": 5,
+                    "count": 615
+                },
+                {
+                    "stars": 4,
+                    "count": 78
+                },
+                {
+                    "stars": 3,
+                    "count": 15
+                },
+                {
+                    "stars": 2,
+                    "count": 3
+                },
+                {
+                    "stars": 1,
+                    "count": 5
+                }
+            ],
+            "location_rating": 5,
+            "reviews_breakdown": [
+                {
+                    "name": "Món Ăn Sáng",
+                    "description": "Breakfast",
+                    "total_mentioned": 130,
+                    "positive": 117,
+                    "negative": 7,
+                    "neutral": 6
+                },
+                {
+                    "name": "Dịch Vụ",
+                    "description": "Service",
+                    "total_mentioned": 300,
+                    "positive": 288,
+                    "negative": 6,
+                    "neutral": 6
+                },
+                {
+                    "name": "Vị Trí",
+                    "description": "Location",
+                    "total_mentioned": 166,
+                    "positive": 148,
+                    "negative": 4,
+                    "neutral": 14
+                },
+                {
+                    "name": "Cơ Sở Vật Chất",
+                    "description": "Property",
+                    "total_mentioned": 234,
+                    "positive": 217,
+                    "negative": 10,
+                    "neutral": 7
+                },
+                {
+                    "name": "Nghỉ Ngơi",
+                    "description": "Sleep",
+                    "total_mentioned": 76,
+                    "positive": 70,
+                    "negative": 4,
+                    "neutral": 2
+                },
+                {
+                    "name": "Nhà Hàng",
+                    "description": "Restaurant",
+                    "total_mentioned": 56,
+                    "positive": 48,
+                    "negative": 4,
+                    "neutral": 4
+                }
+            ],
+            "amenities": [
+                "Free breakfast",
+                "Free Wi-Fi",
+                "Air conditioning",
+                "Restaurant",
+                "Airport shuttle",
+                "Full-service laundry",
+                "Kid-friendly"
+            ]
+        },
+        {
+            "type": "hotel",
+            "name": "Tam Family Homestay Hue",
+            "link": "https://www.booking.com/hotel/vn/my-home-hue.vi.html?aid=356980&label=gog235jc-1DCAso9AFCC215LWhvbWUtaHVlSDNYA2j0AYgBAZgBKrgBGMgBDNgBA-gBAYgCAagCBLgC18bXtAbAAgHSAiQ3MjgzZDk2ZS04MDkxLTQxNDctOGM0Ny02YmFlMWRlNDRkOGTYAgTgAgE&sid=15fc90804822fb3e5e3b5905f2345fe0&dist=0&keep_landing=1&sb_price_type=total&type=total&",
+            "property_token": "ChoIhpeNnI7Gy5qsARoNL2cvMTFmd2w0cXd4ehAB",
+            "serpapi_property_details_link": "https://serpapi.com/search.json?adults=1&check_in_date=2025-10-15&check_out_date=2025-10-17&children=0&currency=VND&engine=google_hotels&gl=vn&hl=vi&max_price=1500000&property_token=ChoIhpeNnI7Gy5qsARoNL2cvMTFmd2w0cXd4ehAB&q=Hotel+in+Hu%E1%BA%BF&sort_by=8",
+            "gps_coordinates": {
+                "latitude": 16.4607933,
+                "longitude": 107.56363300000001
+            },
+            "check_in_time": "14:00",
+            "check_out_time": "12:00",
+            "rate_per_night": {
+                "lowest": "485.382 ₫",
+                "extracted_lowest": 485382,
+                "before_taxes_fees": "449.403 ₫",
+                "extracted_before_taxes_fees": 449403
+            },
+            "total_rate": {
+                "lowest": "970.764 ₫",
+                "extracted_lowest": 970764,
+                "before_taxes_fees": "898.807 ₫",
+                "extracted_before_taxes_fees": 898807
+            },
+            "nearby_places": [
+                {
+                    "name": "Hoàng Thành Huế",
+                    "transportations": [
+                        {
+                            "type": "Taxi",
+                            "duration": "7 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Ga Huế",
+                    "transportations": [
+                        {
+                            "type": "Taxi",
+                            "duration": "6 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Cảng hàng không quốc tế Đà Nẵng",
+                    "transportations": [
+                        {
+                            "type": "Taxi",
+                            "duration": "2 giờ 14 phút"
+                        },
+                        {
+                            "type": "Public transport",
+                            "duration": "3 giờ 45 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Nhà Hàng Thảo Trang Viên",
+                    "transportations": [
+                        {
+                            "type": "Walking",
+                            "duration": "6 phút"
+                        }
+                    ]
+                }
+            ],
+            "images": [
+                {
+                    "thumbnail": "https://lh6.googleusercontent.com/proxy/VrTgk609JXoTm2cgQscgIzN9CQdJVxl01CRUqYlkhMk9WEcweyeRyKdZLN-34_iNjEB5z1HIQnnGj50FrfT7_jXpmcRA5XeP_vsY3usJmVm3_gro9eOBXutDj5EiUqOij4ewFR7npPfFINRpmUcVORNbOJTXsuk=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://images.trvl-media.com/lodging/95000000/94830000/94830000/94829989/w800h448x0y81-6893f0a0_z.jpg"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipO1o-rE7MpkbguW8YVt876X_9uvk4NYdC9srD-v=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipO1o-rE7MpkbguW8YVt876X_9uvk4NYdC9srD-v=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipNPVfg7H0Oe3Tl8x50mZhGnTKdgxFghdO-riokN=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipNPVfg7H0Oe3Tl8x50mZhGnTKdgxFghdO-riokN=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipMtvcPBi3lGTh_roQrtpRz6TLbhByctqkkTAGeQ=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipMtvcPBi3lGTh_roQrtpRz6TLbhByctqkkTAGeQ=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipNwxwOP6so4CVOQ5S1WFwGxLkFhnVygEfdsMhbe=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipNwxwOP6so4CVOQ5S1WFwGxLkFhnVygEfdsMhbe=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipNDfGkDRoAN5wiggciH4hFSRcfLJA3aaGnLVXIS=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipNDfGkDRoAN5wiggciH4hFSRcfLJA3aaGnLVXIS=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipNJwHL-YBfBIXWbU0v-j5R5atbCdWFQhs3vvbjr=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipNJwHL-YBfBIXWbU0v-j5R5atbCdWFQhs3vvbjr=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/proxy/RnIdhvBnl8JNOM38oJFoApXoS3hRUgdEe5j9wW7SghZ8pkO0M0QMivcJXxTcjPaSODw1rsyO0RjVNQymiCSEOXO0GUWAq2bRRPv_xWh_6521VtzMcFhQKWSgIafrOogJd8VVyA2rizYeI-jwU20cSpryYAvjqw=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://images.trvl-media.com/lodging/95000000/94830000/94830000/94829989/53bc1886_z.jpg"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/proxy/ECYC-OBgm-9Ss-9WGN8yypIReO32qc0naCgss8SAkq6Ihcy_ygsACDqQSSEVIaRgAl6p0wj9jqNe2rrjeBWJWp_39RVERonWG9XpKJam7uTP_9R4r6MwDmVWyqQDwLx5jBQESdj30hOwDtVUJZiv2LBfqsHXw-4=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://images.trvl-media.com/lodging/95000000/94830000/94830000/94829989/0975c62e_z.jpg"
+                }
+            ],
+            "overall_rating": 4.9,
+            "reviews": 273,
+            "ratings": [
+                {
+                    "stars": 5,
+                    "count": 250
+                },
+                {
+                    "stars": 4,
+                    "count": 16
+                },
+                {
+                    "stars": 3,
+                    "count": 5
+                },
+                {
+                    "stars": 2,
+                    "count": 0
+                },
+                {
+                    "stars": 1,
+                    "count": 2
+                }
+            ],
+            "location_rating": 4.4,
+            "reviews_breakdown": [
+                {
+                    "name": "Phù Hợp Với Gia Đình",
+                    "description": "Family friendly",
+                    "total_mentioned": 36,
+                    "positive": 32,
+                    "negative": 2,
+                    "neutral": 2
+                },
+                {
+                    "name": "Phòng Tập Thể Dục",
+                    "description": "Fitness",
+                    "total_mentioned": 17,
+                    "positive": 16,
+                    "negative": 1,
+                    "neutral": 0
+                },
+                {
+                    "name": "Dịch Vụ",
+                    "description": "Service",
+                    "total_mentioned": 81,
+                    "positive": 79,
+                    "negative": 1,
+                    "neutral": 1
+                },
+                {
+                    "name": "Bể Bơi",
+                    "description": "Pool",
+                    "total_mentioned": 12,
+                    "positive": 11,
+                    "negative": 1,
+                    "neutral": 0
+                },
+                {
+                    "name": "Vị Trí",
+                    "description": "Location",
+                    "total_mentioned": 28,
+                    "positive": 26,
+                    "negative": 1,
+                    "neutral": 1
+                },
+                {
+                    "name": "Tình Trạng Vệ Sinh",
+                    "description": "Cleanliness",
+                    "total_mentioned": 41,
+                    "positive": 40,
+                    "negative": 1,
+                    "neutral": 0
+                }
+            ],
+            "amenities": [
+                "Breakfast ($)",
+                "Free Wi-Fi",
+                "Free parking",
+                "Pool",
+                "Air conditioning",
+                "Room service",
+                "Airport shuttle",
+                "Full-service laundry",
+                "Accessible"
+            ]
+        },
+        {
+            "type": "hotel",
+            "name": "Khách Sạn Đức Lộc",
+            "link": "https://www.facebook.com/profile.php?id=100063724596329&mibextid=LQQJ4d",
+            "property_token": "ChgIvJ7u0P7B5bsyGgwvZy8xMnZyZnk2eXgQAQ",
+            "serpapi_property_details_link": "https://serpapi.com/search.json?adults=1&check_in_date=2025-10-15&check_out_date=2025-10-17&children=0&currency=VND&engine=google_hotels&gl=vn&hl=vi&max_price=1500000&property_token=ChgIvJ7u0P7B5bsyGgwvZy8xMnZyZnk2eXgQAQ&q=Hotel+in+Hu%E1%BA%BF&sort_by=8",
+            "gps_coordinates": {
+                "latitude": 16.4814047,
+                "longitude": 107.5959502
+            },
+            "check_in_time": "2:00",
+            "check_out_time": "12:00",
+            "rate_per_night": {
+                "lowest": "257.500 ₫",
+                "extracted_lowest": 257500,
+                "before_taxes_fees": "238.426 ₫",
+                "extracted_before_taxes_fees": 238426
+            },
+            "total_rate": {
+                "lowest": "515.000 ₫",
+                "extracted_lowest": 515000,
+                "before_taxes_fees": "476.852 ₫",
+                "extracted_before_taxes_fees": 476852
+            },
+            "nearby_places": [
+                {
+                    "name": "Chợ Đông Ba",
+                    "transportations": [
+                        {
+                            "type": "Taxi",
+                            "duration": "7 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Ga Huế",
+                    "transportations": [
+                        {
+                            "type": "Taxi",
+                            "duration": "9 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Cảng hàng không quốc tế Đà Nẵng",
+                    "transportations": [
+                        {
+                            "type": "Taxi",
+                            "duration": "2 giờ 10 phút"
+                        },
+                        {
+                            "type": "Public transport",
+                            "duration": "3 giờ 2 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Nhà Hàng Vỹ Dạ Xưa",
+                    "transportations": [
+                        {
+                            "type": "Walking",
+                            "duration": "1 phút"
+                        }
+                    ]
+                }
+            ],
+            "images": [
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipN3FUFrJC_oMI0cQnAAFGFEkFcTxPiWcgrGkTu-=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipN3FUFrJC_oMI0cQnAAFGFEkFcTxPiWcgrGkTu-=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipPdhxbbtJg6e7t1g27hu7w6C4sSrPYYSW3JC5YS=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipPdhxbbtJg6e7t1g27hu7w6C4sSrPYYSW3JC5YS=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrE1BakjUs5U5Fvo1hukhRNhhQcexpbNoDV4u0rwNekihYyWs2RakLpPA6SiE9co3JOQKCU2qA6DidD-VvI7H07luPPu7KC6p53GTE_MRKnWE_nRgoGL12FfkyPvkvepMJ7X058=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/CIHM0ogKELGT74W2x5al0wE=s10000"
+                },
+                {
+                    "thumbnail": "https://lh5.googleusercontent.com/proxy/hcBTFJzq05xAnhQ6ZosI4zFu_00Bw2OVIqURHSaTiMnEDXlH-p9YXJ2PUaKkPNxX5i99MGNCXt3z7gNOLPotJ7QZPUI35stJuFVgIY-6INiEiA-UsG96Yo6uZobE-uol2a6Ug7K-r799hZq-n30_O-wD88kzsoE=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/fb/09/78/caption.jpg?w=1900&h=1400&s=1"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipNg2o8Bc27eLOvOTifHTam0JGKYuV4LLqv95-Vl=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipNg2o8Bc27eLOvOTifHTam0JGKYuV4LLqv95-Vl=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipNqC0QEwBVgdd5OhJJoeFF4ISt41FLBzdY436rY=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipNqC0QEwBVgdd5OhJJoeFF4ISt41FLBzdY436rY=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipNOKTtwkcQkjxIc2Pp9NHvquhenPIXRIkotq9Ms=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipNOKTtwkcQkjxIc2Pp9NHvquhenPIXRIkotq9Ms=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipO3eE0YrPClbZRXPkgcSFQDPxVFy7wTEokKjgkl=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipO3eE0YrPClbZRXPkgcSFQDPxVFy7wTEokKjgkl=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipOhhquEwyQveuEeP8li31Gxb57u7woT6dehk--N=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipOhhquEwyQveuEeP8li31Gxb57u7woT6dehk--N=s10000"
+                }
+            ],
+            "overall_rating": 4.8,
+            "reviews": 650,
+            "ratings": [
+                {
+                    "stars": 5,
+                    "count": 590
+                },
+                {
+                    "stars": 4,
+                    "count": 16
+                },
+                {
+                    "stars": 3,
+                    "count": 18
+                },
+                {
+                    "stars": 2,
+                    "count": 7
+                },
+                {
+                    "stars": 1,
+                    "count": 19
+                }
+            ],
+            "location_rating": 3.6,
+            "reviews_breakdown": [
+                {
+                    "name": "Bãi Đỗ Xe",
+                    "description": "Parking",
+                    "total_mentioned": 17,
+                    "positive": 13,
+                    "negative": 3,
+                    "neutral": 1
+                },
+                {
+                    "name": "Dịch Vụ",
+                    "description": "Service",
+                    "total_mentioned": 107,
+                    "positive": 102,
+                    "negative": 5,
+                    "neutral": 0
+                },
+                {
+                    "name": "Ăn Tối",
+                    "description": "Food and Beverage",
+                    "total_mentioned": 22,
+                    "positive": 22,
+                    "negative": 0,
+                    "neutral": 0
+                },
+                {
+                    "name": "Phòng Tắm",
+                    "description": "Bathroom and toiletries",
+                    "total_mentioned": 19,
+                    "positive": 7,
+                    "negative": 11,
+                    "neutral": 1
+                },
+                {
+                    "name": "Tình Trạng Vệ Sinh",
+                    "description": "Cleanliness",
+                    "total_mentioned": 57,
+                    "positive": 48,
+                    "negative": 8,
+                    "neutral": 1
+                },
+                {
+                    "name": "An Toàn",
+                    "description": "Safety",
+                    "total_mentioned": 8,
+                    "positive": 7,
+                    "negative": 0,
+                    "neutral": 1
+                }
+            ],
+            "amenities": [
+                "Free Wi-Fi",
+                "Free parking",
+                "Hot tub",
+                "Air conditioning",
+                "Room service",
+                "Kitchen in some rooms",
+                "Airport shuttle",
+                "Full-service laundry",
+                "Accessible"
+            ]
+        },
+        {
+            "type": "hotel",
+            "name": "Hue Four Seasons Hotel",
+            "description": "Khách sạn bình dân nhìn ra sông, miễn phí bữa sáng, chỗ đỗ xe và Wi-Fi.",
+            "property_token": "ChkI5a-1r6iY0rZyGg0vZy8xMWdteHZ2ajRkEAE",
+            "serpapi_property_details_link": "https://serpapi.com/search.json?adults=1&check_in_date=2025-10-15&check_out_date=2025-10-17&children=0&currency=VND&engine=google_hotels&gl=vn&hl=vi&max_price=1500000&property_token=ChkI5a-1r6iY0rZyGg0vZy8xMWdteHZ2ajRkEAE&q=Hotel+in+Hu%E1%BA%BF&sort_by=8",
+            "gps_coordinates": {
+                "latitude": 16.4722404,
+                "longitude": 107.59642939999999
+            },
+            "check_out_time": "12:00",
+            "rate_per_night": {
+                "lowest": "374.528 ₫",
+                "extracted_lowest": 374528,
+                "before_taxes_fees": "346.701 ₫",
+                "extracted_before_taxes_fees": 346701
+            },
+            "total_rate": {
+                "lowest": "749.055 ₫",
+                "extracted_lowest": 749055,
+                "before_taxes_fees": "693.401 ₫",
+                "extracted_before_taxes_fees": 693401
+            },
+            "nearby_places": [
+                {
+                    "name": "Đường đi bộ Huế",
+                    "transportations": [
+                        {
+                            "type": "Walking",
+                            "duration": "8 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Huế Văn phòng Xe Hạnh Cafe",
+                    "transportations": [
+                        {
+                            "type": "Walking",
+                            "duration": "7 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Cảng hàng không quốc tế Đà Nẵng",
+                    "transportations": [
+                        {
+                            "type": "Taxi",
+                            "duration": "2 giờ 8 phút"
+                        },
+                        {
+                            "type": "Public transport",
+                            "duration": "2 giờ 45 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Chaleng Thai Food",
+                    "transportations": [
+                        {
+                            "type": "Walking",
+                            "duration": "2 phút"
+                        }
+                    ]
+                }
+            ],
+            "hotel_class": "Khách sạn 3 sao",
+            "extracted_hotel_class": 3,
+            "images": [
+                {
+                    "thumbnail": "https://lh4.googleusercontent.com/proxy/odFbxg3nDiX2uYjqvSmGPu7hxMSQl8wvJp3KJyTp7uzRTW0V881m99Gya8M2vLgpQo4Tyrpcc25wHfZeMbv_hKbmX31-z5w-awFmiUO8SrRP-dj-FaPdw9SpTebQZ2x4KhJBk4tX4oLkreMb0vWSi0HrNRzL_SM=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/f6/a9/64/hue-four-seasons-hotel.jpg?w=2100&h=1400&s=1"
+                },
+                {
+                    "thumbnail": "https://lh4.googleusercontent.com/proxy/vTXP-1bpqD5lbsX26dExTi8f5Gv1UutDBhMs5pZeF37xDDTZD2llX4JBkaSZvdLhi_iGXQvaz_PKitay74Sk6ZMRDlXH-6nDCImc0PJlPF-kOxku6_Pe6VwPFgG1KRjeKefQkuc7dMk-JyvCMNad6MnCHlc_Gh8=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://images.trvl-media.com/lodging/35000000/34600000/34593300/34593238/5ad82336_z.jpg"
+                },
+                {
+                    "thumbnail": "https://lh5.googleusercontent.com/proxy/CG28Uvxx3fDibhDi1AL-5iRfY0u7nixU-Hk_v2DaCz5ssDp32o0mTuubOJgv__3REDEVettVaqwNb4NDHguzvFnbbKsSuYBT1hKLlGlnz2oZ-THtEB75JoggvsObvf6jA-pkmhIXT6OFdDlN1s33oS9jNbAP9jE=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://images.trvl-media.com/lodging/35000000/34600000/34593300/34593238/bc85e8c1_z.jpg"
+                },
+                {
+                    "thumbnail": "https://lh4.googleusercontent.com/proxy/ZWKhwVsJgLnjXH3PMe-ioAml8It_tpqon_QRr3XNISfxG5eIWEcLCR15lBXnmHzJhAutKi-jwB1rSItFUSVEMd2zWhLiLq6Z53q7hceLRXwwLAh3MlklOjdu0JsK4PkUiv71CC_qQXsi10uIjna6Peerkv1AuIU=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/f6/b4/72/hue-four-seasons-hotel.jpg?w=2100&h=1400&s=1"
+                },
+                {
+                    "thumbnail": "https://lh5.googleusercontent.com/proxy/xsOv0gtko1-eH3UYGlliUoLT89zU2GL3qt9mBLsY7yfZX6H0YnyW3byv5TJQeQnMrs67MpMre39db3iVYNc4h6I8dqZwivU3S8qCJP2s2qvPtPbxxfwOMUzIjIod3Jb3TNke2vivmoP_3yzT_UTg0Xh8xlX3CA=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://images.trvl-media.com/lodging/35000000/34600000/34593300/34593238/c1f5a4a7_z.jpg"
+                },
+                {
+                    "thumbnail": "https://lh5.googleusercontent.com/proxy/_r_chR9KMIl0ycK7tVonbtH88pF8eXD7-Lg07QS3gC-fkhZA8mDO063mPyBY0OBAV4qxSoA5QMMd6K09UmWTmDNz5B1uHt8ADPMmYXD4eQoJmt3k2GWCi2Wp9xFKnXkPij1FmxOpda1q0-ajmYNhhRWmdRhh9w=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://photos.hotelbeds.com/giata/original/68/686359/686359a_hb_l_001.jpg"
+                },
+                {
+                    "thumbnail": "https://lh4.googleusercontent.com/proxy/L-Cm5zaY_lDXq0nT42MxxtrSiW-ptIOTLsd0zPQcCBXAT4Y7hBdmoUAboFMJYzicXEjPmTblX-RC5bp6vQ7cRK3BCSsEabqj7Tq-a-bUltCyPKJ4YFwex9RpWys8XgwBTvA-l_67sZxFMZ9wVjIXorK3IGnIhg=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://images.trvl-media.com/lodging/35000000/34600000/34593300/34593238/5305cc3e_z.jpg"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nq8KCI3O-c2-PdnIqCSzKedmi4K5NQy5zl2EEaPe6Z6Yx8D-T8Nme_T-k2zloZ2C-b13XpN2rcz0VQLBZH5OqSyPSLAn-PJRMyUT46C5ZOdme6BflrUo6wogT_w6rpbhbCL400=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/CIHM0ogKEICAgIDuvLDDWw=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nolIuIwqPN77HNi8144yhTP3f_D6orgcoFCaBSk-nfohpaZkhQ1El8S6fVly76wbeqDPRVIRRajKK-brnFlTCs2Ah0Y_zNFq6gXX8gQetes8FDUVf_bFFAdhmkrqNQdK2FYO2Ld=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/CIHM0ogKEICAgICOv_2WGw=s10000"
+                }
+            ],
+            "overall_rating": 4.8,
+            "reviews": 577,
+            "ratings": [
+                {
+                    "stars": 5,
+                    "count": 492
+                },
+                {
+                    "stars": 4,
+                    "count": 56
+                },
+                {
+                    "stars": 3,
+                    "count": 14
+                },
+                {
+                    "stars": 2,
+                    "count": 6
+                },
+                {
+                    "stars": 1,
+                    "count": 9
+                }
+            ],
+            "location_rating": 4.8,
+            "reviews_breakdown": [
+                {
+                    "name": "Món Ăn Sáng",
+                    "description": "Breakfast",
+                    "total_mentioned": 137,
+                    "positive": 132,
+                    "negative": 1,
+                    "neutral": 4
+                },
+                {
+                    "name": "Phù Hợp Với Gia Đình",
+                    "description": "Family friendly",
+                    "total_mentioned": 85,
+                    "positive": 83,
+                    "negative": 1,
+                    "neutral": 1
+                },
+                {
+                    "name": "Nhà Hàng",
+                    "description": "Restaurant",
+                    "total_mentioned": 73,
+                    "positive": 67,
+                    "negative": 1,
+                    "neutral": 5
+                },
+                {
+                    "name": "Vị Trí",
+                    "description": "Location",
+                    "total_mentioned": 122,
+                    "positive": 118,
+                    "negative": 0,
+                    "neutral": 4
+                },
+                {
+                    "name": "Dịch Vụ",
+                    "description": "Service",
+                    "total_mentioned": 200,
+                    "positive": 197,
+                    "negative": 0,
+                    "neutral": 3
+                },
+                {
+                    "name": "Phòng",
+                    "description": "Room amenities",
+                    "total_mentioned": 63,
+                    "positive": 53,
+                    "negative": 4,
+                    "neutral": 6
+                }
+            ],
+            "amenities": [
+                "Free breakfast",
+                "Free Wi-Fi",
+                "Pool",
+                "Air conditioning",
+                "Pet-friendly",
+                "Restaurant",
+                "Airport shuttle",
+                "Full-service laundry",
+                "Kid-friendly"
+            ]
+        },
+        {
+            "type": "hotel",
+            "name": "Jade Scene Hotel",
+            "link": "https://m.facebook.com/JadeSceneHotel/?paipv=1",
+            "property_token": "ChkIjZ6mnoei5sIMGg0vZy8xMXJkYjI0NTlyEAE",
+            "serpapi_property_details_link": "https://serpapi.com/search.json?adults=1&check_in_date=2025-10-15&check_out_date=2025-10-17&children=0&currency=VND&engine=google_hotels&gl=vn&hl=vi&max_price=1500000&property_token=ChkIjZ6mnoei5sIMGg0vZy8xMXJkYjI0NTlyEAE&q=Hotel+in+Hu%E1%BA%BF&sort_by=8",
+            "gps_coordinates": {
+                "latitude": 16.4696461,
+                "longitude": 107.5969648
+            },
+            "check_in_time": "14:00",
+            "check_out_time": "12:00",
+            "rate_per_night": {
+                "lowest": "782.418 ₫",
+                "extracted_lowest": 782418,
+                "before_taxes_fees": "689.687 ₫",
+                "extracted_before_taxes_fees": 689687
+            },
+            "total_rate": {
+                "lowest": "1.564.836 ₫",
+                "extracted_lowest": 1564836,
+                "before_taxes_fees": "1.379.374 ₫",
+                "extracted_before_taxes_fees": 1379374
+            },
+            "nearby_places": [
+                {
+                    "name": "Đường đi bộ Huế",
+                    "transportations": [
+                        {
+                            "type": "Walking",
+                            "duration": "6 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Huế Văn phòng Xe Hạnh Cafe",
+                    "transportations": [
+                        {
+                            "type": "Walking",
+                            "duration": "5 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Cảng hàng không quốc tế Đà Nẵng",
+                    "transportations": [
+                        {
+                            "type": "Taxi",
+                            "duration": "2 giờ 7 phút"
+                        },
+                        {
+                            "type": "Public transport",
+                            "duration": "2 giờ 43 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Nhà hàng Thân Thiện - Cơm Niêu Nhà Rường",
+                    "transportations": [
+                        {
+                            "type": "Walking",
+                            "duration": "2 phút"
+                        }
+                    ]
+                }
+            ],
+            "images": [
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npKfC0ZxIywEni9h0XUT3kq5jMqPQDYVIRAFG7QFScR61whwjkC3kxQAAqry-TGKL-yByhtd9mRb3HoLVThmf1FOq_3C7Tu2wDHKBAccNz9Z-7My5vQyCy3lOPWYmhdEali5MNi=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/CIHM0ogKEICAgICeyZfxeA=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipOupRJwBoH7sgJnLsHeUGhS1Aggj1YYacJ_kWM-=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipOupRJwBoH7sgJnLsHeUGhS1Aggj1YYacJ_kWM-=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipOCJAtBvn0yutjbi_FMZlZrZsyZNOJcmPZ38TwY=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipOCJAtBvn0yutjbi_FMZlZrZsyZNOJcmPZ38TwY=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipPV3BKw_PDKo4RSoVwLxFlU05aQs-9Q0hkZiLxe=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipPV3BKw_PDKo4RSoVwLxFlU05aQs-9Q0hkZiLxe=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipMzjI-Dq0Jl4Hq8OLDhsiDQL-zIrPyCXUYB9IZB=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipMzjI-Dq0Jl4Hq8OLDhsiDQL-zIrPyCXUYB9IZB=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipONsl39aIUjnc4jW5pQHQA-NwpZ63LkWODQ0LtZ=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipONsl39aIUjnc4jW5pQHQA-NwpZ63LkWODQ0LtZ=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/proxy/zg3KycquH0r5BvsRe4du_7RVilCpbfw2TNe_T8HbvAWwK2ednOdZa69L7lbaswKT1J4yZJNjsJPBodO2n-eQ5Nn-l5S10_F3B8SpmV8JQqCN7lPOxHZPLBZ_ElJRtvIogf_iOF3eOTdET-qytDjFo06skTe8SAg=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://images.trvl-media.com/lodging/89000000/88350000/88345900/88345837/6c156b1b_z.jpg"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/proxy/kaMivLKKimAgB2HBTY90KBE0rx2jgr1I-HBbDMaEUdjZmaysY6eH2vjO8TG8OLtJATK90tZiDKkpv4GZIENV-_qn3zTJiTgkFC85V3eLyLatBG_uihhBHobTUb0DQpzmFa9oENOmOr7sQ_j-qlfPVVy8u9xdEQ=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://images.trvl-media.com/lodging/89000000/88350000/88345900/88345837/e18b29f5_z.jpg"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipP87WPEyvtU49rn0_coHcB2r1qLLfx0AY81agao=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipP87WPEyvtU49rn0_coHcB2r1qLLfx0AY81agao=s10000"
+                }
+            ],
+            "overall_rating": 4.8,
+            "reviews": 471,
+            "ratings": [
+                {
+                    "stars": 5,
+                    "count": 399
+                },
+                {
+                    "stars": 4,
+                    "count": 52
+                },
+                {
+                    "stars": 3,
+                    "count": 11
+                },
+                {
+                    "stars": 2,
+                    "count": 0
+                },
+                {
+                    "stars": 1,
+                    "count": 9
+                }
+            ],
+            "location_rating": 4.9,
+            "reviews_breakdown": [
+                {
+                    "name": "Phòng Tập Thể Dục",
+                    "description": "Fitness",
+                    "total_mentioned": 95,
+                    "positive": 84,
+                    "negative": 3,
+                    "neutral": 8
+                },
+                {
+                    "name": "Bể Bơi",
+                    "description": "Pool",
+                    "total_mentioned": 79,
+                    "positive": 73,
+                    "negative": 2,
+                    "neutral": 4
+                },
+                {
+                    "name": "Món Ăn Sáng",
+                    "description": "Breakfast",
+                    "total_mentioned": 82,
+                    "positive": 71,
+                    "negative": 8,
+                    "neutral": 3
+                },
+                {
+                    "name": "Vị Trí",
+                    "description": "Location",
+                    "total_mentioned": 129,
+                    "positive": 120,
+                    "negative": 4,
+                    "neutral": 5
+                },
+                {
+                    "name": "Dịch Vụ",
+                    "description": "Service",
+                    "total_mentioned": 188,
+                    "positive": 181,
+                    "negative": 3,
+                    "neutral": 4
+                },
+                {
+                    "name": "Cơ Sở Vật Chất",
+                    "description": "Property",
+                    "total_mentioned": 147,
+                    "positive": 143,
+                    "negative": 0,
+                    "neutral": 4
+                }
+            ],
+            "amenities": [
+                "Free breakfast",
+                "Free Wi-Fi",
+                "Free parking",
+                "Outdoor pool",
+                "Air conditioning",
+                "Pet-friendly",
+                "Spa",
+                "Bar",
+                "Restaurant",
+                "Airport shuttle",
+                "Full-service laundry",
+                "Business center",
+                "Kid-friendly",
+                "Smoke-free property"
+            ]
+        },
+        {
+            "type": "hotel",
+            "name": "Soleil Boutique Homestay",
+            "property_token": "ChoIrbrFqMP47p7fARoNL2cvMTFqY2QyZHI2ehAB",
+            "serpapi_property_details_link": "https://serpapi.com/search.json?adults=1&check_in_date=2025-10-15&check_out_date=2025-10-17&children=0&currency=VND&engine=google_hotels&gl=vn&hl=vi&max_price=1500000&property_token=ChoIrbrFqMP47p7fARoNL2cvMTFqY2QyZHI2ehAB&q=Hotel+in+Hu%E1%BA%BF&sort_by=8",
+            "gps_coordinates": {
+                "latitude": 16.467551699999998,
+                "longitude": 107.58325040000001
+            },
+            "check_in_time": "14:00",
+            "check_out_time": "12:00",
+            "rate_per_night": {
+                "lowest": "467.503 ₫",
+                "extracted_lowest": 467503,
+                "before_taxes_fees": "432.873 ₫",
+                "extracted_before_taxes_fees": 432873
+            },
+            "total_rate": {
+                "lowest": "935.006 ₫",
+                "extracted_lowest": 935006,
+                "before_taxes_fees": "865.746 ₫",
+                "extracted_before_taxes_fees": 865746
+            },
+            "nearby_places": [
+                {
+                    "name": "Kinh thành Huế",
+                    "transportations": [
+                        {
+                            "type": "Walking",
+                            "duration": "8 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Ga Huế",
+                    "transportations": [
+                        {
+                            "type": "Taxi",
+                            "duration": "6 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Cảng hàng không quốc tế Đà Nẵng",
+                    "transportations": [
+                        {
+                            "type": "Taxi",
+                            "duration": "2 giờ 9 phút"
+                        },
+                        {
+                            "type": "Public transport",
+                            "duration": "3 giờ 40 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "N. Cafe & Restaurant",
+                    "transportations": [
+                        {
+                            "type": "Walking",
+                            "duration": "3 phút"
+                        }
+                    ]
+                }
+            ],
+            "images": [
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipNcq28T_AXsKQi_ErGFQXBOMaOuMr8EBWth7sb0=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipNcq28T_AXsKQi_ErGFQXBOMaOuMr8EBWth7sb0=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipPpLpnRJz7_V3uZx1FUl5NIgM-9DYIlcHuzm-sd=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipPpLpnRJz7_V3uZx1FUl5NIgM-9DYIlcHuzm-sd=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipNdZQldlPwoOjIXtiLzv3Kgdz068VHXGfT1rjlc=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipNdZQldlPwoOjIXtiLzv3Kgdz068VHXGfT1rjlc=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipNAHo-0dBPFc5BQPaVvYZzonsKFHQZ4I2qUeWAa=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipNAHo-0dBPFc5BQPaVvYZzonsKFHQZ4I2qUeWAa=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipOP-fgumXIcFyBdIL7zmRZBEU9aUb9TacP21p4h=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipOP-fgumXIcFyBdIL7zmRZBEU9aUb9TacP21p4h=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipPOkxp7ZqlbSYtJCNxESq5bZutrIy4xVlfxrbX4=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipPOkxp7ZqlbSYtJCNxESq5bZutrIy4xVlfxrbX4=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipP2nBe2MHUBWISlN3l_esBLg0HcHVwRgqG7vWKV=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipP2nBe2MHUBWISlN3l_esBLg0HcHVwRgqG7vWKV=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipPXil2ag-5PIhre14Xkpw7g3NpaOgboG6E80XPI=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipPXil2ag-5PIhre14Xkpw7g3NpaOgboG6E80XPI=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipOJuXyNccrRB-8fOsb06gzFNlc0rlBF-d29H4XX=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipOJuXyNccrRB-8fOsb06gzFNlc0rlBF-d29H4XX=s10000"
+                }
+            ],
+            "overall_rating": 4.8,
+            "reviews": 442,
+            "ratings": [
+                {
+                    "stars": 5,
+                    "count": 375
+                },
+                {
+                    "stars": 4,
+                    "count": 45
+                },
+                {
+                    "stars": 3,
+                    "count": 11
+                },
+                {
+                    "stars": 2,
+                    "count": 6
+                },
+                {
+                    "stars": 1,
+                    "count": 5
+                }
+            ],
+            "location_rating": 4.7,
+            "reviews_breakdown": [
+                {
+                    "name": "Vị Trí",
+                    "description": "Location",
+                    "total_mentioned": 135,
+                    "positive": 123,
+                    "negative": 3,
+                    "neutral": 9
+                },
+                {
+                    "name": "Món Ăn Sáng",
+                    "description": "Breakfast",
+                    "total_mentioned": 49,
+                    "positive": 40,
+                    "negative": 3,
+                    "neutral": 6
+                },
+                {
+                    "name": "Dịch Vụ",
+                    "description": "Service",
+                    "total_mentioned": 171,
+                    "positive": 168,
+                    "negative": 2,
+                    "neutral": 1
+                },
+                {
+                    "name": "Phương Tiện Công Cộng",
+                    "description": "Public transit",
+                    "total_mentioned": 25,
+                    "positive": 20,
+                    "negative": 2,
+                    "neutral": 3
+                },
+                {
+                    "name": "Cơ Sở Vật Chất",
+                    "description": "Property",
+                    "total_mentioned": 108,
+                    "positive": 98,
+                    "negative": 8,
+                    "neutral": 2
+                },
+                {
+                    "name": "Tình Trạng Vệ Sinh",
+                    "description": "Cleanliness",
+                    "total_mentioned": 93,
+                    "positive": 86,
+                    "negative": 7,
+                    "neutral": 0
+                }
+            ],
+            "amenities": [
+                "Free breakfast",
+                "Free Wi-Fi",
+                "Free parking",
+                "Air conditioning",
+                "Restaurant",
+                "Airport shuttle",
+                "Full-service laundry"
+            ]
+        },
+        {
+            "type": "hotel",
+            "name": "Nhà nghỉ Candy Inn",
+            "property_token": "ChoItMnoiK_b-IDsARoNL2cvMTFmZDNoZDl0axAB",
+            "serpapi_property_details_link": "https://serpapi.com/search.json?adults=1&check_in_date=2025-10-15&check_out_date=2025-10-17&children=0&currency=VND&engine=google_hotels&gl=vn&hl=vi&max_price=1500000&property_token=ChoItMnoiK_b-IDsARoNL2cvMTFmZDNoZDl0axAB&q=Hotel+in+Hu%E1%BA%BF&sort_by=8",
+            "gps_coordinates": {
+                "latitude": 16.468796299999998,
+                "longitude": 107.59761999999999
+            },
+            "check_in_time": "14:00",
+            "rate_per_night": {
+                "lowest": "500.000 ₫",
+                "extracted_lowest": 500000,
+                "before_taxes_fees": "462.963 ₫",
+                "extracted_before_taxes_fees": 462963
+            },
+            "total_rate": {
+                "lowest": "1.000.000 ₫",
+                "extracted_lowest": 1000000,
+                "before_taxes_fees": "925.926 ₫",
+                "extracted_before_taxes_fees": 925926
+            },
+            "nearby_places": [
+                {
+                    "name": "Đường đi bộ Huế",
+                    "transportations": [
+                        {
+                            "type": "Walking",
+                            "duration": "6 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Huế Văn phòng Xe Hạnh Cafe",
+                    "transportations": [
+                        {
+                            "type": "Walking",
+                            "duration": "5 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Cảng hàng không quốc tế Đà Nẵng",
+                    "transportations": [
+                        {
+                            "type": "Taxi",
+                            "duration": "2 giờ 6 phút"
+                        },
+                        {
+                            "type": "Public transport",
+                            "duration": "2 giờ 45 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Nhà Hàng Nhật Bản Shino Sushi - 22 Nguyễn Thái Học, Huế",
+                    "transportations": [
+                        {
+                            "type": "Walking",
+                            "duration": "3 phút"
+                        }
+                    ]
+                }
+            ],
+            "hotel_class": "Khách sạn 3 sao",
+            "extracted_hotel_class": 3,
+            "images": [
+                {
+                    "thumbnail": "https://lh5.googleusercontent.com/proxy/bw7peeuPBFKNaHwNCo972Ag3gSdc_7DbGe42XCKmGaOvCPcSHU9hHsFHwgxfqr0PDXmfXOFow5kXP0-MYJQ4H-O6Zg2CujAqqM22Y3tIsDSVLzh7SO-FG-oyJcuZWpRTms8Wph5MMSep8s6O9NgEJ0YluC2AePk=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://cdn.worldota.net/t/1024x768/content/37/a4/37a47a6fc28a2ead0ea657448bc3cc87ecd821ff.jpeg"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nphhLWHoMIvZh7lIDznoL3fGm68qtPnj_zwFaILMEtqW6hNXd5N59qoCMGZHIVg14RTidaLCEEfcY9v8vlszqIs4r85ZDR73W5DCWgFKeSiX7gsAm50XSpYQEGAhqqBdf0k6eAM=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/CIHM0ogKEICAgICBto-DOQ=s10000"
+                },
+                {
+                    "thumbnail": "https://lh6.googleusercontent.com/proxy/RN0mYHCqS2IUF9jwY6Pj60G1jgC-A0-BLFo0sBRqd_2bYgL-Sr_R7_uS3cLEsJjUT7Ao9sK_7vONiOo8RooAoTJaxIsHk4R-Aqz9qQEaR7wkO2gwVxn0w9SBKsaRzf8wVVfWSOVqOAZ9fk7Q0Dp1Jacuu5tn-Q=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://cdn.worldota.net/t/1024x768/content/5a/13/5a13bef146dc70c0c6d915e51b27a06ce142e97f.jpeg"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npKosR5H0_0E_DHcyPB37tY3dPLhfjFyPWj_NSrQ1ae8vEErfBF4G2cT8CUAgjzkBJZmGKDiAoA2XH3sNXLYF8Z07USjprvy7HdRJsLdObSO2Sg6u1kjS26Iq4sZyLCpn8o5UeP=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/CIHM0ogKEICAgIC_vNq0dA=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4no9jNKZnA2fcNYRQSbYK-uEJ3L0DGZWBTH7V7v6ue5iixUtBNPNuP2w3geHrbcB9UoCd8mW9BHZ1n-JUPWauTfG-FY2r7vcVRpfHyIEOiwO1ArML3pGh_dG8kh0UGn0mjW_WrhW=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/CIHM0ogKEICAgIDP-O7QYg=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npuDKKfyEgVZN80P5VMPG7mHcWfoug7FW_krTizXlnD-7dJDNxZfozonViObN2TPxpcL5JBZglZGqiCBJAB2aK4NSX2UdRN5we5v57OIXvSB2SwBJ83S7khKMxGLQIZKDoLRQ5B5Q=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/CIHM0ogKEICAgICx2JbxxwE=s10000"
+                },
+                {
+                    "thumbnail": "https://lh6.googleusercontent.com/proxy/_gDVjAaxHm-xEef2ye1feUZnzoh04lWCgeDOa2MbzI6sqATaMOBQ0oMKLnW6fH8PvwPyU84tvaD6oljcIv8w8BkDGzeoCSNHwo2Htlh3roovE3VOPM1jF9GNyhgcOkr5_2fmv6gnA2cd5mGT608hEotl6Rcn8xg=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://cdn.worldota.net/t/1024x768/content/77/22/772268847eb5154c68452621d272c3498644f2b0.jpeg"
+                },
+                {
+                    "thumbnail": "https://lh6.googleusercontent.com/proxy/7FFIqM6yiWaGC8YPMjkNGGwefhx-4csZcTcVdbebx0mFkcNkUnD1cSchWQwEjuQsYhFkl8Je3UWfrzhm7s2fGEIOkBDgWQK2EtxcbIfhFZWSB9MhDTcIHtNNj3U3KO_z8xNh7s5K1MzTl1wckFxk1DCVHENz_gY=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://cdn.worldota.net/t/1024x768/content/25/9d/259d1fe51fae342617975e814e0a1c9ee3be3945.jpeg"
+                },
+                {
+                    "thumbnail": "https://lh6.googleusercontent.com/proxy/jL0--qk3AO25MeBJJZxmR18oZrGeBRfOfS_bNRic3vMsvf0s6WMvnuP7i7hfTOne877CSquCrb3nmN00z_dWVsOEjNZem-5m_pPPFbptugrESARINt4BwUJZ2EtToairYGajIyzrqgIFNjLT90P87ngNPgU9yQ=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://cdn.worldota.net/t/1024x768/content/f2/c8/f2c86776c5a46dd6b9ea34bcee7dabfd062512f6.jpeg"
+                }
+            ],
+            "overall_rating": 4.9,
+            "reviews": 216,
+            "ratings": [
+                {
+                    "stars": 5,
+                    "count": 209
+                },
+                {
+                    "stars": 4,
+                    "count": 4
+                },
+                {
+                    "stars": 3,
+                    "count": 2
+                },
+                {
+                    "stars": 2,
+                    "count": 0
+                },
+                {
+                    "stars": 1,
+                    "count": 1
+                }
+            ],
+            "location_rating": 4.8,
+            "reviews_breakdown": [
+                {
+                    "name": "Món Ăn Sáng",
+                    "description": "Breakfast",
+                    "total_mentioned": 63,
+                    "positive": 61,
+                    "negative": 1,
+                    "neutral": 1
+                },
+                {
+                    "name": "Nhà Hàng",
+                    "description": "Restaurant",
+                    "total_mentioned": 43,
+                    "positive": 42,
+                    "negative": 0,
+                    "neutral": 1
+                },
+                {
+                    "name": "Vị Trí",
+                    "description": "Location",
+                    "total_mentioned": 68,
+                    "positive": 67,
+                    "negative": 0,
+                    "neutral": 1
+                },
+                {
+                    "name": "Dịch Vụ",
+                    "description": "Service",
+                    "total_mentioned": 113,
+                    "positive": 111,
+                    "negative": 1,
+                    "neutral": 1
+                },
+                {
+                    "name": "Phương Tiện Công Cộng",
+                    "description": "Public transit",
+                    "total_mentioned": 21,
+                    "positive": 20,
+                    "negative": 0,
+                    "neutral": 1
+                },
+                {
+                    "name": "Phòng Tắm",
+                    "description": "Bathroom and toiletries",
+                    "total_mentioned": 25,
+                    "positive": 23,
+                    "negative": 1,
+                    "neutral": 1
+                }
+            ],
+            "amenities": [
+                "Free breakfast",
+                "Free Wi-Fi",
+                "Air conditioning",
+                "Restaurant",
+                "Airport shuttle",
+                "Full-service laundry",
+                "Kid-friendly"
+            ]
+        },
+        {
+            "type": "hotel",
+            "name": "The Purple Hue BnB_Central Hub",
+            "property_token": "ChkIvv6mu-eruoEUGg0vZy8xMWg2c2ZjYnRsEAE",
+            "serpapi_property_details_link": "https://serpapi.com/search.json?adults=1&check_in_date=2025-10-15&check_out_date=2025-10-17&children=0&currency=VND&engine=google_hotels&gl=vn&hl=vi&max_price=1500000&property_token=ChkIvv6mu-eruoEUGg0vZy8xMWg2c2ZjYnRsEAE&q=Hotel+in+Hu%E1%BA%BF&sort_by=8",
+            "gps_coordinates": {
+                "latitude": 16.4658493,
+                "longitude": 107.5942177
+            },
+            "check_in_time": "14:00",
+            "rate_per_night": {
+                "lowest": "349.243 ₫",
+                "extracted_lowest": 349243,
+                "before_taxes_fees": "349.243 ₫",
+                "extracted_before_taxes_fees": 349243
+            },
+            "total_rate": {
+                "lowest": "698.486 ₫",
+                "extracted_lowest": 698486,
+                "before_taxes_fees": "698.486 ₫",
+                "extracted_before_taxes_fees": 698486
+            },
+            "nearby_places": [
+                {
+                    "name": "Đường đi bộ Huế",
+                    "transportations": [
+                        {
+                            "type": "Walking",
+                            "duration": "5 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Huế Văn phòng Xe Queen Cafe",
+                    "transportations": [
+                        {
+                            "type": "Walking",
+                            "duration": "5 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Cảng hàng không quốc tế Đà Nẵng",
+                    "transportations": [
+                        {
+                            "type": "Taxi",
+                            "duration": "2 giờ 5 phút"
+                        },
+                        {
+                            "type": "Public transport",
+                            "duration": "2 giờ 48 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Buffet Huế & Sushi Huế - Yaki Yum",
+                    "transportations": [
+                        {
+                            "type": "Walking",
+                            "duration": "2 phút"
+                        }
+                    ]
+                }
+            ],
+            "images": [
+                {
+                    "thumbnail": "https://lh6.googleusercontent.com/proxy/oQUitLOunam-_rTaFoNO_9MqURkuZRRD-k6Hk_utIzmesCsnI7PWy9K1OXNF3kzQsDqTYNMdFPXo2MQpNUW3yGTUQVlQV4ztCv6nXNWIG8UrjomC1ScbkvkTfBZocTDDOLcViOE9UiEdYQB49289iLnM2pfPOc0=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://cdn.worldota.net/t/1024x768/content/31/64/31645927bbd86c073911906ed6e72d5b120bf46c.jpeg"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipPmI-ilQwYfPXYeuhReujNpZOKVpfSi7jBf0mg2=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipPmI-ilQwYfPXYeuhReujNpZOKVpfSi7jBf0mg2=s10000"
+                },
+                {
+                    "thumbnail": "https://lh6.googleusercontent.com/proxy/o4bZJ0EaDB3NcV2h-9v1B8aqNZJxedw7GB15BV2oWBBtvTn5cfute4boxQWxvdbQInjUHySw2qm6zjvpeC3NNWEyYwKSUl93j_IZpV_voGRR4zEL1demmdNP6oQtRBtdlUmD-pmhmeel57WuYyVMk9nrZFSKAiI=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://cdn.worldota.net/t/1024x768/content/e1/8f/e18f45ffa9b1faf0f3381aa3465c1d99a123c956.jpeg"
+                },
+                {
+                    "thumbnail": "https://lh6.googleusercontent.com/proxy/oNliVfhvxpxbSyyVAqXhPCDFNiE5kEqKxFjHVKBEWIBjiK-ULFnZPP3LNeQ6MkghXU4_4H_BJtAC10kWD7UEwFuL77Mp8wclM4cD8CzrzQDYcjIe1jDGCQrsc5Pb6-oc4FurkzCs75uEGa4nPbcowWQGDgkqQzU=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://images.trvl-media.com/lodging/38000000/37140000/37133200/37133126/6feb9d03_z.jpg"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipMkgxnv7F4S_yfi4PTRzzPruImaOOeuE2tP-5yB=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipMkgxnv7F4S_yfi4PTRzzPruImaOOeuE2tP-5yB=s10000"
+                },
+                {
+                    "thumbnail": "https://lh4.googleusercontent.com/proxy/r18retorWIAkVoYvTcGqACFYcv1VVCV-qNsIScJ2FT-_2jJALsWmv-ObFKq72Ai5Mw9CfdWa_cBX126KjmtQ5DihEokV1E5oCi8N2hM-rI2fk6zN0zFKOoVVCe4pLrliHMy7gohhI60g7Cryec9FJmI3_3Lnk04=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://images.trvl-media.com/lodging/38000000/37140000/37133200/37133126/d58ce32d_z.jpg"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipOjCTCfWnsRL_olJJrJOjhBpnvVW-9RQCRmQiGU=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipOjCTCfWnsRL_olJJrJOjhBpnvVW-9RQCRmQiGU=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipOgmA7ol7GJq953SXrVG66dJouuN8CAo8FmzBZL=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipOgmA7ol7GJq953SXrVG66dJouuN8CAo8FmzBZL=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipMec3-IOdWCiDuwU_naDtWc5ki2e7ZamkzT-G2x=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipMec3-IOdWCiDuwU_naDtWc5ki2e7ZamkzT-G2x=s10000"
+                }
+            ],
+            "overall_rating": 4.8,
+            "reviews": 394,
+            "ratings": [
+                {
+                    "stars": 5,
+                    "count": 347
+                },
+                {
+                    "stars": 4,
+                    "count": 29
+                },
+                {
+                    "stars": 3,
+                    "count": 14
+                },
+                {
+                    "stars": 2,
+                    "count": 3
+                },
+                {
+                    "stars": 1,
+                    "count": 1
+                }
+            ],
+            "location_rating": 4.9,
+            "reviews_breakdown": [
+                {
+                    "name": "Quầy Bar",
+                    "description": "Bar or lounge",
+                    "total_mentioned": 81,
+                    "positive": 75,
+                    "negative": 1,
+                    "neutral": 5
+                },
+                {
+                    "name": "Ăn Tối",
+                    "description": "Food and Beverage",
+                    "total_mentioned": 73,
+                    "positive": 68,
+                    "negative": 2,
+                    "neutral": 3
+                },
+                {
+                    "name": "Dịch Vụ",
+                    "description": "Service",
+                    "total_mentioned": 146,
+                    "positive": 142,
+                    "negative": 1,
+                    "neutral": 3
+                },
+                {
+                    "name": "Nghỉ Ngơi",
+                    "description": "Sleep",
+                    "total_mentioned": 43,
+                    "positive": 31,
+                    "negative": 10,
+                    "neutral": 2
+                },
+                {
+                    "name": "Vị Trí",
+                    "description": "Location",
+                    "total_mentioned": 80,
+                    "positive": 75,
+                    "negative": 2,
+                    "neutral": 3
+                },
+                {
+                    "name": "Cơ Sở Vật Chất",
+                    "description": "Property",
+                    "total_mentioned": 123,
+                    "positive": 115,
+                    "negative": 2,
+                    "neutral": 6
+                }
+            ],
+            "amenities": [
+                "Free breakfast",
+                "Free Wi-Fi",
+                "Parking",
+                "Air conditioning",
+                "Restaurant",
+                "Airport shuttle",
+                "Full-service laundry",
+                "Kid-friendly"
+            ]
+        },
+        {
+            "type": "hotel",
+            "name": "Trạng Nguyên Huế Hotel",
+            "property_token": "ChkI3NLAxIru5s9uGg0vZy8xMXZ5ejRfamo3EAE",
+            "serpapi_property_details_link": "https://serpapi.com/search.json?adults=1&check_in_date=2025-10-15&check_out_date=2025-10-17&children=0&currency=VND&engine=google_hotels&gl=vn&hl=vi&max_price=1500000&property_token=ChkI3NLAxIru5s9uGg0vZy8xMXZ5ejRfamo3EAE&q=Hotel+in+Hu%E1%BA%BF&sort_by=8",
+            "gps_coordinates": {
+                "latitude": 16.4692453,
+                "longitude": 107.5944462
+            },
+            "check_in_time": "14:00",
+            "rate_per_night": {
+                "lowest": "467.590 ₫",
+                "extracted_lowest": 467590,
+                "before_taxes_fees": "432.930 ₫",
+                "extracted_before_taxes_fees": 432930
+            },
+            "total_rate": {
+                "lowest": "935.181 ₫",
+                "extracted_lowest": 935181,
+                "before_taxes_fees": "865.859 ₫",
+                "extracted_before_taxes_fees": 865859
+            },
+            "nearby_places": [
+                {
+                    "name": "Đường đi bộ Huế",
+                    "transportations": [
+                        {
+                            "type": "Walking",
+                            "duration": "2 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Huế Lê Lợi",
+                    "transportations": [
+                        {
+                            "type": "Walking",
+                            "duration": "3 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Cảng hàng không quốc tế Đà Nẵng",
+                    "transportations": [
+                        {
+                            "type": "Taxi",
+                            "duration": "2 giờ 7 phút"
+                        },
+                        {
+                            "type": "Public transport",
+                            "duration": "2 giờ 42 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Cơm niêu Chạn",
+                    "transportations": [
+                        {
+                            "type": "Walking",
+                            "duration": "2 phút"
+                        }
+                    ]
+                }
+            ],
+            "images": [
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipNkwUFuLv3s_pQHiUWuwMxuNuqnA1gfSDZYHjts=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipNkwUFuLv3s_pQHiUWuwMxuNuqnA1gfSDZYHjts=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipPvpWvWy3j2-gmvHjATd1-HD9twxP2_Kc3Wcvei=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipPvpWvWy3j2-gmvHjATd1-HD9twxP2_Kc3Wcvei=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipM3ET1GqYtClpuMgvSsrkluEVW1FQqYwyeQwI4N=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipM3ET1GqYtClpuMgvSsrkluEVW1FQqYwyeQwI4N=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipPoJZ7Q3oK4B84bYH2Y0k9CnsAcgH8L0S8ivflp=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipPoJZ7Q3oK4B84bYH2Y0k9CnsAcgH8L0S8ivflp=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipNbNEXUQ6UI8K_KFEGpF7YeZAV2yJuDiMfvveEM=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipNbNEXUQ6UI8K_KFEGpF7YeZAV2yJuDiMfvveEM=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipNIz0szMoVsDAFXnbqiKaqfNEccJUy4SqmBmPHW=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipNIz0szMoVsDAFXnbqiKaqfNEccJUy4SqmBmPHW=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipOtaufEfh4ykBqsFprXsx0dhCWFn4C88cjTBEtf=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipOtaufEfh4ykBqsFprXsx0dhCWFn4C88cjTBEtf=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipN31mmMZYwA4Hj1pZXtpteeToTylih8zTT4c3mi=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipN31mmMZYwA4Hj1pZXtpteeToTylih8zTT4c3mi=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipMB1LrzjycRfJcYrf47yuS6IX2LBTuic--8uc73=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipMB1LrzjycRfJcYrf47yuS6IX2LBTuic--8uc73=s10000"
+                }
+            ],
+            "overall_rating": 4.9,
+            "reviews": 201,
+            "ratings": [
+                {
+                    "stars": 5,
+                    "count": 190
+                },
+                {
+                    "stars": 4,
+                    "count": 4
+                },
+                {
+                    "stars": 3,
+                    "count": 2
+                },
+                {
+                    "stars": 2,
+                    "count": 0
+                },
+                {
+                    "stars": 1,
+                    "count": 5
+                }
+            ],
+            "location_rating": 5,
+            "reviews_breakdown": [
+                {
+                    "name": "Dịch Vụ",
+                    "description": "Service",
+                    "total_mentioned": 65,
+                    "positive": 62,
+                    "negative": 3,
+                    "neutral": 0
+                },
+                {
+                    "name": "Vị Trí",
+                    "description": "Location",
+                    "total_mentioned": 32,
+                    "positive": 30,
+                    "negative": 1,
+                    "neutral": 1
+                },
+                {
+                    "name": "Tình Trạng Vệ Sinh",
+                    "description": "Cleanliness",
+                    "total_mentioned": 41,
+                    "positive": 39,
+                    "negative": 1,
+                    "neutral": 1
+                },
+                {
+                    "name": "Cơ Sở Vật Chất",
+                    "description": "Property",
+                    "total_mentioned": 39,
+                    "positive": 36,
+                    "negative": 2,
+                    "neutral": 1
+                },
+                {
+                    "name": "Bầu Không Khí",
+                    "description": "Atmosphere",
+                    "total_mentioned": 10,
+                    "positive": 10,
+                    "negative": 0,
+                    "neutral": 0
+                },
+                {
+                    "name": "Nghỉ Ngơi",
+                    "description": "Sleep",
+                    "total_mentioned": 7,
+                    "positive": 4,
+                    "negative": 2,
+                    "neutral": 1
+                }
+            ]
+        },
+        {
+            "type": "hotel",
+            "name": "Khách Sạn Pilgrimage Village",
+            "link": "http://www.pilgrimagevillage.com/",
+            "property_token": "ChkIwvPp2uyv2vInGg0vZy8xMWMweGQ3N2YxEAE",
+            "serpapi_property_details_link": "https://serpapi.com/search.json?adults=1&check_in_date=2025-10-15&check_out_date=2025-10-17&children=0&currency=VND&engine=google_hotels&gl=vn&hl=vi&max_price=1500000&property_token=ChkIwvPp2uyv2vInGg0vZy8xMWMweGQ3N2YxEAE&q=Hotel+in+Hu%E1%BA%BF&sort_by=8",
+            "gps_coordinates": {
+                "latitude": 16.42506,
+                "longitude": 107.57951639999999
+            },
+            "check_in_time": "14:00",
+            "check_out_time": "11:00",
+            "rate_per_night": {
+                "lowest": "1.676.672 ₫",
+                "extracted_lowest": 1676672,
+                "before_taxes_fees": "1.470.214 ₫",
+                "extracted_before_taxes_fees": 1470214
+            },
+            "total_rate": {
+                "lowest": "3.353.344 ₫",
+                "extracted_lowest": 3353344,
+                "before_taxes_fees": "2.940.427 ₫",
+                "extracted_before_taxes_fees": 2940427
+            },
+            "nearby_places": [
+                {
+                    "name": "Lăng Khải Định",
+                    "transportations": [
+                        {
+                            "type": "Taxi",
+                            "duration": "6 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Ga Huế",
+                    "transportations": [
+                        {
+                            "type": "Taxi",
+                            "duration": "9 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Cảng hàng không quốc tế Đà Nẵng",
+                    "transportations": [
+                        {
+                            "type": "Taxi",
+                            "duration": "2 giờ 4 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Nhà Hàng Không Gian Xưa",
+                    "transportations": [
+                        {
+                            "type": "Walking",
+                            "duration": "8 phút"
+                        }
+                    ]
+                }
+            ],
+            "hotel_class": "Khách sạn 4 sao",
+            "extracted_hotel_class": 4,
+            "images": [
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipMVGEmn5cYJw-poIy-6vKEyzFTwSRiYhw6yo-h6=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipMVGEmn5cYJw-poIy-6vKEyzFTwSRiYhw6yo-h6=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipONM7XGEnyrVLjBp9eLKltjK0TfRfZT9JCEMcJp=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipONM7XGEnyrVLjBp9eLKltjK0TfRfZT9JCEMcJp=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipNnyflms-IVF8ebeowR4s8EziPxIKOo3LXbZz_0=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipNnyflms-IVF8ebeowR4s8EziPxIKOo3LXbZz_0=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipMB9CPpWCVzhxI0yY3ZmltkLSV8-G6NPLDzdryf=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipMB9CPpWCVzhxI0yY3ZmltkLSV8-G6NPLDzdryf=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipMx-_kw1xzsQrWGi-jtTVC7VsghD6RGhYjMroLX=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipMx-_kw1xzsQrWGi-jtTVC7VsghD6RGhYjMroLX=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipM8s9_LirV-mRIDA7L5zhNVi9wv7cjrZ5KlpNj3=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipM8s9_LirV-mRIDA7L5zhNVi9wv7cjrZ5KlpNj3=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipPvw_xgjSrYlv5_PIS3AaucQ2jRN25WB6LI6-Ji=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipPvw_xgjSrYlv5_PIS3AaucQ2jRN25WB6LI6-Ji=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipMDbjWCDbcivbNGrch-frRLw8AfNraJNUhaidZn=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipMDbjWCDbcivbNGrch-frRLw8AfNraJNUhaidZn=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipPZ27PXk_ZIugox0pFW_YRvmD2vB5K7YhCX58Vd=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipPZ27PXk_ZIugox0pFW_YRvmD2vB5K7YhCX58Vd=s10000"
+                }
+            ],
+            "overall_rating": 4.7,
+            "reviews": 2402,
+            "ratings": [
+                {
+                    "stars": 5,
+                    "count": 1894
+                },
+                {
+                    "stars": 4,
+                    "count": 369
+                },
+                {
+                    "stars": 3,
+                    "count": 82
+                },
+                {
+                    "stars": 2,
+                    "count": 24
+                },
+                {
+                    "stars": 1,
+                    "count": 33
+                }
+            ],
+            "location_rating": 3.8,
+            "reviews_breakdown": [
+                {
+                    "name": "Phòng Tập Thể Dục",
+                    "description": "Fitness",
+                    "total_mentioned": 293,
+                    "positive": 271,
+                    "negative": 6,
+                    "neutral": 16
+                },
+                {
+                    "name": "Chăm Sóc Sức Khỏe",
+                    "description": "Wellness",
+                    "total_mentioned": 167,
+                    "positive": 149,
+                    "negative": 11,
+                    "neutral": 7
+                },
+                {
+                    "name": "Spa",
+                    "description": "Spa",
+                    "total_mentioned": 151,
+                    "positive": 137,
+                    "negative": 9,
+                    "neutral": 5
+                },
+                {
+                    "name": "Bể Bơi",
+                    "description": "Pool",
+                    "total_mentioned": 203,
+                    "positive": 194,
+                    "negative": 4,
+                    "neutral": 5
+                },
+                {
+                    "name": "Món Ăn Sáng",
+                    "description": "Breakfast",
+                    "total_mentioned": 235,
+                    "positive": 210,
+                    "negative": 14,
+                    "neutral": 11
+                },
+                {
+                    "name": "Dịch Vụ",
+                    "description": "Service",
+                    "total_mentioned": 486,
+                    "positive": 457,
+                    "negative": 14,
+                    "neutral": 15
+                }
+            ],
+            "amenities": [
+                "Free breakfast",
+                "Free Wi-Fi",
+                "Free parking",
+                "Outdoor pool",
+                "Hot tub",
+                "Air conditioning",
+                "Fitness center",
+                "Spa",
+                "Bar",
+                "Restaurant",
+                "Room service",
+                "Airport shuttle",
+                "Full-service laundry",
+                "Kid-friendly"
+            ]
+        },
+        {
+            "type": "hotel",
+            "name": "Hue Sweethouse 2 Homestay",
+            "property_token": "ChkIxOXJr56nxodvGg0vZy8xMWZkNzVibF9zEAE",
+            "serpapi_property_details_link": "https://serpapi.com/search.json?adults=1&check_in_date=2025-10-15&check_out_date=2025-10-17&children=0&currency=VND&engine=google_hotels&gl=vn&hl=vi&max_price=1500000&property_token=ChkIxOXJr56nxodvGg0vZy8xMWZkNzVibF9zEAE&q=Hotel+in+Hu%E1%BA%BF&sort_by=8",
+            "gps_coordinates": {
+                "latitude": 16.4724063,
+                "longitude": 107.59726990000001
+            },
+            "check_in_time": "14:00",
+            "check_out_time": "12:00",
+            "rate_per_night": {
+                "lowest": "540.000 ₫",
+                "extracted_lowest": 540000,
+                "before_taxes_fees": "500.000 ₫",
+                "extracted_before_taxes_fees": 500000
+            },
+            "total_rate": {
+                "lowest": "1.080.000 ₫",
+                "extracted_lowest": 1080000,
+                "before_taxes_fees": "1.000.000 ₫",
+                "extracted_before_taxes_fees": 1000000
+            },
+            "nearby_places": [
+                {
+                    "name": "Đường đi bộ Huế",
+                    "transportations": [
+                        {
+                            "type": "Walking",
+                            "duration": "7 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Huế Văn phòng Xe Hạnh Cafe",
+                    "transportations": [
+                        {
+                            "type": "Walking",
+                            "duration": "7 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Cảng hàng không quốc tế Đà Nẵng",
+                    "transportations": [
+                        {
+                            "type": "Taxi",
+                            "duration": "2 giờ 7 phút"
+                        },
+                        {
+                            "type": "Public transport",
+                            "duration": "2 giờ 46 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Nhà hàng Bánh Gánh",
+                    "transportations": [
+                        {
+                            "type": "Walking",
+                            "duration": "4 phút"
+                        }
+                    ]
+                }
+            ],
+            "hotel_class": "Khách sạn 3 sao",
+            "extracted_hotel_class": 3,
+            "images": [
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipO-JS-2-jiRCg2Munv45bpFG4_4Wtu6rFHn8HXE=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipO-JS-2-jiRCg2Munv45bpFG4_4Wtu6rFHn8HXE=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipNIFX3UytB4h0JOLKrqBQTb1lIA2hjyGDqWvFjq=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipNIFX3UytB4h0JOLKrqBQTb1lIA2hjyGDqWvFjq=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nobDPFnLswbWdC7RMqkK6ueP8SkFRjgGshduhVz2gDra2GDcrzFI9VRI4YiIoQoRwGFithY3rUfK5u13_sKgkeGXq1J77nIPj_BXCwQQV3MtR3bHv3w-NWQKTA72V95pExwqtlZ=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/CIHM0ogKEICAgID16_vpCA=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipNZib3_K12DJ_yUSZO_aynA_QAAKSzI_AxoPGpg=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipNZib3_K12DJ_yUSZO_aynA_QAAKSzI_AxoPGpg=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipMpAUv9oGgpw1hODexVVGEiz-GiCmky-Df2fI60=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipMpAUv9oGgpw1hODexVVGEiz-GiCmky-Df2fI60=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipOqJKdNkE6bQPNXUGM6pY_Tkakyh7hybK3KPMDb=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipOqJKdNkE6bQPNXUGM6pY_Tkakyh7hybK3KPMDb=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipPO8YX-dzgzDOTUkAuOmCHSTWmBahlIcwYBnRK4=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipPO8YX-dzgzDOTUkAuOmCHSTWmBahlIcwYBnRK4=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipNtY9Mh2OJdnjvO-7eS-5T0ijF3LPQuY3cuqPwk=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipNtY9Mh2OJdnjvO-7eS-5T0ijF3LPQuY3cuqPwk=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipMw3bHk--onzkcC2XUeMTXVVeip6AFc5T9sggvV=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipMw3bHk--onzkcC2XUeMTXVVeip6AFc5T9sggvV=s10000"
+                }
+            ],
+            "overall_rating": 4.8,
+            "reviews": 294,
+            "ratings": [
+                {
+                    "stars": 5,
+                    "count": 257
+                },
+                {
+                    "stars": 4,
+                    "count": 23
+                },
+                {
+                    "stars": 3,
+                    "count": 6
+                },
+                {
+                    "stars": 2,
+                    "count": 1
+                },
+                {
+                    "stars": 1,
+                    "count": 7
+                }
+            ],
+            "location_rating": 4.7,
+            "reviews_breakdown": [
+                {
+                    "name": "Món Ăn Sáng",
+                    "description": "Breakfast",
+                    "total_mentioned": 64,
+                    "positive": 63,
+                    "negative": 1,
+                    "neutral": 0
+                },
+                {
+                    "name": "Vị Trí",
+                    "description": "Location",
+                    "total_mentioned": 81,
+                    "positive": 79,
+                    "negative": 0,
+                    "neutral": 2
+                },
+                {
+                    "name": "Thú Cưng",
+                    "description": "Pets",
+                    "total_mentioned": 11,
+                    "positive": 10,
+                    "negative": 0,
+                    "neutral": 1
+                },
+                {
+                    "name": "Nhà Hàng",
+                    "description": "Restaurant",
+                    "total_mentioned": 28,
+                    "positive": 28,
+                    "negative": 0,
+                    "neutral": 0
+                },
+                {
+                    "name": "Dịch Vụ",
+                    "description": "Service",
+                    "total_mentioned": 109,
+                    "positive": 104,
+                    "negative": 4,
+                    "neutral": 1
+                },
+                {
+                    "name": "Nghỉ Ngơi",
+                    "description": "Sleep",
+                    "total_mentioned": 29,
+                    "positive": 25,
+                    "negative": 1,
+                    "neutral": 3
+                }
+            ],
+            "amenities": [
+                "Free breakfast",
+                "Free Wi-Fi",
+                "Air conditioning",
+                "Airport shuttle",
+                "Full-service laundry",
+                "Kid-friendly"
+            ]
+        },
+        {
+            "type": "hotel",
+            "name": "Homestay 5 Sạch",
+            "property_token": "ChkI-KKX0YDJ6aVgGg0vZy8xMXdxOHkyand6EAE",
+            "serpapi_property_details_link": "https://serpapi.com/search.json?adults=1&check_in_date=2025-10-15&check_out_date=2025-10-17&children=0&currency=VND&engine=google_hotels&gl=vn&hl=vi&max_price=1500000&property_token=ChkI-KKX0YDJ6aVgGg0vZy8xMXdxOHkyand6EAE&q=Hotel+in+Hu%E1%BA%BF&sort_by=8",
+            "gps_coordinates": {
+                "latitude": 16.4715179,
+                "longitude": 107.5625003
+            },
+            "check_in_time": "14:00",
+            "rate_per_night": {
+                "lowest": "510.000 ₫",
+                "extracted_lowest": 510000,
+                "before_taxes_fees": "472.222 ₫",
+                "extracted_before_taxes_fees": 472222
+            },
+            "total_rate": {
+                "lowest": "1.020.000 ₫",
+                "extracted_lowest": 1020000,
+                "before_taxes_fees": "944.444 ₫",
+                "extracted_before_taxes_fees": 944444
+            },
+            "nearby_places": [
+                {
+                    "name": "Hoàng Thành Huế",
+                    "transportations": [
+                        {
+                            "type": "Taxi",
+                            "duration": "7 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Ga Huế",
+                    "transportations": [
+                        {
+                            "type": "Taxi",
+                            "duration": "6 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Cảng hàng không quốc tế Đà Nẵng",
+                    "transportations": [
+                        {
+                            "type": "Taxi",
+                            "duration": "2 giờ 14 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Nhà hàng Vườn Khế",
+                    "transportations": [
+                        {
+                            "type": "Taxi",
+                            "duration": "7 phút"
+                        }
+                    ]
+                }
+            ],
+            "images": [
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipPtTJpdTRHqHSuhKaRkRHQngNCU0nyMDdC74Ghj=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipPtTJpdTRHqHSuhKaRkRHQngNCU0nyMDdC74Ghj=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipMqyzYGHifXN3RpzlNCkljq4FOKuxLX8FLm1kSX=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipMqyzYGHifXN3RpzlNCkljq4FOKuxLX8FLm1kSX=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipOHJqm6ZjMD7wZR84cuQWqJ_pIclTpiauMO9QBo=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipOHJqm6ZjMD7wZR84cuQWqJ_pIclTpiauMO9QBo=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipPjdYJJbfZ8QeJSIgqVspIIOmsRF4XTqVF9_ysE=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipPjdYJJbfZ8QeJSIgqVspIIOmsRF4XTqVF9_ysE=s10000"
+                },
+                {
+                    "thumbnail": "https://lh4.googleusercontent.com/proxy/6WSMxHQf6kFCFk5YugChzV8jueSfnW43-Xt9hiBBxOTj1EpoJQDGRxzc3qbnlnmIyI0SIUdL3qZSk11yeTHmuqN0GHbg3smM7HCPXcXhRh7GNnl5yM_5ywi6KilFGNRMJX0yVPI426UoWkZjRJf_6iF4X7wqKw=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/30/2b/09/e6/nh-phong-gia-dinh-dong.jpg?w=1900&h=1400&s=1"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipNu7LwsZVCNrLNoh0BDZd95ZZeWPYW83B1gltS1=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipNu7LwsZVCNrLNoh0BDZd95ZZeWPYW83B1gltS1=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipP2pbVXZj2rk23Z_KIFnO5I5tNQMHp7eWDzeBbE=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipP2pbVXZj2rk23Z_KIFnO5I5tNQMHp7eWDzeBbE=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipMHe-Xzz2wkiWS78XH-0J2sQGohRkgMbmIpk4qI=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipMHe-Xzz2wkiWS78XH-0J2sQGohRkgMbmIpk4qI=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipPj_JbV9e_EIM6fM-RJg4W0wbJ0AZr6gSl99sJU=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipPj_JbV9e_EIM6fM-RJg4W0wbJ0AZr6gSl99sJU=s10000"
+                }
+            ],
+            "overall_rating": 5,
+            "reviews": 118,
+            "ratings": [
+                {
+                    "stars": 5,
+                    "count": 118
+                },
+                {
+                    "stars": 4,
+                    "count": 0
+                },
+                {
+                    "stars": 3,
+                    "count": 0
+                },
+                {
+                    "stars": 2,
+                    "count": 0
+                },
+                {
+                    "stars": 1,
+                    "count": 0
+                }
+            ],
+            "location_rating": 3.5,
+            "reviews_breakdown": [
+                {
+                    "name": "Phù Hợp Với Gia Đình",
+                    "description": "Family friendly",
+                    "total_mentioned": 13,
+                    "positive": 13,
+                    "negative": 0,
+                    "neutral": 0
+                },
+                {
+                    "name": "Phòng",
+                    "description": "Room amenities",
+                    "total_mentioned": 24,
+                    "positive": 23,
+                    "negative": 0,
+                    "neutral": 1
+                },
+                {
+                    "name": "Tình Trạng Vệ Sinh",
+                    "description": "Cleanliness",
+                    "total_mentioned": 42,
+                    "positive": 41,
+                    "negative": 0,
+                    "neutral": 1
+                },
+                {
+                    "name": "Dịch Vụ",
+                    "description": "Service",
+                    "total_mentioned": 43,
+                    "positive": 43,
+                    "negative": 0,
+                    "neutral": 0
+                },
+                {
+                    "name": "Cơ Sở Vật Chất",
+                    "description": "Property",
+                    "total_mentioned": 29,
+                    "positive": 28,
+                    "negative": 0,
+                    "neutral": 1
+                },
+                {
+                    "name": "Vị Trí",
+                    "description": "Location",
+                    "total_mentioned": 11,
+                    "positive": 10,
+                    "negative": 0,
+                    "neutral": 1
+                }
+            ]
+        },
+        {
+            "type": "hotel",
+            "name": "La Vela Hue Hotel",
+            "link": "http://lavelahuehotel.com/",
+            "property_token": "ChkIzvfpm_iu-7MTGg0vZy8xMXNienI2NGxmEAE",
+            "serpapi_property_details_link": "https://serpapi.com/search.json?adults=1&check_in_date=2025-10-15&check_out_date=2025-10-17&children=0&currency=VND&engine=google_hotels&gl=vn&hl=vi&max_price=1500000&property_token=ChkIzvfpm_iu-7MTGg0vZy8xMXNienI2NGxmEAE&q=Hotel+in+Hu%E1%BA%BF&sort_by=8",
+            "gps_coordinates": {
+                "latitude": 16.4483259,
+                "longitude": 107.61760989999999
+            },
+            "check_in_time": "14:00",
+            "check_out_time": "12:00",
+            "rate_per_night": {
+                "lowest": "1.056.559 ₫",
+                "extracted_lowest": 1056559,
+                "before_taxes_fees": "914.753 ₫",
+                "extracted_before_taxes_fees": 914753
+            },
+            "total_rate": {
+                "lowest": "2.113.118 ₫",
+                "extracted_lowest": 2113118,
+                "before_taxes_fees": "1.829.506 ₫",
+                "extracted_before_taxes_fees": 1829506
+            },
+            "nearby_places": [
+                {
+                    "name": "Cầu ngói Thanh Toàn",
+                    "transportations": [
+                        {
+                            "type": "Taxi",
+                            "duration": "7 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Cảng hàng không quốc tế Đà Nẵng",
+                    "transportations": [
+                        {
+                            "type": "Taxi",
+                            "duration": "1 giờ 58 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Nhà Hàng Cơm Niêu 1Hue",
+                    "transportations": [
+                        {
+                            "type": "Taxi",
+                            "duration": "7 phút"
+                        }
+                    ]
+                }
+            ],
+            "images": [
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipPIBWxpAd6lXPL_1B08hxwmWIqHmxlz6LbA561k=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipPIBWxpAd6lXPL_1B08hxwmWIqHmxlz6LbA561k=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrXG3Qh30xx7Z7WMlhQS0WAIo7s3CeBBszOAS-W43S7qL8jNPaB4Ejo54JqYD4HGtAJiOFhk46nXcGwewJuosOh3lV21xUNDiGTYmLM3Ca1DQpEnYFC-_k9zXiqf1FSR9w-40cXrg=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/CIHM0ogKEICAgIDxkcqG-wE=s10000"
+                },
+                {
+                    "thumbnail": "https://lh4.googleusercontent.com/proxy/E4IPEj6U0oaEYqp0-W5kfgiDaWbVpLDkNsTdlRQTJTuhmkmJkfvB763wm_Bk3N89cEmqaubN4IL6hiHjs1i3O-nDkvvzJXbq8Q5Dv1-LfAYpw-0s6MILVnjUZ-ongMrX4MjZXiLBnJmz6ISxl8U1bPtMKZ27Blo=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://images.trvl-media.com/lodging/88000000/87380000/87375900/87375895/c598ec26_z.jpg"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nokJkZtyL3YlLHWnGCD8AXGnxVWEpyHoOb_BjQ7Q9Th9uuXrcXK7_K9G32RCbK1D54O6ms6iSsp1CNw05bMDDCX0pkPGz0nUATnHHD6EAzjhnDXzsGQIsLSWw7ejjBNOO8hXjS-zg=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/CIHM0ogKEICAgICx8KS27gE=s10000"
+                },
+                {
+                    "thumbnail": "https://lh5.googleusercontent.com/proxy/BmI8kh11MDzJWEVJ_Efa8iwI1YF4pqQ1g92jWLo9vJ-UZbQ5RTFTURc7J-a7UyEmeHbFN1HutaGMTNUWKNQ3Jh1-k_HeAQxa913_rAxE6dyXuSRJPuCucoel_wV8DjNxLg5YsdpMtOHDerVtfC58EDkfUjeAAIE=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://images.trvl-media.com/lodging/88000000/87380000/87375900/87375895/4cecd87e_z.jpg"
+                },
+                {
+                    "thumbnail": "https://lh6.googleusercontent.com/proxy/HCyTsoca9fEkpWwIatWxUgHF0qcWBBE2pQ891diujxomKcuqu5CQb3lNDWg8190jjS9DaTT-hM9ogqaxOQUVt_KuzPlZZ5rog86GRRo-3zurs6wjLsZEgMHpYVEUanxP8l0RYNHYx7hQspBGdsJO9tRPkNEAXPA=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://images.trvl-media.com/lodging/88000000/87380000/87375900/87375895/a0bb0286_z.jpg"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/proxy/bzCn2HLls5qFSO0jwnsiDCweyjHBofmj1wbofSAolg46HpzYGHNgJ7u3BQMEYhpirL8TBcaabhnz-mtlgcsnCfx3fhfEiWUaD_XpTM90Lzcze-wlj67cHLp_bVWkmwPN7c51HyIEvU6U6VeW6wjTYd0C7xx_eNQ=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://cdn.worldota.net/t/1024x768/content/cf/6e/cf6e4f5e44427a79d7f04037dbee905f32d072c4.JPEG"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nr7tYm58Vf8XR7TX0SxauCwj3UAkLo9AKssH0EknbpYUnxhcVxNrJrCvF9bWnMXuYYYRGR7qfI4aoL1hDye-fuyjsQOjsfU-_76Abpu9d31S8R_YkQRyfh55GIkMnR3hY7T8GQx=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/CIHM0ogKEICAgIC99p3w-AE=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npLx2GeElx_Jh_r1k_gA8niA4RyPdF6ixI7Sl7zelPA2BQgJpQuJcXMvpNUjxxMYx8j2QdFvpDJ-Htb2TNjMqkn-55D9mDpPTwX_foP00L877hZZgtrTHD6x_W1WKY7JJ4tqrJp9sUfpsED=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/CIABIhDWJbfoc5-2w_Lmt-o4QWWR=s10000"
+                }
+            ],
+            "overall_rating": 4.7,
+            "reviews": 746,
+            "ratings": [
+                {
+                    "stars": 5,
+                    "count": 610
+                },
+                {
+                    "stars": 4,
+                    "count": 85
+                },
+                {
+                    "stars": 3,
+                    "count": 18
+                },
+                {
+                    "stars": 2,
+                    "count": 12
+                },
+                {
+                    "stars": 1,
+                    "count": 21
+                }
+            ],
+            "location_rating": 2.6,
+            "reviews_breakdown": [
+                {
+                    "name": "Ăn Tối",
+                    "description": "Food and Beverage",
+                    "total_mentioned": 69,
+                    "positive": 63,
+                    "negative": 3,
+                    "neutral": 3
+                },
+                {
+                    "name": "Phòng Tập Thể Dục",
+                    "description": "Fitness",
+                    "total_mentioned": 79,
+                    "positive": 64,
+                    "negative": 4,
+                    "neutral": 11
+                },
+                {
+                    "name": "Món Ăn Sáng",
+                    "description": "Breakfast",
+                    "total_mentioned": 59,
+                    "positive": 49,
+                    "negative": 6,
+                    "neutral": 4
+                },
+                {
+                    "name": "Dịch Vụ",
+                    "description": "Service",
+                    "total_mentioned": 203,
+                    "positive": 186,
+                    "negative": 9,
+                    "neutral": 8
+                },
+                {
+                    "name": "Bể Bơi",
+                    "description": "Pool",
+                    "total_mentioned": 65,
+                    "positive": 53,
+                    "negative": 4,
+                    "neutral": 8
+                },
+                {
+                    "name": "Vị Trí",
+                    "description": "Location",
+                    "total_mentioned": 64,
+                    "positive": 42,
+                    "negative": 9,
+                    "neutral": 13
+                }
+            ],
+            "amenities": [
+                "Free breakfast",
+                "Free Wi-Fi",
+                "Free parking",
+                "Outdoor pool",
+                "Restaurant",
+                "Room service",
+                "Full-service laundry"
+            ]
+        },
+        {
+            "type": "hotel",
+            "name": "Hue Happy Homestay",
+            "description": "Nhà nghỉ ấm cúng có phòng ở đơn giản, bữa sáng, Wi-Fi miễn phí và xe đưa đón trong khu vực.",
+            "link": "http://huehappyhomestay.weebly.com/",
+            "property_token": "ChkIk9Hgt933iMEuGg0vZy8xMWI2Z2poeDRsEAE",
+            "serpapi_property_details_link": "https://serpapi.com/search.json?adults=1&check_in_date=2025-10-15&check_out_date=2025-10-17&children=0&currency=VND&engine=google_hotels&gl=vn&hl=vi&max_price=1500000&property_token=ChkIk9Hgt933iMEuGg0vZy8xMWI2Z2poeDRsEAE&q=Hotel+in+Hu%E1%BA%BF&sort_by=8",
+            "gps_coordinates": {
+                "latitude": 16.4700977,
+                "longitude": 107.5965274
+            },
+            "check_out_time": "11:00",
+            "rate_per_night": {
+                "lowest": "100.000 ₫",
+                "extracted_lowest": 100000,
+                "before_taxes_fees": "92.593 ₫",
+                "extracted_before_taxes_fees": 92593
+            },
+            "total_rate": {
+                "lowest": "200.000 ₫",
+                "extracted_lowest": 200000,
+                "before_taxes_fees": "185.185 ₫",
+                "extracted_before_taxes_fees": 185185
+            },
+            "nearby_places": [
+                {
+                    "name": "Đường đi bộ Huế",
+                    "transportations": [
+                        {
+                            "type": "Walking",
+                            "duration": "4 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Huế Văn phòng Xe Hạnh Cafe",
+                    "transportations": [
+                        {
+                            "type": "Walking",
+                            "duration": "3 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Cảng hàng không quốc tế Đà Nẵng",
+                    "transportations": [
+                        {
+                            "type": "Taxi",
+                            "duration": "2 giờ 8 phút"
+                        },
+                        {
+                            "type": "Public transport",
+                            "duration": "2 giờ 42 phút"
+                        }
+                    ]
+                },
+                {
+                    "name": "Maison Trang",
+                    "transportations": [
+                        {
+                            "type": "Walking",
+                            "duration": "1 phút"
+                        }
+                    ]
+                }
+            ],
+            "hotel_class": "Khách sạn 1 sao",
+            "extracted_hotel_class": 1,
+            "images": [
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipNUQq-2jatCqrEQx4GY4mTaUVoXfX5_LGeS3XCE=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/AF1QipNUQq-2jatCqrEQx4GY4mTaUVoXfX5_LGeS3XCE=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npSjAzlmo2d_ZaHIBFMX_zFxsbmhHRqdoZGQBrQ5ElYIVRa7E7wTNp5z8ZnXxg1hjNHKYzaYBiWFym_BZi6U-HTNlkdUq30srAwZ80q0QHMQ-A-UGkk8enD_w5ZaMLHT-cKPiRyavzGOgto=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/CIABIhDtMS5HzQX6h9eMqTn_Klxe=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npHlLaHssknjqp7blIbTxNmF3Tsy23uZclhGO5Nj_hUmbldQwl-h-xbIU7osQpoh6TEq9-kel_sFNgOyv5gounaGdNKi5MiyjcuPZlilJ1es0ALhCUwQi7XkpOZhC9E2r8sSl6y=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/CIHM0ogKEICAgICDy6CXDw=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npRsDXLjR2tVuT7EpEoawQGXRaINK2gzzVLsVyYzqoqhpj95-xB7t4ifwlsjPnWvQxdORTP02_Xwrfar6ykX06raTsrKK6PXlCb6mUIlnOvz31frP-viN4uemYS_oHkplvckt0x=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/CIHM0ogKEICAgICrruGQGQ=s10000"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4np15iVpBhuTchD5MH502R64gjjWp9tLfYE2aDozge6VYPugZIOl5nRnGolh1BwyPZ40RJPb4prsTm53LrS9Kv8jcs1dC0SMEldQ9SoS75G8mhRtdyZctKvC_xV6lnqt-vpbyacu=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://lh5.googleusercontent.com/p/CIHM0ogKEICAgICMrI7NFQ=s10000"
+                },
+                {
+                    "thumbnail": "https://lh4.googleusercontent.com/proxy/ve7O7zh27LKcgdA-PfrB2JOh-cYeihRxija7dBSYiKf1dBcyastH_MXtgx2uhag5bRFd8cOpbUR0fvRyjH46Fc3ISbOh3gQVavbkJBXIG4tuY0Y3UZW20V9OOHo5oGUj7khWs1KbC4ozHGkVMCQy-zzLmOm1i6Y=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/69/e3/46/hue-happy-s-memories.jpg?w=1600&h=900&s=1"
+                },
+                {
+                    "thumbnail": "https://lh4.googleusercontent.com/proxy/EmrZFhaatuoP-764pPJAUPtcYgo6wAzHInhv5AdLty5n214z8TPmv5FPhV0bgFCzQ8J5B_hLT3cuV2b2ubVJcM3p7X8eLi5lQzdwNTyBfDzJb0_CNz3ovyXe8pcv7UCMZptIUc3qa5poK_qaKrHAKb_rW6GVIg=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/07/0a/d3/89/dorm-room-at-hue-happy.jpg?w=1000&h=700&s=1"
+                },
+                {
+                    "thumbnail": "https://lh3.googleusercontent.com/proxy/DgZ5Gbs-_j7vnqz8u5vkkx69UCTd-3g95VtZONSqA9D_z9_lroCbB0OaYGjZdz22ACxwxUehP2d_YQKc-K0sP-CvRRUp7Qg0fpI5V6ol18Nm0-CMVDEN055epK9Y9VGvRJctae6HFAaL-sE9lmz0gPNruAzv6eU=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/69/e3/21/hue-happy-s-memories.jpg?w=1600&h=900&s=1"
+                },
+                {
+                    "thumbnail": "https://lh6.googleusercontent.com/proxy/aONUtJduzgANpA0d6sUQycse-H2lYvqny9AVZ0UEDv7DO0UzPftJkgUYieMvhYvyNVMEDsDx_i2h5Wa-6Aw4SnviQp6-wqhrrq1yozgQ7G1upNmshiw_KrJDp6_7Oivoij3VQkkyFFjw8TOVUYxEignmQoNUig=s287-w287-h192-n-k-no-v1",
+                    "original_image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/69/e3/62/hue-happy-s-memories.jpg?w=1600&h=900&s=1"
+                }
+            ],
+            "overall_rating": 4.8,
+            "reviews": 266,
+            "ratings": [
+                {
+                    "stars": 5,
+                    "count": 234
+                },
+                {
+                    "stars": 4,
+                    "count": 19
+                },
+                {
+                    "stars": 3,
+                    "count": 9
+                },
+                {
+                    "stars": 2,
+                    "count": 2
+                },
+                {
+                    "stars": 1,
+                    "count": 2
+                }
+            ],
+            "location_rating": 4.9,
+            "reviews_breakdown": [
+                {
+                    "name": "Món Ăn Sáng",
+                    "description": "Breakfast",
+                    "total_mentioned": 57,
+                    "positive": 55,
+                    "negative": 1,
+                    "neutral": 1
+                },
+                {
+                    "name": "Phù Hợp Với Gia Đình",
+                    "description": "Family friendly",
+                    "total_mentioned": 33,
+                    "positive": 33,
+                    "negative": 0,
+                    "neutral": 0
+                },
+                {
+                    "name": "Quầy Bar",
+                    "description": "Bar or lounge",
+                    "total_mentioned": 26,
+                    "positive": 25,
+                    "negative": 0,
+                    "neutral": 1
+                },
+                {
+                    "name": "Phương Tiện Công Cộng",
+                    "description": "Public transit",
+                    "total_mentioned": 17,
+                    "positive": 13,
+                    "negative": 2,
+                    "neutral": 2
+                },
+                {
+                    "name": "Nhà Hàng",
+                    "description": "Restaurant",
+                    "total_mentioned": 24,
+                    "positive": 23,
+                    "negative": 0,
+                    "neutral": 1
+                },
+                {
+                    "name": "Dịch Vụ",
+                    "description": "Service",
+                    "total_mentioned": 94,
+                    "positive": 91,
+                    "negative": 2,
+                    "neutral": 1
+                }
+            ],
+            "amenities": [
+                "Free breakfast",
+                "Free Wi-Fi",
+                "Air conditioning",
+                "Kitchen",
+                "Airport shuttle",
+                "Full-service laundry",
+                "Kid-friendly"
+            ]
+        }
+    ],
+    "attractions": [
+        {
+            "date": "2025-10-14",
+            "schedule": [
+                {
+                    "time": "08:00-11:00",
+                    "activity": "Tham quan Đại Nội Huế, chụp ảnh, đạp xe quanh các di tích",
+                    "location": "Đại Nội Huế",
+                    "reason": "Thời tiết mát mẻ, hầu như không mưa, thuận lợi cho hoạt động ngoài trời như photography, cycling. Đại Nội Huế là trung tâm di tích lịch sử nổi bật nhất của thành phố, phù hợp cho khám phá buổi sáng[1][5][6]."
+                },
+                {
+                    "time": "11:00-14:00",
+                    "activity": "Ăn trưa đặc sản, nghỉ ngơi tại nhà hàng/khách sạn",
+                    "location": "Nhà hàng Huế hoặc khách sạn",
+                    "reason": "Giờ nghỉ trưa; trời ấm, có thể có mưa nhẹ nên ưu tiên nghỉ ngơi trong nhà. Đặc sản như cơm hến, bún bò Huế rất thích hợp[2][9]."
+                },
+                {
+                    "time": "14:00-17:00",
+                    "activity": "Tham quan Chùa Thiên Mụ, Lăng Minh Mạng",
+                    "location": "Chùa Thiên Mụ, Lăng Minh Mạng",
+                    "reason": "Chiều trời dễ chịu, mưa nhẹ không ảnh hưởng lớn. Đây là các công trình lịch sử và tôn giáo tiêu biểu, thuận tiện di chuyển từ nội đô[1][5][6]."
+                },
+                {
+                    "time": "17:00-20:00",
+                    "activity": "Ăn tối, dạo cầu Trường Tiền, chụp ảnh hoàng hôn",
+                    "location": "Cầu Trường Tiền",
+                    "reason": "Chiều tối trời dịu mát, rất thích hợp ngắm cảnh thành phố, thưởng thức món ăn ven sông và chụp ảnh[8][1]."
+                },
+                {
+                    "time": "20:00-22:00",
+                    "activity": "Khám phá phố đi bộ, thưởng thức chè Huế",
+                    "location": "Phố đi bộ Huế",
+                    "reason": "Buổi tối mát, không mưa. Phố đi bộ và chè Huế là trải nghiệm văn hóa, ẩm thực đặc trưng về đêm[8][9]."
+                }
+            ]
+        },
+        {
+            "date": "2025-10-15",
+            "schedule": [
+                {
+                    "time": "08:00-11:00",
+                    "activity": "Đạp xe, chụp ảnh tại biển Lăng Cô",
+                    "location": "Biển Lăng Cô",
+                    "reason": "Buổi sáng đẹp trời, không mưa, lý tưởng cho vận động ngoài trời và chụp ảnh ở cảnh biển nổi tiếng của xứ Huế[5]."
+                },
+                {
+                    "time": "11:00-14:00",
+                    "activity": "Ăn trưa hải sản, nghỉ ngơi gần biển",
+                    "location": "Nhà hàng biển Lăng Cô",
+                    "reason": "Giờ trưa nghỉ ngơi, trong nhà; hải sản Lăng Cô nổi tiếng; có khả năng mưa nhẹ nên nên chọn nhà hàng kín[5][6]."
+                },
+                {
+                    "time": "14:00-17:00",
+                    "activity": "Tham quan bảo tàng/các điểm trong nhà: Bảo tàng Cổ vật Cung đình Huế",
+                    "location": "Bảo tàng Cổ vật Cung đình Huế",
+                    "reason": "Chiều trời mưa vừa, không thuận lợi cho hoạt động ngoài trời; tham quan bảo tàng phù hợp khi thời tiết không ổn định[1][6]."
+                },
+                {
+                    "time": "17:00-20:00",
+                    "activity": "Ăn tối đặc sản Huế tại nhà hàng, nghỉ ngơi",
+                    "location": "Nhà hàng Huế",
+                    "reason": "Trời có mưa, nên ưu tiên ăn tối tại nhà hàng và nghỉ ngơi[2][5]."
+                },
+                {
+                    "time": "20:00-22:00",
+                    "activity": "Đi dạo phố đêm, thưởng thức chè, xem nhã nhạc cung đình Huế (nếu có)",
+                    "location": "Phố đi bộ, Nhà hát hoặc Nhà hàng",
+                    "reason": "Buổi tối thời tiết tạnh, thuận lợi dạo chơi, thưởng thức các hoạt động văn hóa nghệ thuật về đêm, đặc biệt là nhã nhạc cung đình Huế đặc trưng[9][8]."
+                }
+            ]
+        },
+        {
+            "date": "2025-10-16",
+            "schedule": [
+                {
+                    "time": "08:00-11:00",
+                    "activity": "Tham quan chợ Đông Ba, mua đặc sản, tham quan trong nhà",
+                    "location": "Chợ Đông Ba",
+                    "reason": "Trời mưa khá lớn, ưu tiên hoạt động trong nhà. Chợ Đông Ba là chợ lớn nhất Huế với nhiều đặc sản và quà lưu niệm[2][8]."
+                },
+                {
+                    "time": "11:00-14:00",
+                    "activity": "Ăn trưa, nghỉ ngơi, thưởng thức đặc sản quán địa phương",
+                    "location": "Quán ăn gần chợ Đông Ba",
+                    "reason": "Trưa có thể ra ngoài, mưa giảm; tiếp tục khám phá ẩm thực tại các quán ăn gần chợ[8][9]."
+                },
+                {
+                    "time": "14:00-17:00",
+                    "activity": "Tham quan Đồi Vọng Cảnh, chụp ảnh thiên nhiên",
+                    "location": "Đồi Vọng Cảnh",
+                    "reason": "Chiều trời ổn định, mưa nhẹ; đồi Vọng Cảnh rất đẹp cho hoạt động nghỉ dưỡng, photography và ngắm cảnh sông Hương[1][5]."
+                },
+                {
+                    "time": "17:00-20:00",
+                    "activity": "Ăn tối, tự do dạo sông Hương",
+                    "location": "Ven sông Hương",
+                    "reason": "Buổi tối mưa nhỏ, khí hậu dễ chịu, thích hợp dạo sông, trải nghiệm ẩm thực ven sông[8]."
+                },
+                {
+                    "time": "20:00-22:00",
+                    "activity": "Dạo phố đêm, nghỉ ngơi hoặc thưởng thức ẩm thực Huế lần cuối",
+                    "location": "Phố đi bộ, quán chè/quán ăn",
+                    "reason": "Buổi tối mưa nhẹ, có thể tiếp tục khám phá phố đi bộ, quán chè; trải nghiệm ẩm thực Huế trước khi kết thúc chuyến đi[8][9]."
+                }
+            ]
+        }
+    ],
+    "weather": [],
+    "suggestedTitle": "Trip to Huế",
+    "estimatedTotal": 5000000
+}

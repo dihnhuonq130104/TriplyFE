@@ -34,7 +34,6 @@ public class FavoriteActivity extends AppCompatActivity {
         MaterialTextView statusText = findViewById(R.id.favorite_status);
         RecyclerView recyclerFavorites = findViewById(R.id.recycler_favorites);
         
-        // Remove "has_favorites" key from count since it's just a flag
         int favoriteCount = allFavorites.size();
         if (allFavorites.containsKey("has_favorites")) {
             favoriteCount--;
@@ -43,32 +42,26 @@ public class FavoriteActivity extends AppCompatActivity {
         if (favoriteCount > 0) {
             statusText.setText("Danh sách địa điểm yêu thích của bạn:");
             
-            // Show the favorites list
             List<String> favoritesList = new ArrayList<>();
             for (Map.Entry<String, ?> entry : allFavorites.entrySet()) {
                 String key = entry.getKey();
-                // Skip the flag key
                 if (!"has_favorites".equals(key)) {
                     favoritesList.add(key);
                 }
             }
             
-            // For now, just display text representation of favorites
             StringBuilder favoritesText = new StringBuilder();
             for (String favorite : favoritesList) {
                 favoritesText.append("❤️ ").append(favorite).append("\n\n");
             }
             
-            // Create a simple text display
             MaterialTextView favoritesDisplay = new MaterialTextView(this);
             favoritesDisplay.setText(favoritesText.toString());
             favoritesDisplay.setTextSize(16);
             favoritesDisplay.setPadding(20, 20, 20, 20);
             
-            // Hide the default empty message and show favorites
             recyclerFavorites.setVisibility(View.GONE);
             
-            // Add the favorites display to the layout
             LinearLayout contentLayout = (LinearLayout) statusText.getParent();
             contentLayout.addView(favoritesDisplay, contentLayout.indexOfChild(statusText) + 1);
             
@@ -84,34 +77,27 @@ public class FavoriteActivity extends AppCompatActivity {
         ImageView navFavorite = findViewById(R.id.nav_favorite);
         ImageView navProfile = findViewById(R.id.nav_profile);
         
-        // Set favorite icon as selected (black) since we're on favorite activity
         navHome.setSelected(false);
         navPlan.setSelected(false);
         navFavorite.setSelected(true);
         navProfile.setSelected(false);
         
-        // Setup click listeners for navigation
         navHome.setOnClickListener(v -> {
             Intent intent = new Intent(FavoriteActivity.this, HomeActivity.class);
             startActivity(intent);
-            // Không gọi finish() để có thể quay lại FavoriteActivity
         });
         
         navPlan.setOnClickListener(v -> {
-            // Luôn mở ScheduleActivity để nhập thông tin chuyến đi mới (nhất quán với HomeActivity)
             Intent intent = new Intent(FavoriteActivity.this, ScheduleActivity.class);
             startActivity(intent);
-            // Không gọi finish() để có thể quay lại FavoriteActivity
         });
         
         navFavorite.setOnClickListener(v -> {
-            // Current screen - do nothing
         });
         
         navProfile.setOnClickListener(v -> {
             Intent intent = new Intent(FavoriteActivity.this, ProfileActivity.class);
             startActivity(intent);
-            // Không gọi finish() để có thể quay lại FavoriteActivity
         });
     }
 }

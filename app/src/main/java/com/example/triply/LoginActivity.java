@@ -57,7 +57,6 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(intent);
         });
         loginTab.setOnClickListener(v -> {
-            // current screen
         });
 
         googleBtn.setOnClickListener(v -> {
@@ -117,7 +116,6 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onSuccess(com.example.triply.data.remote.model.AuthResponse response) {
                 Toast.makeText(LoginActivity.this, getString(R.string.toast_login_success), Toast.LENGTH_SHORT).show();
-                // Không delay để cải thiện trải nghiệm người dùng
                 Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                 startActivity(intent);
                 finish();
@@ -143,7 +141,6 @@ public class LoginActivity extends AppCompatActivity {
                         @Override
                         public void onSuccess(com.example.triply.data.remote.model.AuthResponse response) {
                             Toast.makeText(LoginActivity.this, getString(R.string.toast_login_success), Toast.LENGTH_SHORT).show();
-                            // Không delay để cải thiện trải nghiệm người dùng
                             startActivity(new Intent(LoginActivity.this, HomeActivity.class));
                             finish();
                         }

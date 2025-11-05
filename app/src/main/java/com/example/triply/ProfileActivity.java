@@ -30,7 +30,6 @@ public class ProfileActivity extends AppCompatActivity {
         });
         
         menuSavedPlans.setOnClickListener(v -> {
-            // Mở SavedPlansActivity để hiển thị danh sách kế hoạch đã lưu
             Intent intent = new Intent(ProfileActivity.this, SavedPlansActivity.class);
             startActivity(intent);
         });
@@ -40,7 +39,6 @@ public class ProfileActivity extends AppCompatActivity {
         });
         
         menuLogout.setOnClickListener(v -> {
-            // Navigate to LoginActivity
             Intent intent = new Intent(ProfileActivity.this, LoginActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
@@ -54,32 +52,26 @@ public class ProfileActivity extends AppCompatActivity {
         ImageView navFavorite = findViewById(R.id.nav_favorite);
         ImageView navProfile = findViewById(R.id.nav_profile);
         
-        // Set profile icon as selected (black) since we're on profile activity
         navHome.setSelected(false);
         navPlan.setSelected(false);
         navFavorite.setSelected(false);
         navProfile.setSelected(true);
         
-        // Setup click listeners for navigation
         navHome.setOnClickListener(v -> {
-            // Quay về HomeActivity mà không tạo mới
-            finish(); // Chỉ finish ProfileActivity để quay về HomeActivity
+            finish();
         });
         
         navPlan.setOnClickListener(v -> {
             Intent intent = new Intent(ProfileActivity.this, ScheduleActivity.class);
             startActivity(intent);
-            // Không gọi finish() để có thể quay lại ProfileActivity
         });
         
         navFavorite.setOnClickListener(v -> {
             Intent intent = new Intent(ProfileActivity.this, FavoriteActivity.class);
             startActivity(intent);
-            // Không gọi finish() để có thể quay lại ProfileActivity
         });
         
         navProfile.setOnClickListener(v -> {
-            // Current screen - do nothing
         });
     }
 }

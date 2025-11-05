@@ -17,7 +17,6 @@
             android:background="@color/blue"
             android:padding="16dp">
 
-            <!-- Back Button -->
             <ImageView
                 android:id="@+id/btn_back"
                 android:layout_width="32dp"
@@ -37,12 +36,11 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="40dp"
                 android:fontFamily="@font/lobster"
-                android:text="Kế Hoạch Chi Tiết"
+                android:text="Detailed Plan"
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 android:textStyle="bold"/>
 
-            <!-- Trip Summary -->
             <LinearLayout
                 android:id="@+id/trip_summary"
                 android:layout_width="match_parent"
@@ -56,7 +54,7 @@
                     android:id="@+id/tv_destination"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Hà Nội"
+                    android:text="Điểm đến"
                     android:textColor="@color/white"
                     android:textSize="16sp"
                     android:layout_marginEnd="16dp"/>
@@ -73,7 +71,7 @@
                     android:id="@+id/tv_duration"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="3 ngày 2 đêm"
+                    android:text="Thời gian"
                     android:textColor="@color/white"
                     android:textSize="16sp"
                     android:layout_marginEnd="16dp"/>
@@ -90,12 +88,10 @@
                     android:id="@+id/tv_people_count"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="2 người"
+                    android:text="Số người"
                     android:textColor="@color/white"
                     android:textSize="16sp"/>
-
             </LinearLayout>
-
         </RelativeLayout>
 
         <!-- Content Container -->
@@ -126,7 +122,6 @@
                         android:orientation="horizontal"
                         android:gravity="center_vertical"
                         android:layout_marginBottom="12dp">
-
                         <TextView
                             android:layout_width="32dp"
                             android:layout_height="32dp"
@@ -134,7 +129,6 @@
                             android:textSize="20sp"
                             android:gravity="center"
                             android:layout_marginEnd="12dp"/>
-
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -143,18 +137,17 @@
                             android:textSize="18sp"
                             android:textStyle="bold"
                             android:textColor="@color/black"/>
-
                     </LinearLayout>
 
-                    <!-- Departure Flight -->
+                    <!-- Card Chuyến Đi -->
                     <LinearLayout
+                        android:id="@+id/ll_departure_flight_card"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         android:background="@drawable/bg_rounded_white"
                         android:padding="12dp"
                         android:layout_marginBottom="8dp">
-
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -163,196 +156,174 @@
                             android:textStyle="bold"
                             android:textColor="@color/blue"
                             android:layout_marginBottom="8dp"/>
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
                             android:gravity="center_vertical">
-
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:orientation="vertical">
-
                                 <TextView
+                                    android:id="@+id/tv_flight_dep_airport"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="TP. Hồ Chí Minh (SGN)"
+                                    android:text="Sân bay đi"
                                     android:textSize="14sp"
                                     android:textStyle="bold"/>
-
                                 <TextView
+                                    android:id="@+id/tv_flight_dep_time"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="06:00 - 25/12/2024"
+                                    android:text="Giờ đi"
                                     android:textSize="12sp"
                                     android:textColor="@color/gray"/>
-
                             </LinearLayout>
-
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="→"
                                 android:textSize="20sp"
-                                android:layout_margin="16dp"/>
-
+                                android:layout_marginHorizontal="16dp"/>
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:orientation="vertical"
                                 android:gravity="end">
-
                                 <TextView
+                                    android:id="@+id/tv_flight_arr_airport"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Hà Nội (HAN)"
+                                    android:text="Sân bay đến"
                                     android:textSize="14sp"
                                     android:textStyle="bold"/>
-
                                 <TextView
+                                    android:id="@+id/tv_flight_arr_time"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="08:15 - 25/12/2024"
+                                    android:text="Giờ đến"
                                     android:textSize="12sp"
                                     android:textColor="@color/gray"/>
-
                             </LinearLayout>
-
                         </LinearLayout>
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
                             android:layout_marginTop="8dp">
-
                             <TextView
+                                android:id="@+id/tv_flight_airline_info"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="VietJet Air - VJ123"
+                                android:text="Hãng bay - Số hiệu"
                                 android:textSize="14sp"
                                 android:textStyle="bold"/>
-
                             <TextView
+                                android:id="@+id/tv_flight_duration"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Thời gian bay: 2h 15m"
+                                android:text="Thời gian bay"
                                 android:textSize="12sp"
                                 android:textColor="@color/gray"/>
-
                         </LinearLayout>
-
                     </LinearLayout>
 
-                    <!-- Return Flight -->
+                    <!-- Card Chuyến Về -->
                     <LinearLayout
+                        android:id="@+id/ll_return_flight_card"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         android:background="@drawable/bg_rounded_white"
                         android:padding="12dp">
-
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="CHUYẾN VỀ"
                             android:textSize="12sp"
                             android:textStyle="bold"
-                            android:textColor="@color/blue"
+                            android:textColor="@color/green"
                             android:layout_marginBottom="8dp"/>
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
                             android:gravity="center_vertical">
-
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:orientation="vertical">
-
                                 <TextView
+                                    android:id="@+id/tv_flight_return_dep_airport"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Hà Nội (HAN)"
+                                    android:text="Sân bay đi"
                                     android:textSize="14sp"
                                     android:textStyle="bold"/>
-
                                 <TextView
+                                    android:id="@+id/tv_flight_return_dep_time"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="18:30 - 27/12/2024"
+                                    android:text="Giờ đi"
                                     android:textSize="12sp"
                                     android:textColor="@color/gray"/>
-
                             </LinearLayout>
-
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="→"
                                 android:textSize="20sp"
-                                android:layout_margin="16dp"/>
-
+                                android:layout_marginHorizontal="16dp"/>
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:orientation="vertical"
                                 android:gravity="end">
-
                                 <TextView
+                                    android:id="@+id/tv_flight_return_arr_airport"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="TP. Hồ Chí Minh (SGN)"
+                                    android:text="Sân bay đến"
                                     android:textSize="14sp"
                                     android:textStyle="bold"/>
-
                                 <TextView
+                                    android:id="@+id/tv_flight_return_arr_time"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="20:45 - 27/12/2024"
+                                    android:text="Giờ đến"
                                     android:textSize="12sp"
                                     android:textColor="@color/gray"/>
-
                             </LinearLayout>
-
                         </LinearLayout>
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
                             android:layout_marginTop="8dp">
-
                             <TextView
+                                android:id="@+id/tv_flight_return_airline_info"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="VietJet Air - VJ456"
+                                android:text="Hãng bay - Số hiệu"
                                 android:textSize="14sp"
                                 android:textStyle="bold"/>
-
                             <TextView
+                                android:id="@+id/tv_flight_return_duration"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Thời gian bay: 2h 15m"
+                                android:text="Thời gian bay"
                                 android:textSize="12sp"
                                 android:textColor="@color/gray"/>
-
                         </LinearLayout>
-
                     </LinearLayout>
-
                 </LinearLayout>
-
             </com.google.android.material.card.MaterialCardView>
 
             <!-- Hotel Details Card -->
@@ -363,20 +334,17 @@
                 app:cardCornerRadius="12dp"
                 app:cardElevation="4dp"
                 app:cardBackgroundColor="#FFF3E0">
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:padding="16dp">
-
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:gravity="center_vertical"
                         android:layout_marginBottom="12dp">
-
                         <TextView
                             android:layout_width="32dp"
                             android:layout_height="32dp"
@@ -384,7 +352,6 @@
                             android:textSize="20sp"
                             android:gravity="center"
                             android:layout_marginEnd="12dp"/>
-
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -393,123 +360,76 @@
                             android:textSize="18sp"
                             android:textStyle="bold"
                             android:textColor="@color/black"/>
-
                     </LinearLayout>
 
-                    <!-- Hotel Info -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         android:background="@drawable/bg_rounded_white"
                         android:padding="12dp">
-
                         <TextView
+                            android:id="@+id/tv_hotel_name"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Pullman Hanoi Hotel"
+                            android:text="Tên khách sạn"
                             android:textSize="18sp"
                             android:textStyle="bold"
-                            android:layout_marginBottom="4dp"/>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="40 Cát Linh, Đống Đa, Hà Nội"
-                            android:textSize="14sp"
-                            android:textColor="@color/gray"
                             android:layout_marginBottom="8dp"/>
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
                             android:layout_marginBottom="8dp">
-
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="🛏️ Loại phòng: Deluxe Room"
+                                android:text="Hạng phòng: Deluxe"
                                 android:textSize="14sp"/>
-
                             <TextView
+                                android:id="@+id/tv_hotel_stars"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="⭐ 4 sao"
+                                android:text="⭐ 0 sao"
                                 android:textSize="14sp"/>
-
                         </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:layout_marginBottom="8dp">
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="📅 Check-in: 25/12/2024 - 14:00"
-                                android:textSize="14sp"/>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="📅 Check-out: 27/12/2024 - 12:00"
-                                android:textSize="14sp"/>
-
-                        </LinearLayout>
-
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:background="@color/gray"
-                            android:layout_margin="8dp"/>
-
                         <TextView
+                            android:id="@+id/tv_hotel_checkin"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="✅ Wifi miễn phí • ✅ Bữa sáng • ✅ Hồ bơi • ✅ Phòng gym"
-                            android:textSize="12sp"
-                            android:textColor="@color/gray"/>
-
+                            android:text="📅 Check-in:"
+                            android:textSize="14sp"
+                            android:layout_marginBottom="8dp"/>
+                        <TextView
+                            android:id="@+id/tv_hotel_checkout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="📅 Check-out:"
+                            android:textSize="14sp"/>
                     </LinearLayout>
-
                 </LinearLayout>
-
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Day by Day Schedule -->
+            <!-- Schedule Card -->
             <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_schedule"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="4dp">
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:padding="16dp">
-
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:gravity="center_vertical"
                         android:layout_marginBottom="16dp">
-
                         <TextView
                             android:layout_width="32dp"
                             android:layout_height="32dp"
@@ -517,230 +437,91 @@
                             android:textSize="20sp"
                             android:gravity="center"
                             android:layout_marginEnd="12dp"/>
-
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Lịch Trình Từng Ngày"
+                            android:text="Lịch Trình Đã Chọn"
                             android:textSize="18sp"
                             android:textStyle="bold"
                             android:textColor="@color/black"/>
-
                     </LinearLayout>
 
-                    <!-- Day 1 -->
                     <LinearLayout
+                        android:id="@+id/ll_day_1_block"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
                         android:background="@drawable/bg_rounded_blue_light"
-                        android:padding="12dp"
-                        android:layout_marginBottom="12dp">
-
+                        android:padding="16dp"
+                        android:layout_marginBottom="12dp"
+                        android:orientation="vertical"
+                        android:visibility="gone">
                         <TextView
-                            android:layout_width="match_parent"
+                            android:id="@+id/tv_day_1_header"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="NGÀY 1 - 25/12/2024"
+                            android:text="Ngày 1"
                             android:textSize="16sp"
                             android:textStyle="bold"
                             android:textColor="@color/blue"
                             android:layout_marginBottom="8dp"/>
-
-                        <TextView
+                        <LinearLayout
+                            android:id="@+id/ll_day_1_activities"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="06:00 - Khởi hành từ TP.HCM (Sân bay Tân Sơn Nhất)"
-                            android:textSize="14sp"
-                            android:layout_marginBottom="4dp"/>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="08:15 - Đến Hà Nội (Sân bay Nội Bài)"
-                            android:textSize="14sp"
-                            android:layout_marginBottom="4dp"/>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="10:00 - Di chuyển về khách sạn và nhận phòng"
-                            android:textSize="14sp"
-                            android:layout_marginBottom="4dp"/>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="12:00 - Ăn trưa tại nhà hàng địa phương"
-                            android:textSize="14sp"
-                            android:layout_marginBottom="4dp"/>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="14:00 - Tham quan Lăng Chủ Tịch Hồ Chí Minh"
-                            android:textSize="14sp"
-                            android:layout_marginBottom="4dp"/>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="16:00 - Tham quan Chùa Một Cột"
-                            android:textSize="14sp"
-                            android:layout_marginBottom="4dp"/>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="18:00 - Dạo bộ quanh Hồ Hoàn Kiếm"
-                            android:textSize="14sp"
-                            android:layout_marginBottom="4dp"/>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="19:30 - Ăn tối tại Phố Cổ Hà Nội"
-                            android:textSize="14sp"/>
-
+                            android:orientation="vertical"/>
                     </LinearLayout>
 
-                    <!-- Day 2 -->
                     <LinearLayout
+                        android:id="@+id/ll_day_2_block"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="@drawable/bg_rounded_blue_light"
+                        android:padding="16dp"
+                        android:layout_marginBottom="12dp"
                         android:orientation="vertical"
-                        android:background="@drawable/bg_rounded_green_light"
-                        android:padding="12dp"
-                        android:layout_marginBottom="12dp">
-
+                        android:visibility="gone">
                         <TextView
-                            android:layout_width="match_parent"
+                            android:id="@+id/tv_day_2_header"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="NGÀY 2 - 26/12/2024"
+                            android:text="Ngày 2"
                             android:textSize="16sp"
                             android:textStyle="bold"
-                            android:textColor="#4CAF50"
+                            android:textColor="@color/blue"
                             android:layout_marginBottom="8dp"/>
-
-                        <TextView
+                        <LinearLayout
+                            android:id="@+id/ll_day_2_activities"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="08:00 - Ăn sáng tại khách sạn"
-                            android:textSize="14sp"
-                            android:layout_marginBottom="4dp"/>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="09:00 - Tham quan Văn Miếu - Quốc Tử Giám"
-                            android:textSize="14sp"
-                            android:layout_marginBottom="4dp"/>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="11:30 - Tham quan Nhà Hát Lớn Hà Nội"
-                            android:textSize="14sp"
-                            android:layout_marginBottom="4dp"/>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="12:30 - Ăn trưa tại nhà hàng Madame Hiền"
-                            android:textSize="14sp"
-                            android:layout_marginBottom="4dp"/>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="15:00 - Tham quan Bảo Tàng Lịch Sử Việt Nam"
-                            android:textSize="14sp"
-                            android:layout_marginBottom="4dp"/>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="17:00 - Dạo quanh Hồ Tây"
-                            android:textSize="14sp"
-                            android:layout_marginBottom="4dp"/>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="19:00 - Ăn tối tại nhà hàng Cầu Gỗ"
-                            android:textSize="14sp"/>
-
+                            android:orientation="vertical"/>
                     </LinearLayout>
 
-                    <!-- Day 3 -->
                     <LinearLayout
+                        android:id="@+id/ll_day_3_block"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="@drawable/bg_rounded_blue_light"
+                        android:padding="16dp"
                         android:orientation="vertical"
-                        android:background="@drawable/bg_rounded_orange_light"
-                        android:padding="12dp">
-
+                        android:visibility="gone">
                         <TextView
-                            android:layout_width="match_parent"
+                            android:id="@+id/tv_day_3_header"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="NGÀY 3 - 27/12/2024"
+                            android:text="Ngày 3"
                             android:textSize="16sp"
                             android:textStyle="bold"
-                            android:textColor="#FF9800"
+                            android:textColor="@color/blue"
                             android:layout_marginBottom="8dp"/>
-
-                        <TextView
+                        <LinearLayout
+                            android:id="@+id/ll_day_3_activities"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="08:00 - Ăn sáng tại khách sạn"
-                            android:textSize="14sp"
-                            android:layout_marginBottom="4dp"/>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="09:30 - Mua sắm tại Chợ Đồng Xuân"
-                            android:textSize="14sp"
-                            android:layout_marginBottom="4dp"/>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="11:00 - Tham quan Cầu Long Biên"
-                            android:textSize="14sp"
-                            android:layout_marginBottom="4dp"/>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="12:00 - Trả phòng khách sạn"
-                            android:textSize="14sp"
-                            android:layout_marginBottom="4dp"/>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="13:00 - Ăn trưa tại Bún Chả Hương Liên"
-                            android:textSize="14sp"
-                            android:layout_marginBottom="4dp"/>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="16:00 - Di chuyển ra sân bay Nội Bài"
-                            android:textSize="14sp"
-                            android:layout_marginBottom="4dp"/>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="18:30 - Chuyến bay về TP.HCM"
-                            android:textSize="14sp"/>
-
+                            android:orientation="vertical"/>
                     </LinearLayout>
 
                 </LinearLayout>
-
             </com.google.android.material.card.MaterialCardView>
 
             <!-- Final Cost Summary -->
@@ -751,20 +532,17 @@
                 app:cardCornerRadius="12dp"
                 app:cardElevation="4dp"
                 app:cardBackgroundColor="#E8F5E8">
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:padding="16dp">
-
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:gravity="center_vertical"
                         android:layout_marginBottom="12dp">
-
                         <TextView
                             android:layout_width="32dp"
                             android:layout_height="32dp"
@@ -772,148 +550,72 @@
                             android:textSize="20sp"
                             android:gravity="center"
                             android:layout_marginEnd="12dp"/>
-
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Tổng Chi Phí Cuối Cùng"
+                            android:text="Tổng Chi Phí"
                             android:textSize="18sp"
                             android:textStyle="bold"
                             android:textColor="@color/black"/>
-
                     </LinearLayout>
 
-                    <!-- Final Cost Breakdown -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         android:background="@drawable/bg_rounded_white"
                         android:padding="12dp">
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
-                            android:padding="4dp">
-
+                            android:paddingVertical="4dp">
                             <TextView
+                                android:id="@+id/tv_cost_flight_label"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Vé máy bay (VietJet):"
+                                android:text="Vé máy bay:"
                                 android:textSize="16sp"/>
-
                             <TextView
+                                android:id="@+id/tv_cost_flight_value"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="3,600,000 VND"
+                                android:text="0 VND"
                                 android:textSize="16sp"
                                 android:textStyle="bold"/>
-
                         </LinearLayout>
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
-                            android:padding="4dp">
-
+                            android:paddingVertical="4dp">
                             <TextView
+                                android:id="@+id/tv_cost_hotel_label"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Khách sạn (2 đêm):"
+                                android:text="Khách sạn:"
                                 android:textSize="16sp"/>
-
                             <TextView
+                                android:id="@+id/tv_cost_hotel_value"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="5,600,000 VND"
+                                android:text="0 VND"
                                 android:textSize="16sp"
                                 android:textStyle="bold"/>
-
                         </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:padding="4dp">
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="Vé tham quan:"
-                                android:textSize="16sp"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="340,000 VND"
-                                android:textSize="16sp"
-                                android:textStyle="bold"/>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:padding="4dp">
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="Ăn uống (ước tính):"
-                                android:textSize="16sp"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="1,800,000 VND"
-                                android:textSize="16sp"
-                                android:textStyle="bold"/>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:padding="4dp">
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="Di chuyển local:"
-                                android:textSize="16sp"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="600,000 VND"
-                                android:textSize="16sp"
-                                android:textStyle="bold"/>
-
-                        </LinearLayout>
-
                         <View
                             android:layout_width="match_parent"
-                            android:layout_height="2dp"
-                            android:background="@color/blue"
-                            android:layout_margin="8dp"/>
-
+                            android:layout_height="1dp"
+                            android:background="@color/gray"
+                            android:layout_marginVertical="8dp"/>
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
-                            android:padding="8dp">
-
+                            android:paddingVertical="8dp">
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
@@ -922,40 +624,36 @@
                                 android:textSize="20sp"
                                 android:textStyle="bold"
                                 android:textColor="@color/blue"/>
-
                             <TextView
+                                android:id="@+id/tv_cost_total_value"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="11,940,000 VND"
+                                android:text="0 VND"
                                 android:textSize="20sp"
                                 android:textStyle="bold"
                                 android:textColor="@color/blue"/>
-
                         </LinearLayout>
-
                         <TextView
+                            android:id="@+id/tv_cost_summary_text"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="(Cho 2 người, 3 ngày 2 đêm)"
+                            android:text="(Chi phí ước tính)"
                             android:textSize="12sp"
                             android:textColor="@color/gray"
                             android:gravity="center"
                             android:layout_marginTop="4dp"/>
-
                     </LinearLayout>
-
                 </LinearLayout>
-
             </com.google.android.material.card.MaterialCardView>
 
             <!-- Action Buttons -->
             <LinearLayout
+                android:id="@+id/ll_action_buttons"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="24dp"
                 android:layout_marginBottom="24dp">
-
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_save_plan"
                     android:layout_width="0dp"
@@ -967,7 +665,6 @@
                     android:textStyle="bold"
                     app:backgroundTint="@color/green"
                     app:cornerRadius="8dp"/>
-
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_book_now"
                     android:layout_width="0dp"
@@ -979,11 +676,7 @@
                     android:textStyle="bold"
                     app:backgroundTint="@color/blue"
                     app:cornerRadius="8dp"/>
-
             </LinearLayout>
-
         </LinearLayout>
-
     </LinearLayout>
-
 </ScrollView>

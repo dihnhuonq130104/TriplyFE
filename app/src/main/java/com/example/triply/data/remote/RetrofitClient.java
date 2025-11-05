@@ -12,7 +12,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
     private static final String TAG = "RetrofitClient";
-    private static final String BASE_URL = "http://43.228.212.108:8080"; // emulator to localhost
+    private static final String BASE_URL = "http://43.228.212.108:8080";
     private static Retrofit retrofitInstance;
 
     public static Retrofit getInstance() {
