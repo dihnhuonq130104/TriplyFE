@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.bumptech.glide.Glide;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textview.MaterialTextView;
 
@@ -41,10 +42,51 @@ public class DestinationActivity extends AppCompatActivity {
     }
     
     private void loadDestinationData() {
-        textTitle.setText("Lăng Chủ Tịch Hồ Chí Minh");
-        textLocation.setText("Ba Đình, Hà Nội");
-        textDescription.setText("Lăng Chủ tịch Hồ Chí Minh là công trình trang nghiêm, linh thiêng, nơi yên nghỉ của Chủ tịch Hồ Chí Minh - vị lãnh tụ kính yêu của dân tộc Việt Nam. Đây là điểm đến không thể bỏ qua khi du lịch Hà Nội.");
-        imagePlace.setImageResource(R.drawable.langbac);
+        Intent intent = getIntent();
+        String destinationName = intent.getStringExtra("destination_name");
+        String destinationAddress = intent.getStringExtra("destination_address");
+        String destinationDescription = intent.getStringExtra("destination_description");
+        String imgPath = intent.getStringExtra("destination_img_path");
+        final String googleMapUrl = intent.getStringExtra("destination_google_map_url");
+        
+        if (destinationName != null) {
+            textTitle.setText(destinationName);
+        } else {
+            textTitle.setText("Lăng Chủ Tịch Hồ Chí Minh");
+        }
+        
+        if (destinationAddress != null) {
+            textLocation.setText(destinationAddress);
+        } else {
+            textLocation.setText("Ba Đình, Hà Nội");
+        }
+        
+        if (destinationDescription != null) {
+            textDescription.setText(destinationDescription);
+        } else {
+            textDescription.setText("Lăng Chủ tịch Hồ Chí Minh là công trình trang nghiêm, linh thiêng, nơi yên nghỉ của Chủ tịch Hồ Chí Minh - vị lãnh tụ kính yêu của dân tộc Việt Nam. Đây là điểm đến không thể bỏ qua khi du lịch Hà Nội.");
+        }
+        
+        if (imgPath != null && !imgPath.isEmpty()) {
+            Glide.with(this)
+                .load(imgPath)
+                .placeholder(R.drawable.langbac)
+                .error(R.drawable.langbac)
+                .into(imagePlace);
+        } else {
+            imagePlace.setImageResource(R.drawable.langbac);
+        }
+        
+        if (googleMapUrl != null && !googleMapUrl.isEmpty()) {
+            btnDirections.setOnClickListener(v -> {
+                Intent mapIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(googleMapUrl));
+                if (mapIntent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(mapIntent);
+                } else {
+                    Toast.makeText(this, "Không thể mở Google Maps", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
     }
     
     private void checkFavoriteStatus() {
@@ -73,20 +115,6 @@ public class DestinationActivity extends AppCompatActivity {
     }
     
     private void setupClickListeners() {
-        btnDirections.setOnClickListener(v -> {
-            String location = textLocation.getText().toString();
-            String query = textTitle.getText().toString() + ", " + location;
-            Uri gmmIntentUri = Uri.parse("geo:0,0?q=" + Uri.encode(query));
-            Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
-            mapIntent.setPackage("com.google.android.apps.maps");
-            if (mapIntent.resolveActivity(getPackageManager()) != null) {
-                startActivity(mapIntent);
-            } else {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW,
-                    Uri.parse("https://www.google.com/maps/search/" + Uri.encode(query)));
-                startActivity(browserIntent);
-            }
-        });
         btnAddToFavorite.setOnClickListener(v -> {
             toggleFavorite();
         });

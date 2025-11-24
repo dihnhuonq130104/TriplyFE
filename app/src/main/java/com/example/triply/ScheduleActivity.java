@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -29,6 +31,7 @@ public class ScheduleActivity extends AppCompatActivity {
 
     private TextInputEditText etDeparture, etDirection, etNumbersPerson, etBudget, etDurations, etStartDate;
     private MaterialButton btnPlan;
+    private FrameLayout loadingOverlay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +53,7 @@ public class ScheduleActivity extends AppCompatActivity {
         etDurations = findViewById(R.id.et_durations);
         etStartDate = findViewById(R.id.et_start_date);
         btnPlan = findViewById(R.id.btn_plan);
+        loadingOverlay = findViewById(R.id.loading_overlay);
     }
 
     private void loadExistingData() {
@@ -93,8 +97,7 @@ public class ScheduleActivity extends AppCompatActivity {
         btnPlan.setOnClickListener(v -> {
             if (validateForm()) {
                 saveScheduleData();
-                btnPlan.setEnabled(false);
-                Toast.makeText(this, "Đang tạo kế hoạch...", Toast.LENGTH_SHORT).show();
+                showLoading(true);
 
                 String origin = etDeparture.getText().toString().trim();
                 String destination = etDirection.getText().toString().trim();
@@ -111,8 +114,10 @@ public class ScheduleActivity extends AppCompatActivity {
                 new PlanRepository().planTrip(request, new PlanRepository.PlanCallback() {
                     @Override
                     public void onSuccess(PlanResponse response) {
-                        btnPlan.post(() -> {
-                            btnPlan.setEnabled(true);
+                        runOnUiThread(() -> {
+                            showLoading(false);
+                            Toast.makeText(ScheduleActivity.this, "Tạo kế hoạch thành công!", Toast.LENGTH_SHORT).show();
+                            
                             Intent intent = new Intent(ScheduleActivity.this, PlanActivity.class);
                             intent.putExtra("departure", origin);
                             intent.putExtra("direction", destination);
@@ -120,7 +125,7 @@ public class ScheduleActivity extends AppCompatActivity {
                             intent.putExtra("budget", etBudget.getText().toString());
                             intent.putExtra("durations", etDurations.getText().toString());
                             intent.putExtra("start_date", startDateUi);
-                            intent.putExtra("night_count", nights); // Giá trị nights đúng sẽ được truyền đi
+                            intent.putExtra("night_count", nights);
                             intent.putExtra("plan_json", new Gson().toJson(response));
                             startActivity(intent);
                             finish();
@@ -129,14 +134,19 @@ public class ScheduleActivity extends AppCompatActivity {
 
                     @Override
                     public void onError(Throwable t, retrofit2.Response<?> raw) {
-                        btnPlan.post(() -> {
-                            btnPlan.setEnabled(true);
+                        runOnUiThread(() -> {
+                            showLoading(false);
                             Toast.makeText(ScheduleActivity.this, "Tạo kế hoạch thất bại: " + t.getMessage(), Toast.LENGTH_LONG).show();
                         });
                     }
                 });
             }
         });
+    }
+
+    private void showLoading(boolean show) {
+        loadingOverlay.setVisibility(show ? View.VISIBLE : View.GONE);
+        btnPlan.setEnabled(!show);
     }
 
     private void saveScheduleData() {

@@ -4,12 +4,16 @@
     android:layout_height="match_parent"
     android:background="@color/white">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="872dp"
+        android:layout_height="match_parent"
         android:layout_above="@+id/bottomMenu"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="0dp"
+        android:fillViewport="false">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="16dp">
 
@@ -154,158 +158,28 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Popular location near you!"
+            android:text="Popular locations!"
             android:textSize="18sp"
             android:textStyle="bold" />
 
-        <GridLayout
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/cities_container"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
             android:layout_marginTop="12dp"
-            android:layout_weight="1"
-            android:alignmentMode="alignMargins"
-            android:columnCount="2"
-            android:columnOrderPreserved="false"
-            android:rowCount="2">
-
-            <!-- Card 1 -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/card_lang_chu_tich"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:layout_margin="8dp"
-                android:clickable="true"
-                android:focusable="true"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="3dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/langbac" />
-
-                    <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/lobster"
-                        android:gravity="center"
-                        android:padding="8dp"
-                        android:text="Lăng Chủ Tịch Hồ Chí Minh"
-                        android:textSize="15sp" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- Card 2 -->
-            <androidx.cardview.widget.CardView
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:layout_margin="8dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="3dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/hoguom" />
-
-                    <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/lobster"
-                        android:gravity="center"
-                        android:padding="8dp"
-                        android:text="Hồ Hoàn Kiếm"
-                        android:textSize="15sp" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- Card 3 -->
-            <androidx.cardview.widget.CardView
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:layout_margin="8dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="3dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/vanmieu" />
-
-                    <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/lobster"
-                        android:gravity="center"
-                        android:padding="8dp"
-                        android:text="Văn Miếu Quốc Tử Giám"
-                        android:textSize="15sp" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- Card 4 -->
-            <androidx.cardview.widget.CardView
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:layout_margin="8dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="3dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/hoangthanh" />
-
-                    <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/lobster"
-                        android:gravity="center"
-                        android:padding="8dp"
-                        android:text="Hoàng Thành Thăng Long"
-                        android:textSize="15sp" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-        </GridLayout>
+            android:layout_marginBottom="16dp" />
 
     </LinearLayout>
+    </ScrollView>
 
     <!-- Menu dưới cùng -->
     <include

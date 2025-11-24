@@ -8,6 +8,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.triply.util.TokenManager;
+
 public class ProfileActivity extends AppCompatActivity {
 
     @Override
@@ -39,7 +41,10 @@ public class ProfileActivity extends AppCompatActivity {
         });
         
         menuLogout.setOnClickListener(v -> {
-            Intent intent = new Intent(ProfileActivity.this, LoginActivity.class);
+            TokenManager tokenManager = new TokenManager(this);
+            tokenManager.clear();
+            
+            Intent intent = new Intent(ProfileActivity.this, MainActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
             finish();

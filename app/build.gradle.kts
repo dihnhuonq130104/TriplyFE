@@ -47,6 +47,9 @@ dependencies {
     implementation("androidx.credentials:credentials-play-services-auth:1.6.0-alpha05")
     implementation("com.google.android.libraries.identity.googleid:googleid:1.1.1")
     implementation(libs.credentials)
+    // https://mvnrepository.com/artifact/com.github.bumptech.glide/glide
+    implementation("com.github.bumptech.glide:glide:5.0.5")
+    annotationProcessor("com.github.bumptech.glide:compiler:5.0.5")
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

@@ -10,6 +10,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import com.example.triply.data.remote.model.SaveTripRequest;
+import com.example.triply.data.remote.model.SaveFullTripRequest;
+import com.example.triply.data.repository.TripRepository;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.google.android.material.button.MaterialButton;
@@ -266,13 +269,7 @@ public class PlanDetailActivity extends AppCompatActivity {
         findViewById(R.id.btn_back).setOnClickListener(v -> finish());
 
         btnSavePlan.setOnClickListener(v -> {
-            savePlan();
-            Toast.makeText(this, "Kế hoạch đã được lưu!", Toast.LENGTH_LONG).show();
-
-            Intent intent = new Intent(PlanDetailActivity.this, HomeActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(intent);
-            finish();
+            savePlanToDatabase();
         });
 
         btnBookNow.setOnClickListener(v -> {
@@ -280,7 +277,233 @@ public class PlanDetailActivity extends AppCompatActivity {
         });
     }
 
-    private void savePlan() {
+    private void savePlanToDatabase() {
+        btnSavePlan.setEnabled(false);
+        Toast.makeText(this, "Đang lưu kế hoạch...", Toast.LENGTH_SHORT).show();
+
+        Intent intent = getIntent();
+        String destination = intent.getStringExtra(PlanActivity.EXTRA_DETAIL_DESTINATION);
+        String startDateRaw = intent.getStringExtra(PlanActivity.EXTRA_DETAIL_START_DATE);
+        String durationText = intent.getStringExtra(PlanActivity.EXTRA_DETAIL_DURATION_TEXT);
+        int peopleCount = intent.getIntExtra(PlanActivity.EXTRA_DETAIL_PEOPLE_COUNT, 1);
+        long flightCost = intent.getLongExtra(PlanActivity.EXTRA_DETAIL_FLIGHT_COST, 0);
+        long hotelCost = intent.getLongExtra(PlanActivity.EXTRA_DETAIL_HOTEL_COST, 0);
+        long totalCost = intent.getLongExtra(PlanActivity.EXTRA_DETAIL_TOTAL_COST, 0);
+
+        if (destination == null || destination.trim().isEmpty()) {
+            btnSavePlan.setEnabled(true);
+            Toast.makeText(this, "Lỗi: Không tìm thấy thông tin điểm đến", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        String title = "Chuyến đi đến " + destination;
+        String startDate = convertToIsoDate(startDateRaw);
+        String endDate = addDays(startDate, nightCount);
+        String notesValue = (durationText != null && !durationText.trim().isEmpty()) ? durationText : "Chuyến đi " + destination;
+
+        // Build destinations
+        List<SaveFullTripRequest.Destination> destinations = new ArrayList<>();
+        destinations.add(new SaveFullTripRequest.Destination(destination, startDate, endDate, notesValue));
+
+        // Build flight info
+        SaveFullTripRequest.Flight flight = buildFlightInfo(intent);
+
+        // Build hotel info
+        SaveFullTripRequest.Hotel hotel = buildHotelInfo(intent);
+
+        // Build daily attractions
+        List<SaveFullTripRequest.DailyAttraction> dailyAttractions = buildDailyAttractions(intent, startDate);
+
+        // Build expenses
+        List<SaveFullTripRequest.Expense> expenses = new ArrayList<>();
+        if (flightCost > 0) {
+            expenses.add(new SaveFullTripRequest.Expense(flightCost, "Flight", startDate));
+        }
+        if (hotelCost > 0) {
+            expenses.add(new SaveFullTripRequest.Expense(hotelCost, "Accommodation", startDate));
+        }
+
+        // Create the full request
+        SaveFullTripRequest request = new SaveFullTripRequest(
+            title,
+            startDate,
+            endDate,
+            peopleCount,
+            totalCost,
+            "VND",
+            destinations,
+            flight,
+            hotel,
+            dailyAttractions,
+            expenses
+        );
+
+        new TripRepository().saveFullTrip(request, new TripRepository.SaveTripCallback() {
+            @Override
+            public void onSuccess(int tripId) {
+                runOnUiThread(() -> {
+                    btnSavePlan.setEnabled(true);
+                    savePlanLocally();
+                    Toast.makeText(PlanDetailActivity.this, "Kế hoạch đã được lưu thành công! (ID: " + tripId + ")", Toast.LENGTH_LONG).show();
+
+                    Intent homeIntent = new Intent(PlanDetailActivity.this, HomeActivity.class);
+                    homeIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(homeIntent);
+                    finish();
+                });
+            }
+
+            @Override
+            public void onError(String message) {
+                runOnUiThread(() -> {
+                    btnSavePlan.setEnabled(true);
+                    Toast.makeText(PlanDetailActivity.this, message, Toast.LENGTH_LONG).show();
+                });
+            }
+        });
+    }
+
+    private SaveFullTripRequest.Flight buildFlightInfo(Intent intent) {
+        String depAirport = intent.getStringExtra(PlanActivity.EXTRA_DETAIL_FLIGHT_DEP_AIRPORT);
+        String arrAirport = intent.getStringExtra(PlanActivity.EXTRA_DETAIL_FLIGHT_ARR_AIRPORT);
+        String airlineInfo = intent.getStringExtra(PlanActivity.EXTRA_DETAIL_FLIGHT_AIRLINE_INFO);
+        String depTime = intent.getStringExtra(PlanActivity.EXTRA_DETAIL_FLIGHT_DEP_TIME);
+        String arrTime = intent.getStringExtra(PlanActivity.EXTRA_DETAIL_FLIGHT_ARR_TIME);
+        String durationStr = intent.getStringExtra(PlanActivity.EXTRA_DETAIL_FLIGHT_DURATION);
+        long flightCost = intent.getLongExtra(PlanActivity.EXTRA_DETAIL_FLIGHT_COST, 0);
+
+        if (depAirport == null || arrAirport == null) {
+            return null;
+        }
+
+        // Extract airport codes (first 3 characters) - IATA codes
+        String depId = extractAirportCode(depAirport);
+        String arrId = extractAirportCode(arrAirport);
+
+        // Extract airline name and code from airlineInfo (format: "Airline Name - FlightNumber")
+        String airline = "";
+        String airlineId = "";
+        if (airlineInfo != null && airlineInfo.contains(" - ")) {
+            airline = airlineInfo.split(" - ")[0].trim();
+            // Try to extract airline code (first 2 letters of airline name as default)
+            if (airline.length() >= 2) {
+                airlineId = airline.substring(0, 2).toUpperCase();
+            }
+        }
+
+        // Format duration (convert "120 phút" to "2h 0m")
+        String flightDuration = formatDuration(durationStr);
+
+        return new SaveFullTripRequest.Flight(
+            depId,
+            arrId,
+            airline,
+            airlineId,
+            (int) flightCost,
+            flightDuration,
+            depTime,
+            arrTime
+        );
+    }
+
+    private SaveFullTripRequest.Hotel buildHotelInfo(Intent intent) {
+        String hotelName = intent.getStringExtra(PlanActivity.EXTRA_DETAIL_HOTEL_NAME);
+        long hotelCost = intent.getLongExtra(PlanActivity.EXTRA_DETAIL_HOTEL_COST, 0);
+
+        if (hotelName == null || hotelName.isEmpty()) {
+            return null;
+        }
+
+        // For now, we don't have the address and coordinates, so we'll set them to null
+        // In a real implementation, you would want to get this data from the plan response
+        return new SaveFullTripRequest.Hotel(
+            hotelName,
+            null,  // address
+            null,  // latitude
+            null,  // longitude
+            (int) hotelCost
+        );
+    }
+
+    private List<SaveFullTripRequest.DailyAttraction> buildDailyAttractions(Intent intent, String startDate) {
+        String[] selectedAttractions = intent.getStringArrayExtra(PlanActivity.EXTRA_DETAIL_SELECTED_ATTRACTIONS);
+        
+        if (selectedAttractions == null || selectedAttractions.length == 0) {
+            return new ArrayList<>();
+        }
+
+        List<SaveFullTripRequest.DailyAttraction> dailyAttractions = new ArrayList<>();
+        
+        for (String attraction : selectedAttractions) {
+            // Parse attraction string (format: "09:00 | Location: Activity")
+            String time = "09:00";
+            String location = "";
+            String activity = attraction;
+            String reason = "";
+
+            if (attraction.contains(" | ")) {
+                String[] parts = attraction.split(" \\| ", 2);
+                time = parts[0].trim();
+                
+                if (parts.length > 1 && parts[1].contains(": ")) {
+                    String[] locationActivity = parts[1].split(": ", 2);
+                    location = locationActivity[0].trim();
+                    if (locationActivity.length > 1) {
+                        activity = locationActivity[1].trim();
+                    }
+                }
+            }
+
+            dailyAttractions.add(new SaveFullTripRequest.DailyAttraction(
+                startDate,
+                time,
+                activity,
+                location,
+                reason
+            ));
+        }
+
+        return dailyAttractions;
+    }
+
+    private String extractAirportCode(String airportName) {
+        if (airportName == null || airportName.isEmpty()) {
+            return "";
+        }
+        // Try to extract code from parentheses like "Noi Bai International Airport (HAN)"
+        if (airportName.contains("(") && airportName.contains(")")) {
+            int start = airportName.indexOf("(") + 1;
+            int end = airportName.indexOf(")");
+            return airportName.substring(start, end).trim();
+        }
+        // Otherwise, return first 3 characters as fallback
+        return airportName.length() >= 3 ? airportName.substring(0, 3).toUpperCase() : airportName.toUpperCase();
+    }
+
+    private String formatDuration(String durationStr) {
+        if (durationStr == null || durationStr.isEmpty()) {
+            return "";
+        }
+        // If already in correct format, return as is
+        if (durationStr.contains("h") || durationStr.contains("m")) {
+            return durationStr.replace(" phút", "m").replace("phút", "m");
+        }
+        // Convert "120 phút" to "2h 0m"
+        try {
+            String numStr = durationStr.replaceAll("[^0-9]", "");
+            if (!numStr.isEmpty()) {
+                int minutes = Integer.parseInt(numStr);
+                int hours = minutes / 60;
+                int mins = minutes % 60;
+                return hours + "h " + mins + "m";
+            }
+        } catch (Exception e) {
+            // If parsing fails, return original
+        }
+        return durationStr;
+    }
+
+    private void savePlanLocally() {
         SharedPreferences prefs = getSharedPreferences("SavedPlansList", MODE_PRIVATE);
         Gson gson = new Gson();
 
@@ -298,6 +521,33 @@ public class PlanDetailActivity extends AppCompatActivity {
         String updatedJson = gson.toJson(plansList);
         editor.putString("plans_json", updatedJson);
         editor.apply();
+    }
+
+    private String convertToIsoDate(String dateStr) {
+        if (dateStr == null || dateStr.isEmpty()) {
+            return new SimpleDateFormat("yyyy-MM-dd", Locale.US).format(new Date());
+        }
+        try {
+            SimpleDateFormat inputFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+            SimpleDateFormat outputFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
+            Date date = inputFormat.parse(dateStr);
+            return outputFormat.format(date);
+        } catch (Exception e) {
+            return new SimpleDateFormat("yyyy-MM-dd", Locale.US).format(new Date());
+        }
+    }
+
+    private String addDays(String isoDate, int days) {
+        try {
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
+            Date date = format.parse(isoDate);
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(date);
+            calendar.add(Calendar.DAY_OF_MONTH, days);
+            return format.format(calendar.getTime());
+        } catch (Exception e) {
+            return isoDate;
+        }
     }
 
     private SavedPlanData createPlanDataFromIntent() {
