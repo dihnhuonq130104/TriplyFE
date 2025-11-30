@@ -9,35 +9,52 @@
     <!-- Header -->
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="64dp"
         android:background="@color/blue"
-        android:padding="16dp">
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:gravity="center_vertical">
 
         <TextView
+            android:id="@+id/tv_chat_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="18dp"
             android:text="Chatbot"
             android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textSize="22sp"
+            android:fontFamily="@font/lobster"
+            android:textStyle="normal" />
 
     </RelativeLayout>
 
-    <!-- Messages area -->
+    <!-- Messages area (scrollable) -->
     <ScrollView
         android:id="@+id/messages_scroll"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:padding="12dp">
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:clipToPadding="false">
 
         <LinearLayout
             android:id="@+id/messages_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" />
+            android:orientation="vertical">
+
+            <!-- Example Bot message -->
+            <include layout="@layout/item_chat_bot" />
+
+            <!-- Example User message -->
+            <include layout="@layout/item_chat_user" />
+
+            <!-- Example Bot message (long) -->
+            <include layout="@layout/item_chat_bot" />
+
+        </LinearLayout>
 
     </ScrollView>
 
@@ -46,8 +63,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="12dp"
-        android:background="@android:color/transparent">
+        android:padding="8dp"
+        android:background="@android:color/transparent"
+        android:gravity="center_vertical">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_message"
@@ -56,15 +74,19 @@
             android:layout_weight="1"
             android:hint="Nhập tin nhắn..."
             android:padding="8dp"
-            android:background="@drawable/input_background" />
+            android:background="@drawable/input_background"
+            android:imeOptions="actionSend"
+            android:maxLines="4" />
 
         <ImageButton
             android:id="@+id/btn_send"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
             android:layout_marginStart="8dp"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@android:drawable/ic_menu_send"
+            android:src="@drawable/ic_send"
+            android:tint="@color/blue"
+            android:scaleType="centerInside"
             android:contentDescription="Send" />
 
     </LinearLayout>
