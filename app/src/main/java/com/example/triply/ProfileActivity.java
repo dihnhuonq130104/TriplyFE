@@ -54,28 +54,28 @@ public class ProfileActivity extends AppCompatActivity {
     private void setupBottomNavigation() {
         ImageView navHome = findViewById(R.id.nav_home);
         ImageView navPlan = findViewById(R.id.nav_plan);
-        ImageView navFavorite = findViewById(R.id.nav_favorite);
+        ImageView navChatbot = findViewById(R.id.nav_chatbot);
         ImageView navProfile = findViewById(R.id.nav_profile);
-        
+
         navHome.setSelected(false);
         navPlan.setSelected(false);
-        navFavorite.setSelected(false);
+        navChatbot.setSelected(false);
         navProfile.setSelected(true);
-        
+
         navHome.setOnClickListener(v -> {
             finish();
         });
-        
+
         navPlan.setOnClickListener(v -> {
             Intent intent = new Intent(ProfileActivity.this, ScheduleActivity.class);
             startActivity(intent);
         });
-        
-        navFavorite.setOnClickListener(v -> {
-            Intent intent = new Intent(ProfileActivity.this, FavoriteActivity.class);
+
+        navChatbot.setOnClickListener(v -> {
+            Intent intent = new Intent(ProfileActivity.this, ChatbotActivity.class);
             startActivity(intent);
         });
-        
+
         navProfile.setOnClickListener(v -> {
         });
     }

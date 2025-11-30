@@ -263,12 +263,12 @@ public class ScheduleActivity extends AppCompatActivity {
     private void setupBottomNavigation() {
         ImageView navHome = findViewById(R.id.nav_home);
         ImageView navPlan = findViewById(R.id.nav_plan);
-        ImageView navFavorite = findViewById(R.id.nav_favorite);
+        ImageView navChatbot = findViewById(R.id.nav_chatbot);
         ImageView navProfile = findViewById(R.id.nav_profile);
 
         navHome.setSelected(false);
         navPlan.setSelected(true);
-        navFavorite.setSelected(false);
+        navChatbot.setSelected(false);
         navProfile.setSelected(false);
 
         navHome.setOnClickListener(v -> {
@@ -277,11 +277,12 @@ public class ScheduleActivity extends AppCompatActivity {
             finish();
         });
 
+
         navPlan.setOnClickListener(v -> {
         });
 
-        navFavorite.setOnClickListener(v -> {
-            Intent intent = new Intent(ScheduleActivity.this, FavoriteActivity.class);
+        navChatbot.setOnClickListener(v -> {
+            Intent intent = new Intent(ScheduleActivity.this, ChatbotActivity.class);
             startActivity(intent);
             finish();
         });

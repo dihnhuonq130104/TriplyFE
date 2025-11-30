@@ -392,27 +392,27 @@ public class HomeActivity extends AppCompatActivity {
     private void setupBottomNavigation() {
         ImageView navHome = findViewById(R.id.nav_home);
         ImageView navPlan = findViewById(R.id.nav_plan);
-        ImageView navFavorite = findViewById(R.id.nav_favorite);
+        ImageView navChatbot = findViewById(R.id.nav_chatbot);
         ImageView navProfile = findViewById(R.id.nav_profile);
-        
+
         navHome.setSelected(true);
         navPlan.setSelected(false);
-        navFavorite.setSelected(false);
+        navChatbot.setSelected(false);
         navProfile.setSelected(false);
-        
+
         navHome.setOnClickListener(v -> {
         });
-        
+
         navPlan.setOnClickListener(v -> {
             Intent intent = new Intent(HomeActivity.this, ScheduleActivity.class);
             startActivity(intent);
         });
-        
-        navFavorite.setOnClickListener(v -> {
-            Intent intent = new Intent(HomeActivity.this, FavoriteActivity.class);
+
+        navChatbot.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, ChatbotActivity.class);
             startActivity(intent);
         });
-        
+
         navProfile.setOnClickListener(v -> {
             Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
             startActivity(intent);

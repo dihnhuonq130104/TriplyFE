@@ -82,28 +82,11 @@
             android:orientation="horizontal"
             android:weightSum="2">
 
-            <!-- Nút Add to Favorite -->
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnAddToFavorite"
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_weight="1"
-                android:layout_marginEnd="8dp"
-                android:text="🤍"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:backgroundTint="#E91E63"
-                app:cornerRadius="25dp" />
-
-            <!-- Nút Directions -->
+            <!-- Button: Directions (full width) -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnDirections"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_weight="1"
-                android:layout_marginStart="8dp"
                 android:text="🧭 Directions"
                 android:textAllCaps="false"
                 android:textColor="@color/white"

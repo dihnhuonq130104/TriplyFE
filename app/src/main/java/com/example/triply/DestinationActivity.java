@@ -17,8 +17,7 @@ public class DestinationActivity extends AppCompatActivity {
 
     private ImageView imagePlace;
     private MaterialTextView textTitle, textLocation, textDescription;
-    private MaterialButton btnDirections, btnAddToFavorite;
-    private boolean isFavorite = false;
+    private MaterialButton btnDirections;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +26,6 @@ public class DestinationActivity extends AppCompatActivity {
         
         initViews();
         loadDestinationData();
-        checkFavoriteStatus();
-        setupClickListeners();
         setupBottomNavigation();
     }
     
@@ -38,7 +35,6 @@ public class DestinationActivity extends AppCompatActivity {
         textLocation = findViewById(R.id.textLocation);
         textDescription = findViewById(R.id.textDescription);
         btnDirections = findViewById(R.id.btnDirections);
-        btnAddToFavorite = findViewById(R.id.btnAddToFavorite);
     }
     
     private void loadDestinationData() {
@@ -89,107 +85,7 @@ public class DestinationActivity extends AppCompatActivity {
         }
     }
     
-    private void checkFavoriteStatus() {
-        SharedPreferences prefs = getSharedPreferences("Favorites", MODE_PRIVATE);
-        String destinationTitle = textTitle.getText().toString();
-        
-        for (String key : prefs.getAll().keySet()) {
-            if (key.endsWith("_title")) {
-                String savedTitle = prefs.getString(key, "");
-                if (destinationTitle.equals(savedTitle)) {
-                    isFavorite = true;
-                    break;
-                }
-            }
-        }
-        
-        updateFavoriteButton();
-    }
     
-    private void updateFavoriteButton() {
-        if (isFavorite) {
-            btnAddToFavorite.setText("❤️");
-        } else {
-            btnAddToFavorite.setText("🤍");
-        }
-    }
-    
-    private void setupClickListeners() {
-        btnAddToFavorite.setOnClickListener(v -> {
-            toggleFavorite();
-        });
-    }
-    
-    private void toggleFavorite() {
-        SharedPreferences prefs = getSharedPreferences("Favorites", MODE_PRIVATE);
-        SharedPreferences.Editor editor = prefs.edit();
-        
-        if (isFavorite) {
-            removeFavorite(editor);
-            isFavorite = false;
-            Toast.makeText(this, "Đã bỏ " + textTitle.getText().toString() + " khỏi danh sách yêu thích!", 
-                    Toast.LENGTH_SHORT).show();
-        } else {
-            addToFavorites(editor);
-            isFavorite = true;
-            Toast.makeText(this, "Đã thêm " + textTitle.getText().toString() + " vào danh sách yêu thích!", 
-                    Toast.LENGTH_SHORT).show();
-        }
-        
-        updateFavoriteButton();
-    }
-    
-    private void addToFavorites(SharedPreferences.Editor editor) {
-        String favoriteKey = "favorite_" + System.currentTimeMillis();
-        editor.putString(favoriteKey + "_title", textTitle.getText().toString());
-        editor.putString(favoriteKey + "_location", textLocation.getText().toString());
-        editor.putString(favoriteKey + "_description", textDescription.getText().toString());
-        editor.putBoolean("has_favorites", true);
-        editor.apply();
-    }
-    
-    private void removeFavorite(SharedPreferences.Editor editor) {
-        SharedPreferences prefs = getSharedPreferences("Favorites", MODE_PRIVATE);
-        String destinationTitle = textTitle.getText().toString();
-        
-        for (String key : prefs.getAll().keySet()) {
-            if (key.endsWith("_title")) {
-                String savedTitle = prefs.getString(key, "");
-                if (destinationTitle.equals(savedTitle)) {
-                    String baseKey = key.replace("_title", "");
-                    editor.remove(baseKey + "_title");
-                    editor.remove(baseKey + "_location");
-                    editor.remove(baseKey + "_description");
-                    break;
-                }
-            }
-        }
-        
-        boolean stillHasFavorites = false;
-        for (String key : prefs.getAll().keySet()) {
-            if (key.endsWith("_title") && !key.contains(textTitle.getText().toString())) {
-                stillHasFavorites = true;
-                break;
-            }
-        }
-        editor.putBoolean("has_favorites", stillHasFavorites);
-        editor.apply();
-    }
-    
-    private void addToFavorite() {
-        SharedPreferences prefs = getSharedPreferences("Favorites", MODE_PRIVATE);
-        SharedPreferences.Editor editor = prefs.edit();
-        String favoriteKey = "favorite_" + System.currentTimeMillis();
-        editor.putString(favoriteKey + "_title", textTitle.getText().toString());
-        editor.putString(favoriteKey + "_location", textLocation.getText().toString());
-        editor.putString(favoriteKey + "_description", textDescription.getText().toString());
-        editor.putBoolean("has_favorites", true);
-        editor.apply();
-        Toast.makeText(this, "Đã thêm " + textTitle.getText().toString() + " vào danh sách yêu thích!",
-                Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(this, FavoriteActivity.class);
-        startActivity(intent);
-    }
     
     private void addToSchedule() {
         Toast.makeText(this, "Đã thêm " + textTitle.getText().toString() + " vào lịch trình!",
@@ -218,32 +114,32 @@ public class DestinationActivity extends AppCompatActivity {
     private void setupBottomNavigation() {
         ImageView navHome = findViewById(R.id.nav_home);
         ImageView navPlan = findViewById(R.id.nav_plan);
-        ImageView navFavorite = findViewById(R.id.nav_favorite);
+        ImageView navChatbot = findViewById(R.id.nav_chatbot);
         ImageView navProfile = findViewById(R.id.nav_profile);
-        
+
         navHome.setSelected(false);
         navPlan.setSelected(false);
-        navFavorite.setSelected(false);
+        navChatbot.setSelected(false);
         navProfile.setSelected(false);
-        
+
         navHome.setOnClickListener(v -> {
             Intent intent = new Intent(DestinationActivity.this, HomeActivity.class);
             startActivity(intent);
             finish();
         });
-        
+
         navPlan.setOnClickListener(v -> {
             Intent intent = new Intent(DestinationActivity.this, ScheduleActivity.class);
             startActivity(intent);
             finish();
         });
-        
-        navFavorite.setOnClickListener(v -> {
-            Intent intent = new Intent(DestinationActivity.this, FavoriteActivity.class);
+
+        navChatbot.setOnClickListener(v -> {
+            Intent intent = new Intent(DestinationActivity.this, ChatbotActivity.class);
             startActivity(intent);
             finish();
         });
-        
+
         navProfile.setOnClickListener(v -> {
             Intent intent = new Intent(DestinationActivity.this, ProfileActivity.class);
             startActivity(intent);

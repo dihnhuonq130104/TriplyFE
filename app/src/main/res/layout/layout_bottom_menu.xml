@@ -35,12 +35,12 @@
             app:tint="@color/bottom_nav_icon_color_selector" />
 
         <ImageView
-            android:id="@+id/nav_favorite"
+            android:id="@+id/nav_chatbot"
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_weight="1"
             android:scaleType="centerInside"
-            android:src="@drawable/ic_heart"
+            android:src="@drawable/ic_chatbot"
             app:tint="@color/bottom_nav_icon_color_selector" />
 
         <ImageView
