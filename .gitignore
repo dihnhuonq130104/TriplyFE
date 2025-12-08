@@ -7,6 +7,7 @@
 /.idea/workspace.xml
 /.idea/navEditor.xml
 /.idea/assetWizardSettings.xml
+**/.idea
 .DS_Store
 /build
 /captures
@@ -17,3 +18,12 @@ local.properties
 **/docs
 **/logs
 **/*.md
+
+**/*.log
+**/*.tmp
+**/*.zip
+
+**/*class*un*
+**/*goong*
+**/*maplibre*
+**/*tmp*
