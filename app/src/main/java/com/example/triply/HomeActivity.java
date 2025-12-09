@@ -29,7 +29,11 @@ import com.example.triply.data.remote.model.Destination;
 import com.example.triply.data.repository.DestinationRepository;
 import com.example.triply.util.TokenManager;
 import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationCallback;
+import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.location.Priority;
 import com.google.android.gms.tasks.OnSuccessListener;
 
 import java.io.IOException;
@@ -51,6 +55,7 @@ public class HomeActivity extends AppCompatActivity {
     private TextView tvUserName;
     private TextView tvLocation;
     private FusedLocationProviderClient fusedLocationClient;
+    private LocationCallback locationCallback;
     private TokenManager tokenManager;
 
     @Override
@@ -137,6 +142,7 @@ public class HomeActivity extends AppCompatActivity {
             return;
         }
         
+        // Thử lấy vị trí cuối cùng trước
         fusedLocationClient.getLastLocation()
                 .addOnSuccessListener(this, new OnSuccessListener<Location>() {
                     @Override
@@ -145,11 +151,50 @@ public class HomeActivity extends AppCompatActivity {
                             // Có vị trí, thực hiện reverse geocoding
                             reverseGeocode(location.getLatitude(), location.getLongitude());
                         } else {
-                            // Không lấy được vị trí, dùng mặc định
-                            tvLocation.setText("Việt Nam");
+                            // Không có lastLocation, yêu cầu location updates
+                            requestLocationUpdates();
                         }
                     }
+                })
+                .addOnFailureListener(e -> {
+                    // Lỗi khi lấy lastLocation, fallback sang location updates
+                    requestLocationUpdates();
                 });
+    }
+    
+    private void requestLocationUpdates() {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) 
+                != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
+        
+        LocationRequest locationRequest = new LocationRequest.Builder(
+                Priority.PRIORITY_HIGH_ACCURACY, 10000)
+                .setWaitForAccurateLocation(false)
+                .setMinUpdateIntervalMillis(5000)
+                .setMaxUpdateDelayMillis(15000)
+                .build();
+        
+        locationCallback = new LocationCallback() {
+            @Override
+            public void onLocationResult(@NonNull LocationResult locationResult) {
+                Location location = locationResult.getLastLocation();
+                if (location != null) {
+                    // Lấy được vị trí, thực hiện reverse geocoding
+                    reverseGeocode(location.getLatitude(), location.getLongitude());
+                    // Dừng location updates sau khi có vị trí
+                    stopLocationUpdates();
+                }
+            }
+        };
+        
+        fusedLocationClient.requestLocationUpdates(locationRequest, locationCallback, null);
+    }
+    
+    private void stopLocationUpdates() {
+        if (locationCallback != null) {
+            fusedLocationClient.removeLocationUpdates(locationCallback);
+        }
     }
     
     private void reverseGeocode(double latitude, double longitude) {
@@ -386,6 +431,13 @@ public class HomeActivity extends AppCompatActivity {
         intent.putExtra("destination_description", destination.getDescription());
         intent.putExtra("destination_img_path", destination.getImgPath());
         intent.putExtra("destination_google_map_url", destination.getGoogleMapUrl());
+        intent.putExtra("place_id", destination.getPlaceId());
+        if (destination.getLatitude() != null) {
+            intent.putExtra("latitude", destination.getLatitude());
+        }
+        if (destination.getLongitude() != null) {
+            intent.putExtra("longitude", destination.getLongitude());
+        }
         startActivity(intent);
     }
     
@@ -417,5 +469,11 @@ public class HomeActivity extends AppCompatActivity {
             Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
             startActivity(intent);
         });
+    }
+    
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        stopLocationUpdates();
     }
 }

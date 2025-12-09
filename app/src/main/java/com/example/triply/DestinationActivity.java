@@ -39,11 +39,15 @@ public class DestinationActivity extends AppCompatActivity {
     
     private void loadDestinationData() {
         Intent intent = getIntent();
+        int destinationId = intent.getIntExtra("destination_id", -1);
         String destinationName = intent.getStringExtra("destination_name");
         String destinationAddress = intent.getStringExtra("destination_address");
         String destinationDescription = intent.getStringExtra("destination_description");
         String imgPath = intent.getStringExtra("destination_img_path");
         final String googleMapUrl = intent.getStringExtra("destination_google_map_url");
+        final String placeId = intent.getStringExtra("place_id");
+        final double latitude = intent.getDoubleExtra("latitude", 0.0);
+        final double longitude = intent.getDoubleExtra("longitude", 0.0);
         
         if (destinationName != null) {
             textTitle.setText(destinationName);
@@ -60,7 +64,7 @@ public class DestinationActivity extends AppCompatActivity {
         if (destinationDescription != null) {
             textDescription.setText(destinationDescription);
         } else {
-            textDescription.setText("Lăng Chủ tịch Hồ Chí Minh là công trình trang nghiêm, linh thiêng, nơi yên nghỉ của Chủ tịch Hồ Chí Minh - vị lãnh tụ kính yêu của dân tộc Việt Nam. Đây là điểm đến không thể bỏ qua khi du lịch Hà Nội.");
+            textDescription.setText("No description for dipslay");
         }
         
         if (imgPath != null && !imgPath.isEmpty()) {
@@ -73,16 +77,19 @@ public class DestinationActivity extends AppCompatActivity {
             imagePlace.setImageResource(R.drawable.langbac);
         }
         
-        if (googleMapUrl != null && !googleMapUrl.isEmpty()) {
-            btnDirections.setOnClickListener(v -> {
-                Intent mapIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(googleMapUrl));
-                if (mapIntent.resolveActivity(getPackageManager()) != null) {
-                    startActivity(mapIntent);
-                } else {
-                    Toast.makeText(this, "Không thể mở Google Maps", Toast.LENGTH_SHORT).show();
-                }
-            });
-        }
+        // Open MapActivity with destination details
+        btnDirections.setOnClickListener(v -> {
+            Intent mapIntent = new Intent(DestinationActivity.this, MapActivity.class);
+            mapIntent.putExtra("destination_name", destinationName);
+            mapIntent.putExtra("destination_address", destinationAddress);
+            if (latitude != 0.0 && longitude != 0.0) {
+                mapIntent.putExtra("latitude", latitude);
+                mapIntent.putExtra("longitude", longitude);
+            } else if (placeId != null && !placeId.isEmpty()) {
+                mapIntent.putExtra("place_id", placeId);
+            }
+            startActivity(mapIntent);
+        });
     }
     
     

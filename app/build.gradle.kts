@@ -43,7 +43,8 @@ dependencies {
     implementation(libs.okhttp.logging)
     implementation(libs.gson)
     implementation(libs.play.services.auth)
-    implementation("com.google.android.gms:play-services-location:21.3.0")
+    implementation(libs.play.services.location)
+//    implementation("com.google.android.gms:play-services-location:21.3.0")
     implementation("androidx.credentials:credentials:1.6.0-alpha05")
     implementation("androidx.credentials:credentials-play-services-auth:1.6.0-alpha05")
     implementation("com.google.android.libraries.identity.googleid:googleid:1.1.1")
@@ -51,6 +52,12 @@ dependencies {
     // https://mvnrepository.com/artifact/com.github.bumptech.glide/glide
     implementation("com.github.bumptech.glide:glide:5.0.5")
     annotationProcessor("com.github.bumptech.glide:compiler:5.0.5")
+    
+    // Mapbox SDK
+    implementation("com.mapbox.mapboxsdk:mapbox-android-sdk:9.7.1")
+    implementation("com.mapbox.mapboxsdk:mapbox-android-plugin-annotation-v9:0.9.0")
+    implementation("com.mapbox.mapboxsdk:mapbox-android-plugin-localization-v9:0.12.0")
+    
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
