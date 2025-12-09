@@ -29,6 +29,14 @@
 
     </RelativeLayout>
 
+    <!-- Loading indicator -->
+    <ProgressBar
+        android:id="@+id/progress_bar_chat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
     <!-- Messages area (scrollable) -->
     <ScrollView
         android:id="@+id/messages_scroll"
@@ -37,24 +45,15 @@
         android:layout_weight="1"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
         android:clipToPadding="false">
 
         <LinearLayout
             android:id="@+id/messages_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <!-- Example Bot message -->
-            <include layout="@layout/item_chat_bot" />
-
-            <!-- Example User message -->
-            <include layout="@layout/item_chat_user" />
-
-            <!-- Example Bot message (long) -->
-            <include layout="@layout/item_chat_bot" />
-
-        </LinearLayout>
+            android:orientation="vertical" />
 
     </ScrollView>
 

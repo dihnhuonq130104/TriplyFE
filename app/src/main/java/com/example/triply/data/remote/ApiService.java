@@ -10,6 +10,11 @@ import com.example.triply.data.remote.model.SaveTripRequest;
 import com.example.triply.data.remote.model.SaveFullTripRequest;
 import com.example.triply.data.remote.model.City;
 import com.example.triply.data.remote.model.Destination;
+import com.example.triply.data.remote.model.ChatThread;
+import com.example.triply.data.remote.model.ChatMessage;
+import com.example.triply.data.remote.model.CreateThreadRequest;
+import com.example.triply.data.remote.model.SendMessageRequest;
+import com.example.triply.data.remote.model.SendMessageResponse;
 
 import java.util.List;
 
@@ -52,6 +57,19 @@ public interface ApiService {
 
     @GET("/api/v1/destinations/{destinationId}")
     Call<Destination> getDestinationById(@Path("destinationId") int destinationId);
+
+    // Chat APIs
+    @POST("/api/v1/chat/threads")
+    Call<ChatThread> createThread(@Body CreateThreadRequest request);
+
+    @GET("/api/v1/chat/threads")
+    Call<List<ChatThread>> getThreads();
+
+    @GET("/api/v1/chat/threads/{threadId}/messages")
+    Call<List<ChatMessage>> getMessages(@Path("threadId") int threadId);
+
+    @POST("/api/v1/chat/send")
+    Call<SendMessageResponse> sendMessage(@Body SendMessageRequest request);
 }
 
 
