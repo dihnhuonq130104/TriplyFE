@@ -15,6 +15,7 @@ import com.example.triply.data.remote.model.ChatMessage;
 import com.example.triply.data.remote.model.CreateThreadRequest;
 import com.example.triply.data.remote.model.SendMessageRequest;
 import com.example.triply.data.remote.model.SendMessageResponse;
+import com.example.triply.data.remote.model.UserProfile;
 
 import java.util.List;
 
@@ -36,7 +37,7 @@ public interface ApiService {
     Call<AuthResponse> socialLogin(@Body SocialLoginRequest request);
 
     @GET("/api/v1/auth/me")
-    Call<AuthResponse> me(@Header("Authorization") String bearerToken);
+    Call<UserProfile> me(@Header("Authorization") String bearerToken);
 
     // Trip planning
     @POST("/api/v1/trip/plan")
