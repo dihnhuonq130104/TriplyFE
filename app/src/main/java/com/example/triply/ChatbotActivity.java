@@ -136,7 +136,10 @@ public class ChatbotActivity extends AppCompatActivity {
             public void onError(String message) {
                 runOnUiThread(() -> {
                     progressBar.setVisibility(View.GONE);
-                    addMessage("Xin chào! Tôi là trợ lý du lịch AI. Tôi có thể giúp gì cho bạn?", false);
+                    // Thread không hợp lệ (lỗi 500 hoặc không tồn tại), xóa và tạo mới
+                    clearThreadId();
+                    currentThreadId = null;
+                    createNewThread();
                 });
             }
         });
@@ -181,6 +184,11 @@ public class ChatbotActivity extends AppCompatActivity {
     private void saveThreadId(int threadId) {
         SharedPreferences prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
         prefs.edit().putInt(KEY_THREAD_ID, threadId).apply();
+    }
+
+    private void clearThreadId() {
+        SharedPreferences prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        prefs.edit().remove(KEY_THREAD_ID).apply();
     }
 
     private TextView typingIndicator;

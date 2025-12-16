@@ -108,7 +108,7 @@ public class PlanActivity extends AppCompatActivity {
         tvTotalCost = findViewById(R.id.tv_total_cost);
         rgFlightOptions = findViewById(R.id.rg_flight_options);
         rgHotelOptions = findViewById(R.id.rg_hotel_options);
-        btnPreview = findViewById(R.id.btn_preview);
+//        btnPreview = findViewById(R.id.btn_preview);
         btnCreatePlan = findViewById(R.id.btn_create_plan);
 
         attractionCheckBoxes = new CheckBox[]{
@@ -132,8 +132,8 @@ public class PlanActivity extends AppCompatActivity {
         String planJson = intent.getStringExtra("plan_json");
 
         tvDestination.setText(direction);
-        tvDuration.setText(durations);
-        tvPeopleCount.setText(numbersPerson);
+        tvDuration.setText(durations + " ngày");
+        tvPeopleCount.setText(numbersPerson + " người");
 
         try {
             if (numbersPerson != null) {
@@ -247,7 +247,7 @@ public class PlanActivity extends AppCompatActivity {
             });
         }
 
-        btnPreview.setOnClickListener(v -> Toast.makeText(this, "Chức năng đang phát triển", Toast.LENGTH_SHORT).show());
+//        btnPreview.setOnClickListener(v -> Toast.makeText(this, "Chức năng đang phát triển", Toast.LENGTH_SHORT).show());
         btnCreatePlan.setOnClickListener(v -> createDetailedPlan());
     }
 
@@ -373,9 +373,9 @@ public class PlanActivity extends AppCompatActivity {
         boolean allSelected = rgFlightOptions.getCheckedRadioButtonId() != -1 &&
                 rgHotelOptions.getCheckedRadioButtonId() != -1 &&
                 selectedAttractionsCount > 0;
-        btnPreview.setEnabled(allSelected);
+//        btnPreview.setEnabled(allSelected);
         btnCreatePlan.setEnabled(allSelected);
-        btnPreview.setAlpha(allSelected ? 1.0f : 0.5f);
+//        btnPreview.setAlpha(allSelected ? 1.0f : 0.5f);
         btnCreatePlan.setAlpha(allSelected ? 1.0f : 0.5f);
     }
 

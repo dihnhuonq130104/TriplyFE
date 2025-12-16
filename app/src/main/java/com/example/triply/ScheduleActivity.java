@@ -1,25 +1,45 @@
 package com.example.triply;
 
+import android.Manifest;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.Location;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.example.triply.data.remote.model.CreatePlanRequest;
 import com.example.triply.data.remote.model.PlanResponse;
 import com.example.triply.data.repository.PlanRepository;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationCallback;
+import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationResult;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.location.Priority;
 import com.google.gson.Gson;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 
+import java.io.IOException;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Locale;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -29,9 +49,13 @@ import java.util.regex.Pattern;
 
 public class ScheduleActivity extends AppCompatActivity {
 
+    private static final int LOCATION_PERMISSION_REQUEST_CODE = 1002;
+    
     private TextInputEditText etDeparture, etDirection, etNumbersPerson, etBudget, etDurations, etStartDate;
     private MaterialButton btnPlan;
     private FrameLayout loadingOverlay;
+    private FusedLocationProviderClient fusedLocationClient;
+    private LocationCallback locationCallback;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +64,8 @@ public class ScheduleActivity extends AppCompatActivity {
 
         initViews();
         loadExistingData();
+        initLocationServices();
+        setupBudgetFormatting();
         setupDatePicker();
         setupPlanButton();
         setupBottomNavigation();
@@ -72,6 +98,164 @@ public class ScheduleActivity extends AppCompatActivity {
             if (durations != null) etDurations.setText(durations);
             if (startDate != null) etStartDate.setText(startDate);
         }
+    }
+    
+    private void initLocationServices() {
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+        // Chỉ auto-fill nếu chưa có dữ liệu departure
+        if (etDeparture.getText() == null || etDeparture.getText().toString().trim().isEmpty()) {
+            checkAndRequestLocationPermission();
+        }
+    }
+    
+    private void checkAndRequestLocationPermission() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION, 
+                               Manifest.permission.ACCESS_COARSE_LOCATION},
+                    LOCATION_PERMISSION_REQUEST_CODE);
+        } else {
+            getCurrentLocation();
+        }
+    }
+    
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
+                                          @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        
+        if (requestCode == LOCATION_PERMISSION_REQUEST_CODE) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                getCurrentLocation();
+            }
+        }
+    }
+    
+    private void getCurrentLocation() {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) 
+                != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
+        
+        fusedLocationClient.getLastLocation()
+                .addOnSuccessListener(this, location -> {
+                    if (location != null) {
+                        reverseGeocode(location.getLatitude(), location.getLongitude());
+                    } else {
+                        requestLocationUpdates();
+                    }
+                })
+                .addOnFailureListener(e -> requestLocationUpdates());
+    }
+    
+    private void requestLocationUpdates() {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) 
+                != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
+        
+        LocationRequest locationRequest = new LocationRequest.Builder(
+                Priority.PRIORITY_HIGH_ACCURACY, 10000)
+                .setWaitForAccurateLocation(false)
+                .setMinUpdateIntervalMillis(5000)
+                .setMaxUpdateDelayMillis(15000)
+                .build();
+        
+        locationCallback = new LocationCallback() {
+            @Override
+            public void onLocationResult(@NonNull LocationResult locationResult) {
+                Location location = locationResult.getLastLocation();
+                if (location != null) {
+                    reverseGeocode(location.getLatitude(), location.getLongitude());
+                    stopLocationUpdates();
+                }
+            }
+        };
+        
+        fusedLocationClient.requestLocationUpdates(locationRequest, locationCallback, null);
+    }
+    
+    private void stopLocationUpdates() {
+        if (locationCallback != null) {
+            fusedLocationClient.removeLocationUpdates(locationCallback);
+        }
+    }
+    
+    private void reverseGeocode(double latitude, double longitude) {
+        Geocoder geocoder = new Geocoder(this, Locale.getDefault());
+        
+        try {
+            List<Address> addresses = geocoder.getFromLocation(latitude, longitude, 1);
+            
+            if (addresses != null && !addresses.isEmpty()) {
+                Address address = addresses.get(0);
+                
+                // Ưu tiên lấy tên thành phố
+                String cityName = address.getLocality();
+                if (cityName == null || cityName.isEmpty()) {
+                    cityName = address.getAdminArea();
+                }
+                if (cityName == null || cityName.isEmpty()) {
+                    cityName = address.getSubAdminArea();
+                }
+                
+                if (cityName != null && !cityName.isEmpty()) {
+                    etDeparture.setText(cityName);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    private void setupBudgetFormatting() {
+        etBudget.addTextChangedListener(new TextWatcher() {
+            private boolean isFormatting = false;
+            private String current = "";
+            
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+            
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+            
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (isFormatting) {
+                    return;
+                }
+                
+                isFormatting = true;
+                
+                String input = s.toString();
+                
+                if (!input.equals(current)) {
+                    String cleanString = input.replaceAll("[,]", "");
+                    
+                    if (cleanString.isEmpty()) {
+                        etBudget.setText("");
+                    } else {
+                        try {
+                            long parsed = Long.parseLong(cleanString);
+                            DecimalFormatSymbols symbols = new DecimalFormatSymbols(Locale.US);
+                            symbols.setGroupingSeparator(',');
+                            DecimalFormat formatter = new DecimalFormat("#,###", symbols);
+                            String formatted = formatter.format(parsed);
+                            current = formatted;
+                            etBudget.setText(formatted);
+                            etBudget.setSelection(formatted.length());
+                        } catch (NumberFormatException e) {
+                            // Nếu số quá lớn, giữ nguyên
+                        }
+                    }
+                }
+                
+                isFormatting = false;
+            }
+        });
     }
 
     private void setupDatePicker() {
@@ -292,5 +476,11 @@ public class ScheduleActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         });
+    }
+    
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        stopLocationUpdates();
     }
 }

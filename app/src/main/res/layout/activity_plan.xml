@@ -368,7 +368,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Chọn tối đa 5 địa điểm bạn muốn tham quan:"
+                        android:text=""
                         android:textSize="14sp"
                         android:textColor="@color/gray"
                         android:layout_marginBottom="12dp"/>
@@ -637,18 +637,7 @@
                 android:layout_marginTop="24dp"
                 android:layout_marginBottom="24dp">
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_preview"
-                    android:layout_width="0dp"
-                    android:layout_height="56dp"
-                    android:layout_weight="1"
-                    android:layout_marginEnd="8dp"
-                    android:text="Xem Trước"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:backgroundTint="@color/gray"
-                    app:cornerRadius="8dp"
-                    android:enabled="false"/>
+
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_create_plan"

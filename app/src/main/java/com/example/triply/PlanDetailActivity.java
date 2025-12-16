@@ -93,7 +93,7 @@ public class PlanDetailActivity extends AppCompatActivity {
         tvCostTotalValue = findViewById(R.id.tv_cost_total_value);
         tvCostSummaryText = findViewById(R.id.tv_cost_summary_text);
         btnSavePlan = findViewById(R.id.btn_save_plan);
-        btnBookNow = findViewById(R.id.btn_book_now);
+//        btnBookNow = findViewById(R.id.btn_book_now);
     }
 
     private void loadDataFromIntent() {
@@ -272,9 +272,9 @@ public class PlanDetailActivity extends AppCompatActivity {
             savePlanToDatabase();
         });
 
-        btnBookNow.setOnClickListener(v -> {
-            Toast.makeText(this, "Chức năng đang phát triển...", Toast.LENGTH_LONG).show();
-        });
+//        btnBookNow.setOnClickListener(v -> {
+//            Toast.makeText(this, "Chức năng đang phát triển...", Toast.LENGTH_LONG).show();
+//        });
     }
 
     private void savePlanToDatabase() {

@@ -665,17 +665,7 @@
                     android:textStyle="bold"
                     app:backgroundTint="@color/green"
                     app:cornerRadius="8dp"/>
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_book_now"
-                    android:layout_width="0dp"
-                    android:layout_height="56dp"
-                    android:layout_weight="1"
-                    android:layout_marginStart="8dp"
-                    android:text="🎯 Đặt Ngay"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:backgroundTint="@color/blue"
-                    app:cornerRadius="8dp"/>
+
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
